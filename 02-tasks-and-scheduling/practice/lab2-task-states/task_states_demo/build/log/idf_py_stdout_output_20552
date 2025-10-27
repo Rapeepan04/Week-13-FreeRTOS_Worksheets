@@ -1,0 +1,309 @@
+Command: C:\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe C:\Users\rapee\esp\v5.5.1\esp-idf\tools/idf_monitor.py -p COM3 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 D:\github\Week-13-FreeRTOS_Worksheets\02-tasks-and-scheduling\practice\lab2-task-states\task_states_demo\build\task_states_demo.elf D:\github\Week-13-FreeRTOS_Worksheets\02-tasks-and-scheduling\practice\lab2-task-states\task_states_demo\build\bootloader\bootloader.elf --force-color -m 'C:\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe' 'C:\Users\rapee\esp\v5.5.1\esp-idf\tools\idf.py'
+rv:0x00,hd_d	�ͅ���         Type ST Offset   Length
+[0;32mI (58) boot:  0 nvs              WiFi da�ets Jul 29 2019 12:21:46[0m
+
+rst:0x1 (POWERON_RESET),boot:0x12 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6380
+ho 0 tail 12 room 4
+load:0x40078000,len:15916
+load:0x40080400,len:3860
+entry 0x40080638
+[0;32mI (29) boot: ESP-IDF v5.5.1 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Oct 23 2025 00:00:28[0m
+[0;32mI (29) boot: Multicore bootloader[0m
+[0;32mI (31) boot: chip revision: v3.0[0m
+[0;32mI (33) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (37) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (41) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (44) boot: Enabling RNG early entropy source...[0m
+[0;32mI (49) boot: Partition Table:[0m
+[0;32mI (51) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (58) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (64) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (71) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (77) boot: End of partition table[0m
+[0;32mI (81) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0ab20h ( 43808) map[0m
+[0;32mI (103) esp_image: segment 1: paddr=0001ab48 vaddr=3ffb0000 size=02438h (  9272) load[0m
+[0;32mI (107) esp_image: segment 2: paddr=0001cf88 vaddr=40080000 size=03090h ( 12432) load[0m
+[0;32mI (112) esp_image: segment 3: paddr=00020020 vaddr=400d0020 size=17d0ch ( 97548) map[0m
+[0;32mI (148) esp_image: segment 4: paddr=00037d34 vaddr=40083090 size=0a644h ( 42564) load[0m
+[0;32mI (165) esp_image: segment 5: paddr=00042380 vaddr=50000000 size=00020h (    32) load[0m
+[0;32mI (171) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (172) boot: Disabling RNG early entropy source...[0m
+[0;32mI (183) cpu_start: Multicore app[0m
+[0;32mI (191) cpu_start: Pro cpu start user code[0m
+[0;32mI (191) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (191) app_init: Application information:[0m
+[0;32mI (191) app_init: Project name:     task_states_demo[0m
+[0;32mI (196) app_init: App version:      f7526bb[0m
+[0;32mI (200) app_init: Compile time:     Oct 22 2025 23:59:23[0m
+[0;32mI (205) app_init: ELF file SHA256:  aa7c74b6a...[0m
+[0;32mI (209) app_init: ESP-IDF:          v5.5.1[0m
+[0;32mI (213) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (217) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (221) efuse_init: Chip rev:         v3.0[0m
+[0;32mI (225) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (231) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (236) heap_init: At 3FFB2D28 len 0002D2D8 (180 KiB): DRAM[0m
+[0;32mI (241) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (247) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (252) heap_init: At 4008D6D4 len 0001292C (74 KiB): IRAM[0m
+[0;32mI (259) spi_flash: detected chip: generic[0m
+[0;32mI (261) spi_flash: flash io: dio[0m
+[0;33mW (264) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (277) main_task: Started on CPU0[0m
+[0;32mI (287) main_task: Calling app_main()[0m
+[0;32mI (287) TASK_STATES: === FreeRTOS Task States Demo ===[0m
+[1;31mE (287) gpio: gpio_pullup_en(78): GPIO number error (input-only pad has no internal PU)[0m
+[0;32mI (287) TASK_STATES: LEDs: 2=Running, 4=Ready, 5=Blocked, 18=Suspended[0m
+[0;32mI (297) TASK_STATES: Buttons: 0=Suspend/Resume, 35=Give Semaphore[0m
+[0;32mI (307) TASK_STATES: State Demo Task started[0m
+[0;32mI (307) TASK_STATES: === Cycle 1 ===[0m
+[0;32mI (307) TASK_STATES: Task is RUNNING[0m
+[0;32mI (417) TASK_STATES: Task will be READY (yield)[0m
+[0;32mI (417) TASK_STATES: Ready demo running[0m
+[0;32mI (427) TASK_STATES: Control Task started[0m
+[0;32mI (427) TASK_STATES: Self-deleting task alive for 10 sec[0m
+[0;32mI (427) TASK_STATES: Self-deleting countdown: 10[0m
+[0;32mI (437) TASK_STATES: System Monitor started[0m
+[0;32mI (437) TASK_STATES: [0m
+=== SYSTEM MONITOR ===
+[0;32mI (437) TASK_STATES: Task		State	Prio	Stack	Num[0m
+[0;32mI (447) TASK_STATES: External delete task: 0[0m
+[0;32mI (447) TASK_STATES: main           	R	1	2072	3[0m
+Monitor        	X	1	2276	9
+IDLE1          	R	0	1024	5
+IDLE0          	R	0	1236	4
+Control        	B	4	1228	8
+ReadyDemo      	B	3	212	7
+SelfDelete     	B	2	236	10
+StateDemo      	B	3	2268	6
+ipc1           	S	24	504	2
+ipc0           	S	24	496	1
+
+[0;32mI (477) TASK_STATES: [0m
+Runtime Stats:
+Task		Abs Time	%Time
+[0;32mI (477) TASK_STATES: Monitor        	15294		6%[0m
+IDLE1          	199962		89%
+IDLE0          	0		<1%
+ReadyDemo      	10756		4%
+SelfDelete     	1790		<1%
+ExtDelete      	4027		1%
+main           	30958		13%
+StateDemo      	117018		52%
+Control        	158		<1%
+ipc0           	19382		8%
+ipc1           	20181		9%
+
+[0;32mI (517) TASK_STATES: Task will be BLOCKED (waiting semaphore)[0m
+[0;32mI (577) TASK_STATES: Ready demo running[0m
+[0;32mI (737) TASK_STATES: Ready demo running[0m
+[0;32mI (897) TASK_STATES: Ready demo running[0m
+[0;32mI (1057) TASK_STATES: Ready demo running[0m
+[0;32mI (1217) TASK_STATES: Ready demo running[0m
+[0;32mI (1377) TASK_STATES: Ready demo running[0m
+[0;32mI (1437) TASK_STATES: Self-deleting countdown: 9[0m
+[0;32mI (1447) TASK_STATES: External delete task: 1[0m
+[0;32mI (1537) TASK_STATES: Ready demo running[0m
+[0;32mI (1697) TASK_STATES: Ready demo running[0m
+[0;32mI (1857) TASK_STATES: Ready demo running[0m
+[0;32mI (2017) TASK_STATES: Ready demo running[0m
+[0;32mI (2177) TASK_STATES: Ready demo running[0m
+[0;32mI (2337) TASK_STATES: Ready demo running[0m
+[0;32mI (2437) TASK_STATES: Self-deleting countdown: 8[0m
+[0;32mI (2447) TASK_STATES: External delete task: 2[0m
+[0;32mI (2497) TASK_STATES: Ready demo running[0m
+[0;32mI (2517) TASK_STATES: Semaphore timeout![0m
+[0;32mI (2517) TASK_STATES: Task BLOCKED (vTaskDelay)[0m
+[0;32mI (2657) TASK_STATES: Ready demo running[0m
+[0;32mI (2817) TASK_STATES: Ready demo running[0m
+[0;32mI (2977) TASK_STATES: Ready demo running[0m
+[0;32mI (3137) TASK_STATES: Ready demo running[0m
+[0;32mI (3297) TASK_STATES: Ready demo running[0m
+[0;32mI (3327) TASK_STATES: === TASK STATUS ===[0m
+[0;32mI (3327) TASK_STATES: State Demo: Blocked[0m
+[0;32mI (3327) TASK_STATES: Priority: 3, Stack: 2268 bytes[0m
+[0;32mI (3437) TASK_STATES: Self-deleting countdown: 7[0m
+[0;32mI (3447) TASK_STATES: External delete task: 3[0m
+[0;32mI (3457) TASK_STATES: Ready demo running[0m
+[0;32mI (3517) TASK_STATES: === Cycle 2 ===[0m
+[0;32mI (3517) TASK_STATES: Task is RUNNING[0m
+[0;32mI (3617) TASK_STATES: Ready demo running[0m
+[0;32mI (3617) TASK_STATES: Task will be READY (yield)[0m
+[0;32mI (3717) TASK_STATES: Task will be BLOCKED (waiting semaphore)[0m
+[0;32mI (3777) TASK_STATES: Ready demo running[0m
+[0;32mI (3937) TASK_STATES: Ready demo running[0m
+[0;32mI (4097) TASK_STATES: Ready demo running[0m
+[0;32mI (4257) TASK_STATES: Ready demo running[0m
+[0;32mI (4417) TASK_STATES: Ready demo running[0m
+[0;32mI (4437) TASK_STATES: Self-deleting countdown: 6[0m
+[0;32mI (4447) TASK_STATES: External delete task: 4[0m
+[0;32mI (4577) TASK_STATES: Ready demo running[0m
+[0;32mI (4737) TASK_STATES: Ready demo running[0m
+[0;32mI (4897) TASK_STATES: Ready demo running[0m
+[0;32mI (5057) TASK_STATES: Ready demo running[0m
+[0;32mI (5217) TASK_STATES: Ready demo running[0m
+[0;32mI (5377) TASK_STATES: Ready demo running[0m
+[0;32mI (5437) TASK_STATES: Self-deleting countdown: 5[0m
+[0;32mI (5447) TASK_STATES: External delete task: 5[0m
+[0;32mI (5507) TASK_STATES: [0m
+=== SYSTEM MONITOR ===
+[0;32mI (5507) TASK_STATES: Task		State	Prio	Stack	Num[0m
+[0;32mI (5507) TASK_STATES: Monitor        	X	1	2244	9[0m
+IDLE1          	R	0	1024	5
+IDLE0          	R	0	1028	4
+ReadyDemo      	B	3	212	7
+StateDemo      	B	3	2268	6
+SelfDelete     	B	2	236	10
+ExtDelete      	B	2	236	11
+main           	B	1	2072	3
+Control        	B	4	1228	8
+ipc1           	S	24	504	2
+ipc0           	S	24	496	1
+
+[0;32mI (5527) TASK_STATES: [0m
+Runtime Stats:
+Task		Abs Time	%Time
+[0;32mI (5537) TASK_STATES: Ready demo running[0m
+[0;32mI (5547) TASK_STATES: Monitor        	93245		1%[0m
+IDLE1          	5242677		99%
+IDLE0          	4552136		86%
+Control        	2045		<1%
+StateDemo      	228096		4%
+SelfDelete     	2395		<1%
+ExtDelete      	4617		<1%
+main           	30958		<1%
+ReadyDemo      	343796		6%
+ipc0           	19382		<1%
+ipc1           	20181		<1%
+
+[0;32mI (5697) TASK_STATES: Ready demo running[0m
+[0;32mI (5717) TASK_STATES: Semaphore timeout![0m
+[0;32mI (5717) TASK_STATES: Task BLOCKED (vTaskDelay)[0m
+[0;32mI (5857) TASK_STATES: Ready demo running[0m
+[0;32mI (6017) TASK_STATES: Ready demo running[0m
+[0;32mI (6177) TASK_STATES: Ready demo running[0m
+[0;32mI (6327) TASK_STATES: === TASK STATUS ===[0m
+[0;32mI (6327) TASK_STATES: State Demo: Blocked[0m
+[0;32mI (6327) TASK_STATES: Priority: 3, Stack: 2268 bytes[0m
+[0;32mI (6337) TASK_STATES: Ready demo running[0m
+[0;32mI (6437) TASK_STATES: Self-deleting countdown: 4[0m
+[0;32mI (6447) TASK_STATES: External delete task: 6[0m
+[0;32mI (6497) TASK_STATES: Ready demo running[0m
+[0;32mI (6657) TASK_STATES: Ready demo running[0m
+[0;32mI (6717) TASK_STATES: === Cycle 3 ===[0m
+[0;32mI (6717) TASK_STATES: Task is RUNNING[0m
+[0;32mI (6817) TASK_STATES: Ready demo running[0m
+[0;32mI (6817) TASK_STATES: Task will be READY (yield)[0m
+[0;32mI (6917) TASK_STATES: Task will be BLOCKED (waiting semaphore)[0m
+[0;32mI (6977) TASK_STATES: Ready demo running[0m
+[0;32mI (7137) TASK_STATES: Ready demo running[0m
+[0;32mI (7297) TASK_STATES: Ready demo running[0m
+[0;32mI (7437) TASK_STATES: Self-deleting countdown: 3[0m
+[0;32mI (7447) TASK_STATES: External delete task: 7[0m
+[0;32mI (7457) TASK_STATES: Ready demo running[0m
+[0;32mI (7617) TASK_STATES: Ready demo running[0m
+[0;32mI (7777) TASK_STATES: Ready demo running[0m
+[0;32mI (7937) TASK_STATES: Ready demo running[0m
+[0;32mI (8097) TASK_STATES: Ready demo running[0m
+[0;32mI (8257) TASK_STATES: Ready demo running[0m
+[0;32mI (8417) TASK_STATES: Ready demo running[0m
+[0;32mI (8437) TASK_STATES: Self-deleting countdown: 2[0m
+[0;32mI (8447) TASK_STATES: External delete task: 8[0m
+[0;32mI (8577) TASK_STATES: Ready demo running[0m
+[0;32mI (8737) TASK_STATES: Ready demo running[0m
+[0;32mI (8897) TASK_STATES: Ready demo running[0m
+[0;32mI (8917) TASK_STATES: Semaphore timeout![0m
+[0;32mI (8917) TASK_STATES: Task BLOCKED (vTaskDelay)[0m
+[0;32mI (9057) TASK_STATES: Ready demo running[0m
+[0;32mI (9217) TASK_STATES: Ready demo running[0m
+[0;32mI (9327) TASK_STATES: === TASK STATUS ===[0m
+[0;32mI (9327) TASK_STATES: State Demo: Blocked[0m
+[0;32mI (9327) TASK_STATES: Priority: 3, Stack: 2268 bytes[0m
+[0;32mI (9377) TASK_STATES: Ready demo running[0m
+[0;32mI (9437) TASK_STATES: Self-deleting countdown: 1[0m
+[0;32mI (9447) TASK_STATES: External delete task: 9[0m
+[0;32mI (9537) TASK_STATES: Ready demo running[0m
+[0;32mI (9697) TASK_STATES: Ready demo running[0m
+[0;32mI (9857) TASK_STATES: Ready demo running[0m
+[0;32mI (9917) TASK_STATES: === Cycle 4 ===[0m
+[0;32mI (9917) TASK_STATES: Task is RUNNING[0m
+[0;32mI (10017) TASK_STATES: Ready demo running[0m
+[0;32mI (10017) TASK_STATES: Task will be READY (yield)[0m
+[0;32mI (10117) TASK_STATES: Task will be BLOCKED (waiting semaphore)[0m
+[0;32mI (10177) TASK_STATES: Ready demo running[0m
+[0;32mI (10337) TASK_STATES: Ready demo running[0m
+[0;32mI (10437) TASK_STATES: Self-deleting now (DELETED)[0m
+[0;32mI (10447) TASK_STATES: External delete task: 10[0m
+[0;32mI (10497) TASK_STATES: Ready demo running[0m
+[0;32mI (10567) TASK_STATES: [0m
+=== SYSTEM MONITOR ===
+[0;32mI (10567) TASK_STATES: Task		State	Prio	Stack	Num[0m
+[0;32mI (10567) TASK_STATES: Monitor        	X	1	2244	9[0m
+IDLE1          	R	0	1024	5
+IDLE0          	R	0	1028	4
+ReadyDemo      	B	3	212	7
+ExtDelete      	B	2	236	11
+StateDemo      	B	3	2268	6
+main           	B	1	2072	3
+Control        	B	4	1228	8
+ipc1           	S	24	504	2
+ipc0           	S	24	496	1
+
+[0;32mI (10587) TASK_STATES: [0m
+Runtime Stats:
+Task		Abs Time	%Time
+[0;32mI (10597) TASK_STATES: Monitor        	130853		1%[0m
+IDLE1          	10264181		99%
+IDLE0          	9027382		87%
+ExtDelete      	5216		<1%
+StateDemo      	442104		4%
+main           	30958		<1%
+Control        	4971		<1%
+ReadyDemo      	691281		6%
+ipc0           	19382		<1%
+ipc1           	20181		<1%
+
+[0;32mI (10657) TASK_STATES: Ready demo running[0m
+[0;32mI (10817) TASK_STATES: Ready demo running[0m
+[0;32mI (10977) TASK_STATES: Ready demo running[0m
+[0;32mI (11137) TASK_STATES: Ready demo running[0m
+[0;32mI (11297) TASK_STATES: Ready demo running[0m
+[0;32mI (11447) TASK_STATES: External delete task: 11[0m
+[0;32mI (11457) TASK_STATES: Ready demo running[0m
+[0;32mI (11617) TASK_STATES: Ready demo running[0m
+[0;32mI (11777) TASK_STATES: Ready demo running[0m
+[0;32mI (11937) TASK_STATES: Ready demo running[0m
+[0;32mI (12097) TASK_STATES: Ready demo running[0m
+[0;32mI (12117) TASK_STATES: Semaphore timeout![0m
+[0;32mI (12117) TASK_STATES: Task BLOCKED (vTaskDelay)[0m
+[0;32mI (12257) TASK_STATES: Ready demo running[0m
+[0;32mI (12327) TASK_STATES: === TASK STATUS ===[0m
+[0;32mI (12327) TASK_STATES: State Demo: Blocked[0m
+[0;32mI (12327) TASK_STATES: Priority: 3, Stack: 2268 bytes[0m
+[0;32mI (12417) TASK_STATES: Ready demo running[0m
+[0;32mI (12447) TASK_STATES: External delete task: 12[0m
+[0;32mI (12577) TASK_STATES: Ready demo running[0m
+[0;32mI (12737) TASK_STATES: Ready demo running[0m
+[0;32mI (12897) TASK_STATES: Ready demo running[0m
+[0;32mI (13057) TASK_STATES: Ready demo running[0m
+[0;32mI (13117) TASK_STATES: === Cycle 5 ===[0m
+[0;32mI (13117) TASK_STATES: Task is RUNNING[0m
+[0;32mI (13217) TASK_STATES: Ready demo running[0m
+[0;32mI (13217) TASK_STATES: Task will be READY (yield)[0m
+[0;32mI (13317) TASK_STATES: Task will be BLOCKED (waiting semaphore)[0m
+[0;32mI (13377) TASK_STATES: Ready demo running[0m
+[0;32mI (13447) TASK_STATES: External delete task: 13[0m
+[0;32mI (13537) TASK_STATES: Ready demo running[0m
+[0;32mI (13697) TASK_STATES: Ready demo running[0m
+[0;32mI (13857) TASK_STATES: Ready demo running[0m
+[0;32mI (14017) TASK_STATES: Ready demo running[0m
+[0;32mI (14177) TASK_STATES: Ready demo running[0m
+[0;32mI (14337) TASK_STATES: Ready demo running[0m
+[0;32mI (14447) TASK_STATES: External delete task: 14[0m
+[0;32mI (14497) TASK_STATES: Ready demo running[0m
+[0;32mI (14657) TASK_STATES: Ready demo running[0m

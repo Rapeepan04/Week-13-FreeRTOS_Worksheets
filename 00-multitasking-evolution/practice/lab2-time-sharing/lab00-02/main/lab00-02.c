@@ -1,0 +1,187 @@
+#include <stdio.h>
+#include "freertos/FreeRTOS.h"
+#include "freertos/task.h"
+#include "driver/gpio.h"
+#include "esp_log.h"
+#include "esp_timer.h"
+
+#define LED1_PIN GPIO_NUM_2
+#define LED2_PIN GPIO_NUM_4
+#define LED3_PIN GPIO_NUM_5
+#define LED4_PIN GPIO_NUM_18
+
+static const char *TAG = "TIME_SHARING";
+
+// Task states
+typedef enum {
+    TASK_SENSOR,
+    TASK_PROCESS,
+    TASK_ACTUATOR,
+    TASK_DISPLAY,
+    TASK_COUNT
+} task_id_t;
+
+// Time slice in milliseconds
+#define TIME_SLICE_MS 50
+
+// Global variables
+static uint32_t task_counter = 0;
+static uint64_t context_switch_time = 0;
+static uint32_t context_switches = 0;
+
+// --------------------------- TASK SIMULATIONS ---------------------------
+void simulate_sensor_task(void)
+{
+    static uint32_t sensor_count = 0;
+    ESP_LOGI(TAG, "Sensor Task %d", sensor_count++);
+    gpio_set_level(LED1_PIN, 1);
+    for (int i = 0; i < 10000; i++) {
+        volatile int dummy = i; // light work
+    }
+    gpio_set_level(LED1_PIN, 0);
+}
+
+void simulate_processing_task(void)
+{
+    static uint32_t process_count = 0;
+    ESP_LOGI(TAG, "Processing Task %d", process_count++);
+    gpio_set_level(LED2_PIN, 1);
+    for (int i = 0; i < 100000; i++) {
+        volatile int dummy = i * i; // heavy work
+    }
+    gpio_set_level(LED2_PIN, 0);
+}
+
+void simulate_actuator_task(void)
+{
+    static uint32_t actuator_count = 0;
+    ESP_LOGI(TAG, "Actuator Task %d", actuator_count++);
+    gpio_set_level(LED3_PIN, 1);
+    for (int i = 0; i < 50000; i++) {
+        volatile int dummy = i + 100; // medium
+    }
+    gpio_set_level(LED3_PIN, 0);
+}
+
+void simulate_display_task(void)
+{
+    static uint32_t display_count = 0;
+    ESP_LOGI(TAG, "Display Task %d", display_count++);
+    gpio_set_level(LED4_PIN, 1);
+    for (int i = 0; i < 20000; i++) {
+        volatile int dummy = i / 2; // quick work
+    }
+    gpio_set_level(LED4_PIN, 0);
+}
+
+// --------------------------- MANUAL SCHEDULER ---------------------------
+void manual_scheduler(void)
+{
+    uint64_t start_time = esp_timer_get_time();
+    context_switches++;
+
+    // Simulate context switch overhead
+    for (int i = 0; i < 1000; i++) {
+        volatile int dummy = i;
+    }
+
+    // Run current task
+    switch (task_counter % TASK_COUNT) {
+        case TASK_SENSOR: simulate_sensor_task(); break;
+        case TASK_PROCESS: simulate_processing_task(); break;
+        case TASK_ACTUATOR: simulate_actuator_task(); break;
+        case TASK_DISPLAY: simulate_display_task(); break;
+    }
+
+    // Overhead after switching
+    for (int i = 0; i < 1000; i++) {
+        volatile int dummy = i;
+    }
+
+    uint64_t end_time = esp_timer_get_time();
+    context_switch_time += (end_time - start_time);
+    task_counter++;
+}
+
+// --------------------------- VARIABLE TIME SLICE TEST ---------------------------
+void variable_time_slice_experiment(void)
+{
+    ESP_LOGI(TAG, "\n=== Variable Time Slice Experiment ===");
+    uint32_t time_slices[] = {10, 25, 50, 100, 200};
+    int num_slices = sizeof(time_slices) / sizeof(time_slices[0]);
+
+    for (int i = 0; i < num_slices; i++) {
+        ESP_LOGI(TAG, "Testing time slice: %d ms", time_slices[i]);
+
+        context_switches = 0;
+        context_switch_time = 0;
+        task_counter = 0;
+
+        uint64_t test_start = esp_timer_get_time();
+
+        for (int j = 0; j < 50; j++) {
+            manual_scheduler();
+            vTaskDelay(pdMS_TO_TICKS(time_slices[i]));
+        }
+
+        uint64_t test_end = esp_timer_get_time();
+        uint64_t test_duration = test_end - test_start;
+
+        float efficiency = ((float)context_switch_time / (float)test_duration) * 100.0f;
+
+        ESP_LOGI(TAG, "Time slice %d ms: Efficiency %.1f%%", time_slices[i], efficiency);
+        ESP_LOGI(TAG, "Context switches: %d", context_switches);
+        vTaskDelay(pdMS_TO_TICKS(1000));
+    }
+}
+
+// --------------------------- DEMONSTRATION ---------------------------
+void demonstrate_problems(void)
+{
+    ESP_LOGI(TAG, "\n=== Demonstrating Time-Sharing Problems ===");
+    ESP_LOGI(TAG, "1️⃣ No priority support – งานสำคัญต้องรอ");
+    ESP_LOGI(TAG, "2️⃣ Fixed time slice – งานสั้นเสียเวลา งานยาวถูกตัดกลางคัน");
+    ESP_LOGI(TAG, "3️⃣ Context switching overhead – เสียเวลาสลับงาน");
+    ESP_LOGI(TAG, "4️⃣ No inter-task communication – งานคุยกันไม่ได้");
+}
+
+// --------------------------- MAIN ---------------------------
+void app_main(void)
+{
+    gpio_config_t io_conf = {
+        .intr_type = GPIO_INTR_DISABLE,
+        .mode = GPIO_MODE_OUTPUT,
+        .pin_bit_mask = (1ULL << LED1_PIN) | (1ULL << LED2_PIN) |
+                        (1ULL << LED3_PIN) | (1ULL << LED4_PIN),
+        .pull_down_en = 0,
+        .pull_up_en = 0,
+    };
+    gpio_config(&io_conf);
+
+    ESP_LOGI(TAG, "Time-Sharing System Started");
+    ESP_LOGI(TAG, "Time slice: %d ms", TIME_SLICE_MS);
+
+    uint64_t start_time = esp_timer_get_time();
+    uint32_t round_count = 0;
+
+    while (1) {
+        manual_scheduler();
+        vTaskDelay(pdMS_TO_TICKS(TIME_SLICE_MS));
+
+        if (context_switches % 20 == 0) {
+            round_count++;
+            uint64_t now = esp_timer_get_time();
+            uint64_t total_time = now - start_time;
+            float cpu_util = ((float)context_switch_time / (float)total_time) * 100.0f;
+            ESP_LOGI(TAG, "=== Round %d ===", round_count);
+            ESP_LOGI(TAG, "Context switches: %d | CPU Utilization: %.1f%%", context_switches, cpu_util);
+        }
+
+        if (round_count == 3) {
+            variable_time_slice_experiment();
+            demonstrate_problems();
+            round_count++;
+        }
+    }
+}
+    

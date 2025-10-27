@@ -1,0 +1,136 @@
+Command: C:\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe C:\Users\rapee\esp\v5.5.1\esp-idf\tools/idf_monitor.py -p COM3 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 D:\github\Week-13-FreeRTOS_Worksheets\00-multitasking-evolution\practice\lab2-time-sharing\lab00-02\build\lab00-02.elf D:\github\Week-13-FreeRTOS_Worksheets\00-multitasking-evolution\practice\lab2-time-sharing\lab00-02\build\bootloader\bootloader.elf --force-color -m 'C:\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe' 'C:\Users\rapee\esp\v5.5.1\esp-idf\tools\idf.py'
+UART1/SDIO_ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x2 (DOWNLOAD_BOOT(UART0/UART1/SDIO_REI_FEO_V2))
+waiting for download
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x12 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6380
+ho 0 tail 12 room 4
+load:0x40078000,len:15916
+load:0x40080400,len:3860
+entry 0x40080638
+[0;32mI (29) boot: ESP-IDF v5.5.1 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Oct 23 2025 18:28:20[0m
+[0;32mI (29) boot: Multicore bootloader[0m
+[0;32mI (31) boot: chip revision: v3.0[0m
+[0;32mI (33) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (37) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (41) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (44) boot: Enabling RNG early entropy source...[0m
+[0;32mI (49) boot: Partition Table:[0m
+[0;32mI (51) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (58) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (64) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (71) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (77) boot: End of partition table[0m
+[0;32mI (81) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0a610h ( 42512) map[0m
+[0;32mI (103) esp_image: segment 1: paddr=0001a638 vaddr=3ffb0000 size=023f8h (  9208) load[0m
+[0;32mI (106) esp_image: segment 2: paddr=0001ca38 vaddr=40080000 size=035e0h ( 13792) load[0m
+[0;32mI (112) esp_image: segment 3: paddr=00020020 vaddr=400d0020 size=14a80h ( 84608) map[0m
+[0;32mI (143) esp_image: segment 4: paddr=00034aa8 vaddr=400835e0 size=099d0h ( 39376) load[0m
+[0;32mI (158) esp_image: segment 5: paddr=0003e480 vaddr=50000000 size=00020h (    32) load[0m
+[0;32mI (165) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (165) boot: Disabling RNG early entropy source...[0m
+[0;32mI (177) cpu_start: Multicore app[0m
+[0;32mI (185) cpu_start: Pro cpu start user code[0m
+[0;32mI (185) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (185) app_init: Application information:[0m
+[0;32mI (185) app_init: Project name:     lab00-02[0m
+[0;32mI (189) app_init: App version:      f7526bb[0m
+[0;32mI (193) app_init: Compile time:     Oct 23 2025 18:27:19[0m
+[0;32mI (198) app_init: ELF file SHA256:  36732fb6a...[0m
+[0;32mI (202) app_init: ESP-IDF:          v5.5.1[0m
+[0;32mI (206) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (210) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (214) efuse_init: Chip rev:         v3.0[0m
+[0;32mI (218) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (224) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (229) heap_init: At 3FFB2CE0 len 0002D320 (180 KiB): DRAM[0m
+[0;32mI (235) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (240) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (245) heap_init: At 4008CFB0 len 00013050 (76 KiB): IRAM[0m
+[0;32mI (252) spi_flash: detected chip: generic[0m
+[0;32mI (254) spi_flash: flash io: dio[0m
+[0;33mW (257) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (270) main_task: Started on CPU0[0m
+[0;32mI (280) main_task: Calling app_main()[0m
+[0;32mI (280) TIME_SHARING: Time-Sharing System Started[0m
+[0;32mI (280) TIME_SHARING: Time slice: 50 ms[0m
+[0;32mI (280) TIME_SHARING: Sensor Task 0[0m
+[0;32mI (330) TIME_SHARING: Processing Task 0[0m
+[0;32mI (380) TIME_SHARING: Actuator Task 0[0m
+[0;32mI (430) TIME_SHARING: Display Task 0[0m
+[0;32mI (480) TIME_SHARING: Sensor Task 1[0m
+[0;32mI (530) TIME_SHARING: Processing Task 1[0m
+[0;32mI (580) TIME_SHARING: Actuator Task 1[0m
+[0;32mI (630) TIME_SHARING: Display Task 1[0m
+[0;32mI (680) TIME_SHARING: Sensor Task 2[0m
+[0;32mI (730) TIME_SHARING: Processing Task 2[0m
+[0;32mI (780) TIME_SHARING: Actuator Task 2[0m
+[0;32mI (830) TIME_SHARING: Display Task 2[0m
+[0;32mI (880) TIME_SHARING: Sensor Task 3[0m
+[0;32mI (930) TIME_SHARING: Processing Task 3[0m
+[0;32mI (980) TIME_SHARING: Actuator Task 3[0m
+[0;32mI (1030) TIME_SHARING: Display Task 3[0m
+[0;32mI (1080) TIME_SHARING: Sensor Task 4[0m
+[0;32mI (1130) TIME_SHARING: Processing Task 4[0m
+[0;32mI (1180) TIME_SHARING: Actuator Task 4[0m
+[0;32mI (1230) TIME_SHARING: Display Task 4[0m
+[0;32mI (1280) TIME_SHARING: === Round 1 ===[0m
+[0;32mI (1280) TIME_SHARING: Context switches: 20 | CPU Utilization: 7.6%[0m
+[0;32mI (1280) TIME_SHARING: Sensor Task 5[0m
+[0;32mI (1330) TIME_SHARING: Processing Task 5[0m
+[0;32mI (1380) TIME_SHARING: Actuator Task 5[0m
+[0;32mI (1430) TIME_SHARING: Display Task 5[0m
+[0;32mI (1480) TIME_SHARING: Sensor Task 6[0m
+[0;32mI (1530) TIME_SHARING: Processing Task 6[0m
+[0;32mI (1580) TIME_SHARING: Actuator Task 6[0m
+[0;32mI (1630) TIME_SHARING: Display Task 6[0m
+[0;32mI (1680) TIME_SHARING: Sensor Task 7[0m
+[0;32mI (1730) TIME_SHARING: Processing Task 7[0m
+[0;32mI (1780) TIME_SHARING: Actuator Task 7[0m
+[0;32mI (1830) TIME_SHARING: Display Task 7[0m
+[0;32mI (1880) TIME_SHARING: Sensor Task 8[0m
+[0;32mI (1930) TIME_SHARING: Processing Task 8[0m
+[0;32mI (1980) TIME_SHARING: Actuator Task 8[0m
+[0;32mI (2030) TIME_SHARING: Display Task 8[0m
+[0;32mI (2080) TIME_SHARING: Sensor Task 9[0m
+[0;32mI (2130) TIME_SHARING: Processing Task 9[0m
+[0;32mI (2180) TIME_SHARING: Actuator Task 9[0m
+[0;32mI (2230) TIME_SHARING: Display Task 9[0m
+[0;32mI (2280) TIME_SHARING: === Round 2 ===[0m
+[0;32mI (2280) TIME_SHARING: Context switches: 40 | CPU Utilization: 7.4%[0m
+[0;32mI (2280) TIME_SHARING: Sensor Task 10[0m
+[0;32mI (2330) TIME_SHARING: Processing Task 10[0m
+[0;32mI (2380) TIME_SHARING: Actuator Task 10[0m
+[0;32mI (2430) TIME_SHARING: Display Task 10[0m
+[0;32mI (2480) TIME_SHARING: Sensor Task 11[0m
+[0;32mI (2530) TIME_SHARING: Processing Task 11[0m
+[0;32mI (2580) TIME_SHARING: Actuator Task 11[0m
+[0;32mI (2630) TIME_SHARING: Display Task 11[0m
+[0;32mI (2680) TIME_SHARING: Sensor Task 12[0m
+[0;32mI (2730) TIME_SHARING: Processing Task 12[0m
+[0;32mI (2780) TIME_SHARING: Actuator Task 12[0m
+[0;32mI (2830) TIME_SHARING: Display Task 12[0m
+[0;32mI (2880) TIME_SHARING: Sensor Task 13[0m
+[0;32mI (2930) TIME_SHARING: Processing Task 13[0m
+[0;32mI (2980) TIME_SHARING: Actuator Task 13[0m
+[0;32mI (3030) TIME_SHARING: Display Task 13[0m
+[0;32mI (3080) TIME_SHARING: Sensor Task 14[0m
+[0;32mI (3130) TIME_SHARING: Processing Task 14[0m
+[0;32mI (3180) TIME_SHARING: Actuator Task 14[0m
+[0;32mI (3230) TIME_SHARING: Display Task 14[0m
+[0;32mI (3280) TIME_SHARING: === Round 3 ===[0m
+[0;32mI (3280) TIME_SHARING: Context switches: 60 | CPU Utilization: 7.4%[0m
+[0;32mI (3280) TIME_SHARING: [0m
+=== Variable Time Slice Experiment ===
+[0;32mI (3280) TIME_SHARING: Testing time slice: 10 ms[0m
+[0;32mI (3280) TIME_SHARING: Sensor Task 15[0m
+[0;32mI (3300) TIME_SHARING: Processing Task 15[0m
+[0;32mI (3310) TIME_SHARING: Actuator Task 15[0m
+[0;32mI (3320) TIME_SHARING: Display Task 15[0m

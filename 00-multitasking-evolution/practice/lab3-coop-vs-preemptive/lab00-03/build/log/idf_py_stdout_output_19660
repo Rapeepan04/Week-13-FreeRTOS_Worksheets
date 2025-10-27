@@ -1,0 +1,305 @@
+Command: C:\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe C:\Users\rapee\esp\v5.5.1\esp-idf\tools/idf_monitor.py -p COM3 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 D:\github\Week-13-FreeRTOS_Worksheets\00-multitasking-evolution\practice\lab3-coop-vs-preemptive\lab00-03\build\lab00-03.elf D:\github\Week-13-FreeRTOS_Worksheets\00-multitasking-evolution\practice\lab3-coop-vs-preemptive\lab00-03\build\bootloader\bootloader.elf --force-color -m 'C:\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe' 'C:\Users\rapee\esp\v5.5.1\esp-idf\tools\idf.py'
+)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_d�  Usage          Type ST Offset   Length
+[0;32mI (58) boot:  0 nvs              WiFi da�ets Jul 29 2019 12:21:46[0m
+
+rst:0x1 (POWERON_RESET),boot:0x12 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6380
+ho 0 tail 12 room 4
+load:0x40078000,len:15916
+load:0x40080400,len:3860
+entry 0x40080638
+[0;32mI (29) boot: ESP-IDF v5.5.1 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Oct 23 2025 19:00:44[0m
+[0;32mI (29) boot: Multicore bootloader[0m
+[0;32mI (31) boot: chip revision: v3.0[0m
+[0;32mI (33) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (37) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (41) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (44) boot: Enabling RNG early entropy source...[0m
+[0;32mI (49) boot: Partition Table:[0m
+[0;32mI (51) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (58) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (64) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (71) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (77) boot: End of partition table[0m
+[0;32mI (81) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0a5d0h ( 42448) map[0m
+[0;32mI (103) esp_image: segment 1: paddr=0001a5f8 vaddr=3ffb0000 size=023f8h (  9208) load[0m
+[0;32mI (106) esp_image: segment 2: paddr=0001c9f8 vaddr=40080000 size=03620h ( 13856) load[0m
+[0;32mI (112) esp_image: segment 3: paddr=00020020 vaddr=400d0020 size=149f4h ( 84468) map[0m
+[0;32mI (143) esp_image: segment 4: paddr=00034a1c vaddr=40083620 size=09990h ( 39312) load[0m
+[0;32mI (158) esp_image: segment 5: paddr=0003e3b4 vaddr=50000000 size=00020h (    32) load[0m
+[0;32mI (165) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (165) boot: Disabling RNG early entropy source...[0m
+[0;32mI (176) cpu_start: Multicore app[0m
+[0;32mI (185) cpu_start: Pro cpu start user code[0m
+[0;32mI (185) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (185) app_init: Application information:[0m
+[0;32mI (185) app_init: Project name:     lab00-03[0m
+[0;32mI (189) app_init: App version:      f7526bb[0m
+[0;32mI (193) app_init: Compile time:     Oct 23 2025 18:59:41[0m
+[0;32mI (198) app_init: ELF file SHA256:  2f3a69c8e...[0m
+[0;32mI (202) app_init: ESP-IDF:          v5.5.1[0m
+[0;32mI (206) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (210) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (214) efuse_init: Chip rev:         v3.0[0m
+[0;32mI (218) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (224) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (229) heap_init: At 3FFB2CE8 len 0002D318 (180 KiB): DRAM[0m
+[0;32mI (234) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (240) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (245) heap_init: At 4008CFB0 len 00013050 (76 KiB): IRAM[0m
+[0;32mI (252) spi_flash: detected chip: generic[0m
+[0;32mI (254) spi_flash: flash io: dio[0m
+[0;33mW (257) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (270) main_task: Started on CPU0[0m
+[0;32mI (280) main_task: Calling app_main()[0m
+[0;32mI (280) MAIN: Multitasking Comparison Demo[0m
+[0;32mI (280) MAIN: Choose test mode:[0m
+[0;32mI (280) MAIN: 1. Cooperative (uncomment line below)[0m
+[0;32mI (280) MAIN: 2. Preemptive (default mode)[0m
+[0;32mI (290) PREEMPTIVE: === Preemptive Multitasking Demo ===[0m
+[0;32mI (290) PREEMPTIVE: RTOS will preempt tasks automatically[0m
+[0;32mI (300) PREEMPTIVE: Press button to test emergency response[0m
+[0;32mI (300) PREEMPTIVE: Preempt Task1: 0[0m
+[0;32mI (340) PREEMPTIVE: Preempt Task2: 0[0m
+[0;32mI (430) PREEMPTIVE: Preempt Task1: 1[0m
+[0;32mI (550) PREEMPTIVE: Preempt Task1: 2[0m
+[0;32mI (570) PREEMPTIVE: Preempt Task2: 1[0m
+[0;32mI (670) PREEMPTIVE: Preempt Task1: 3[0m
+[0;32mI (780) PREEMPTIVE: Preempt Task2: 2[0m
+[0;32mI (790) PREEMPTIVE: Preempt Task1: 4[0m
+[0;32mI (910) PREEMPTIVE: Preempt Task1: 5[0m
+[0;32mI (1010) PREEMPTIVE: Preempt Task2: 3[0m
+[0;32mI (1030) PREEMPTIVE: Preempt Task1: 6[0m
+[0;32mI (1150) PREEMPTIVE: Preempt Task1: 7[0m
+[0;32mI (1240) PREEMPTIVE: Preempt Task2: 4[0m
+[0;32mI (1270) PREEMPTIVE: Preempt Task1: 8[0m
+[0;32mI (1390) PREEMPTIVE: Preempt Task1: 9[0m
+[0;32mI (1470) PREEMPTIVE: Preempt Task2: 5[0m
+[0;32mI (1510) PREEMPTIVE: Preempt Task1: 10[0m
+[0;32mI (1630) PREEMPTIVE: Preempt Task1: 11[0m
+[0;32mI (1700) PREEMPTIVE: Preempt Task2: 6[0m
+[0;32mI (1750) PREEMPTIVE: Preempt Task1: 12[0m
+[0;32mI (1870) PREEMPTIVE: Preempt Task1: 13[0m
+[0;32mI (1930) PREEMPTIVE: Preempt Task2: 7[0m
+[0;32mI (1990) PREEMPTIVE: Preempt Task1: 14[0m
+[0;32mI (2110) PREEMPTIVE: Preempt Task1: 15[0m
+[0;32mI (2160) PREEMPTIVE: Preempt Task2: 8[0m
+[0;32mI (2230) PREEMPTIVE: Preempt Task1: 16[0m
+[0;32mI (2350) PREEMPTIVE: Preempt Task1: 17[0m
+[0;32mI (2370) PREEMPTIVE: Preempt Task2: 9[0m
+[0;32mI (2470) PREEMPTIVE: Preempt Task1: 18[0m
+[0;32mI (2580) PREEMPTIVE: Preempt Task2: 10[0m
+[0;32mI (2590) PREEMPTIVE: Preempt Task1: 19[0m
+[0;32mI (2710) PREEMPTIVE: Preempt Task1: 20[0m
+[0;32mI (2810) PREEMPTIVE: Preempt Task2: 11[0m
+[0;32mI (2830) PREEMPTIVE: Preempt Task1: 21[0m
+[0;32mI (2950) PREEMPTIVE: Preempt Task1: 22[0m
+[0;32mI (3040) PREEMPTIVE: Preempt Task2: 12[0m
+[0;32mI (3070) PREEMPTIVE: Preempt Task1: 23[0m
+[0;32mI (3190) PREEMPTIVE: Preempt Task1: 24[0m
+[0;32mI (3270) PREEMPTIVE: Preempt Task2: 13[0m
+[0;32mI (3310) PREEMPTIVE: Preempt Task1: 25[0m
+[0;32mI (3430) PREEMPTIVE: Preempt Task1: 26[0m
+[0;32mI (3500) PREEMPTIVE: Preempt Task2: 14[0m
+[0;32mI (3550) PREEMPTIVE: Preempt Task1: 27[0m
+[0;32mI (3670) PREEMPTIVE: Preempt Task1: 28[0m
+[0;32mI (3730) PREEMPTIVE: Preempt Task2: 15[0m
+[0;32mI (3790) PREEMPTIVE: Preempt Task1: 29[0m
+[0;32mI (3910) PREEMPTIVE: Preempt Task1: 30[0m
+[0;32mI (3960) PREEMPTIVE: Preempt Task2: 16[0m
+[0;32mI (4030) PREEMPTIVE: Preempt Task1: 31[0m
+[0;32mI (4150) PREEMPTIVE: Preempt Task1: 32[0m
+[0;32mI (4170) PREEMPTIVE: Preempt Task2: 17[0m
+[0;32mI (4270) PREEMPTIVE: Preempt Task1: 33[0m
+[0;32mI (4380) PREEMPTIVE: Preempt Task2: 18[0m
+[0;32mI (4390) PREEMPTIVE: Preempt Task1: 34[0m
+[0;32mI (4510) PREEMPTIVE: Preempt Task1: 35[0m
+[0;32mI (4610) PREEMPTIVE: Preempt Task2: 19[0m
+[0;32mI (4630) PREEMPTIVE: Preempt Task1: 36[0m
+[0;32mI (4750) PREEMPTIVE: Preempt Task1: 37[0m
+[0;32mI (4840) PREEMPTIVE: Preempt Task2: 20[0m
+[0;32mI (4870) PREEMPTIVE: Preempt Task1: 38[0m
+[0;32mI (4990) PREEMPTIVE: Preempt Task1: 39[0m
+[0;32mI (5070) PREEMPTIVE: Preempt Task2: 21[0m
+[0;32mI (5110) PREEMPTIVE: Preempt Task1: 40[0m
+[0;32mI (5230) PREEMPTIVE: Preempt Task1: 41[0m
+[1;31mE (5280) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (5280) task_wdt:  - IDLE0 (CPU 0)[0m
+[1;31mE (5280) task_wdt: Tasks currently running:[0m
+[1;31mE (5280) task_wdt: CPU 0: Emergency[0m
+[1;31mE (5280) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (5280) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8442:0x3FFB1070 0x400D8804:0x3FFB1090 0x40082925:0x3FFB10C0 0x40083A7D:0x3FFB6510 0x40087746:0x3FFB6530 0x400D6421:0x3FFB6550 0x40085CED:0x3FFB6580
+
+[0;32mI (5320) PREEMPTIVE: Preempt Task2: 22[0m
+[0;32mI (5350) PREEMPTIVE: Preempt Task1: 42[0m
+[0;32mI (5470) PREEMPTIVE: Preempt Task1: 43[0m
+[0;32mI (5550) PREEMPTIVE: Preempt Task2: 23[0m
+[0;32mI (5590) PREEMPTIVE: Preempt Task1: 44[0m
+[0;32mI (5710) PREEMPTIVE: Preempt Task1: 45[0m
+[0;32mI (5780) PREEMPTIVE: Preempt Task2: 24[0m
+[0;32mI (5830) PREEMPTIVE: Preempt Task1: 46[0m
+[0;32mI (5950) PREEMPTIVE: Preempt Task1: 47[0m
+[0;32mI (6010) PREEMPTIVE: Preempt Task2: 25[0m
+[0;32mI (6070) PREEMPTIVE: Preempt Task1: 48[0m
+[0;32mI (6190) PREEMPTIVE: Preempt Task1: 49[0m
+[0;32mI (6240) PREEMPTIVE: Preempt Task2: 26[0m
+[0;32mI (6310) PREEMPTIVE: Preempt Task1: 50[0m
+[0;32mI (6430) PREEMPTIVE: Preempt Task1: 51[0m
+[0;32mI (6450) PREEMPTIVE: Preempt Task2: 27[0m
+[0;32mI (6550) PREEMPTIVE: Preempt Task1: 52[0m
+[0;32mI (6660) PREEMPTIVE: Preempt Task2: 28[0m
+[0;32mI (6670) PREEMPTIVE: Preempt Task1: 53[0m
+[0;32mI (6790) PREEMPTIVE: Preempt Task1: 54[0m
+[0;32mI (6890) PREEMPTIVE: Preempt Task2: 29[0m
+[0;32mI (6910) PREEMPTIVE: Preempt Task1: 55[0m
+[0;32mI (7030) PREEMPTIVE: Preempt Task1: 56[0m
+[0;32mI (7120) PREEMPTIVE: Preempt Task2: 30[0m
+[0;32mI (7150) PREEMPTIVE: Preempt Task1: 57[0m
+[0;32mI (7270) PREEMPTIVE: Preempt Task1: 58[0m
+[0;32mI (7350) PREEMPTIVE: Preempt Task2: 31[0m
+[0;32mI (7390) PREEMPTIVE: Preempt Task1: 59[0m
+[0;32mI (7510) PREEMPTIVE: Preempt Task1: 60[0m
+[0;32mI (7580) PREEMPTIVE: Preempt Task2: 32[0m
+[0;32mI (7630) PREEMPTIVE: Preempt Task1: 61[0m
+[0;32mI (7750) PREEMPTIVE: Preempt Task1: 62[0m
+[0;32mI (7810) PREEMPTIVE: Preempt Task2: 33[0m
+[0;32mI (7870) PREEMPTIVE: Preempt Task1: 63[0m
+[0;32mI (7990) PREEMPTIVE: Preempt Task1: 64[0m
+[0;32mI (8040) PREEMPTIVE: Preempt Task2: 34[0m
+[0;32mI (8110) PREEMPTIVE: Preempt Task1: 65[0m
+[0;32mI (8230) PREEMPTIVE: Preempt Task1: 66[0m
+[0;32mI (8250) PREEMPTIVE: Preempt Task2: 35[0m
+[0;32mI (8350) PREEMPTIVE: Preempt Task1: 67[0m
+[0;32mI (8460) PREEMPTIVE: Preempt Task2: 36[0m
+[0;32mI (8470) PREEMPTIVE: Preempt Task1: 68[0m
+[0;32mI (8590) PREEMPTIVE: Preempt Task1: 69[0m
+[0;32mI (8690) PREEMPTIVE: Preempt Task2: 37[0m
+[0;32mI (8710) PREEMPTIVE: Preempt Task1: 70[0m
+[0;32mI (8830) PREEMPTIVE: Preempt Task1: 71[0m
+[0;32mI (8920) PREEMPTIVE: Preempt Task2: 38[0m
+[0;32mI (8950) PREEMPTIVE: Preempt Task1: 72[0m
+[0;32mI (9070) PREEMPTIVE: Preempt Task1: 73[0m
+[0;32mI (9150) PREEMPTIVE: Preempt Task2: 39[0m
+[0;32mI (9190) PREEMPTIVE: Preempt Task1: 74[0m
+[0;32mI (9310) PREEMPTIVE: Preempt Task1: 75[0m
+[0;32mI (9380) PREEMPTIVE: Preempt Task2: 40[0m
+[0;32mI (9430) PREEMPTIVE: Preempt Task1: 76[0m
+[0;32mI (9550) PREEMPTIVE: Preempt Task1: 77[0m
+[0;32mI (9610) PREEMPTIVE: Preempt Task2: 41[0m
+[0;32mI (9670) PREEMPTIVE: Preempt Task1: 78[0m
+[0;32mI (9790) PREEMPTIVE: Preempt Task1: 79[0m
+[0;32mI (9840) PREEMPTIVE: Preempt Task2: 42[0m
+[0;32mI (9910) PREEMPTIVE: Preempt Task1: 80[0m
+[0;32mI (10030) PREEMPTIVE: Preempt Task1: 81[0m
+[0;32mI (10050) PREEMPTIVE: Preempt Task2: 43[0m
+[0;32mI (10150) PREEMPTIVE: Preempt Task1: 82[0m
+[0;32mI (10260) PREEMPTIVE: Preempt Task2: 44[0m
+[0;32mI (10270) PREEMPTIVE: Preempt Task1: 83[0m
+[1;31mE (10280) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (10280) task_wdt:  - IDLE0 (CPU 0)[0m
+[1;31mE (10280) task_wdt: Tasks currently running:[0m
+[1;31mE (10280) task_wdt: CPU 0: Emergency[0m
+[1;31mE (10280) task_wdt: CPU 1: PreTask1[0m
+[1;31mE (10280) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8442:0x3FFB1070 0x400D8804:0x3FFB1090 0x40082925:0x3FFB10C0 0x40087746:0x3FFB6530 0x400D6421:0x3FFB6550 0x40085CED:0x3FFB6580
+
+[0;32mI (10380) PREEMPTIVE: Preempt Task1: 84[0m
+[0;32mI (10490) PREEMPTIVE: Preempt Task2: 45[0m
+[0;32mI (10500) PREEMPTIVE: Preempt Task1: 85[0m
+[0;32mI (10620) PREEMPTIVE: Preempt Task1: 86[0m
+[0;32mI (10720) PREEMPTIVE: Preempt Task2: 46[0m
+[0;32mI (10740) PREEMPTIVE: Preempt Task1: 87[0m
+[0;32mI (10860) PREEMPTIVE: Preempt Task1: 88[0m
+[0;32mI (10950) PREEMPTIVE: Preempt Task2: 47[0m
+[0;32mI (10980) PREEMPTIVE: Preempt Task1: 89[0m
+[0;32mI (11100) PREEMPTIVE: Preempt Task1: 90[0m
+[0;32mI (11180) PREEMPTIVE: Preempt Task2: 48[0m
+[0;32mI (11220) PREEMPTIVE: Preempt Task1: 91[0m
+[0;32mI (11340) PREEMPTIVE: Preempt Task1: 92[0m
+[0;32mI (11410) PREEMPTIVE: Preempt Task2: 49[0m
+[0;32mI (11460) PREEMPTIVE: Preempt Task1: 93[0m
+[0;32mI (11580) PREEMPTIVE: Preempt Task1: 94[0m
+[0;32mI (11640) PREEMPTIVE: Preempt Task2: 50[0m
+[0;32mI (11700) PREEMPTIVE: Preempt Task1: 95[0m
+[0;32mI (11820) PREEMPTIVE: Preempt Task1: 96[0m
+[0;32mI (11870) PREEMPTIVE: Preempt Task2: 51[0m
+[0;32mI (11940) PREEMPTIVE: Preempt Task1: 97[0m
+[0;32mI (12060) PREEMPTIVE: Preempt Task1: 98[0m
+[0;32mI (12080) PREEMPTIVE: Preempt Task2: 52[0m
+[0;32mI (12180) PREEMPTIVE: Preempt Task1: 99[0m
+[0;32mI (12290) PREEMPTIVE: Preempt Task2: 53[0m
+[0;32mI (12300) PREEMPTIVE: Preempt Task1: 100[0m
+[0;32mI (12420) PREEMPTIVE: Preempt Task1: 101[0m
+[0;32mI (12520) PREEMPTIVE: Preempt Task2: 54[0m
+[0;32mI (12540) PREEMPTIVE: Preempt Task1: 102[0m
+[0;32mI (12660) PREEMPTIVE: Preempt Task1: 103[0m
+[0;32mI (12750) PREEMPTIVE: Preempt Task2: 55[0m
+[0;32mI (12780) PREEMPTIVE: Preempt Task1: 104[0m
+[0;32mI (12900) PREEMPTIVE: Preempt Task1: 105[0m
+[0;32mI (12980) PREEMPTIVE: Preempt Task2: 56[0m
+[0;32mI (13020) PREEMPTIVE: Preempt Task1: 106[0m
+[0;32mI (13140) PREEMPTIVE: Preempt Task1: 107[0m
+[0;32mI (13210) PREEMPTIVE: Preempt Task2: 57[0m
+[0;32mI (13260) PREEMPTIVE: Preempt Task1: 108[0m
+[0;32mI (13380) PREEMPTIVE: Preempt Task1: 109[0m
+[0;32mI (13440) PREEMPTIVE: Preempt Task2: 58[0m
+[0;32mI (13500) PREEMPTIVE: Preempt Task1: 110[0m
+[0;32mI (13620) PREEMPTIVE: Preempt Task1: 111[0m
+[0;32mI (13670) PREEMPTIVE: Preempt Task2: 59[0m
+[0;32mI (13740) PREEMPTIVE: Preempt Task1: 112[0m
+[0;32mI (13860) PREEMPTIVE: Preempt Task1: 113[0m
+[0;32mI (13880) PREEMPTIVE: Preempt Task2: 60[0m
+[0;32mI (13980) PREEMPTIVE: Preempt Task1: 114[0m
+[0;32mI (14090) PREEMPTIVE: Preempt Task2: 61[0m
+[0;32mI (14100) PREEMPTIVE: Preempt Task1: 115[0m
+[0;32mI (14220) PREEMPTIVE: Preempt Task1: 116[0m
+[0;32mI (14320) PREEMPTIVE: Preempt Task2: 62[0m
+[0;32mI (14340) PREEMPTIVE: Preempt Task1: 117[0m
+[0;32mI (14460) PREEMPTIVE: Preempt Task1: 118[0m
+[0;32mI (14550) PREEMPTIVE: Preempt Task2: 63[0m
+[0;32mI (14580) PREEMPTIVE: Preempt Task1: 119[0m
+[0;32mI (14700) PREEMPTIVE: Preempt Task1: 120[0m
+[0;32mI (14780) PREEMPTIVE: Preempt Task2: 64[0m
+[0;32mI (14820) PREEMPTIVE: Preempt Task1: 121[0m
+[0;32mI (14940) PREEMPTIVE: Preempt Task1: 122[0m
+[0;32mI (15010) PREEMPTIVE: Preempt Task2: 65[0m
+[0;32mI (15060) PREEMPTIVE: Preempt Task1: 123[0m
+[0;32mI (15180) PREEMPTIVE: Preempt Task1: 124[0m
+[0;32mI (15240) PREEMPTIVE: Preempt Task2: 66[0m
+[1;31mE (15280) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (15280) task_wdt:  - IDLE0 (CPU 0)[0m
+[1;31mE (15280) task_wdt: Tasks currently running:[0m
+[1;31mE (15280) task_wdt: CPU 0: Emergency[0m
+[1;31mE (15280) task_wdt: CPU 1: PreTask2[0m
+[1;31mE (15280) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8442:0x3FFB1070 0x400D8804:0x3FFB1090 0x40082925:0x3FFB10C0 0x40083A7D:0x3FFB6510 0x40087746:0x3FFB6530 0x400D6421:0x3FFB6550 0x40085CED:0x3FFB6580
+
+[0;32mI (15320) PREEMPTIVE: Preempt Task1: 125[0m
+[0;32mI (15430) PREEMPTIVE: Preempt Task2: 67[0m
+[0;32mI (15440) PREEMPTIVE: Preempt Task1: 126[0m
+[0;32mI (15560) PREEMPTIVE: Preempt Task1: 127[0m
+[0;32mI (15660) PREEMPTIVE: Preempt Task2: 68[0m
+[0;32mI (15680) PREEMPTIVE: Preempt Task1: 128[0m
+[0;32mI (15800) PREEMPTIVE: Preempt Task1: 129[0m
+[0;32mI (15890) PREEMPTIVE: Preempt Task2: 69[0m
+[0;32mI (15920) PREEMPTIVE: Preempt Task1: 130[0m
+[0;32mI (16040) PREEMPTIVE: Preempt Task1: 131[0m
+[0;32mI (16120) PREEMPTIVE: Preempt Task2: 70[0m
+[0;32mI (16160) PREEMPTIVE: Preempt Task1: 132[0m
+[0;32mI (16280) PREEMPTIVE: Preempt Task1: 133[0m
+[0;32mI (16350) PREEMPTIVE: Preempt Task2: 71[0m
+[0;32mI (16400) PREEMPTIVE: Preempt Task1: 134[0m
+[0;32mI (16520) PREEMPTIVE: Preempt Task1: 135[0m

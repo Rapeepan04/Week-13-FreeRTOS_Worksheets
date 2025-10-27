@@ -1,0 +1,1194 @@
+Command: C:\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe C:\Users\rapee\esp\v5.5.1\esp-idf\tools/idf_monitor.py -p COM3 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 D:\github\Week-13-FreeRTOS_Worksheets\07-memory-management\practice\lab1-heap-management\heap_management\build\heap_management.elf D:\github\Week-13-FreeRTOS_Worksheets\07-memory-management\practice\lab1-heap-management\heap_management\build\bootloader\bootloader.elf --force-color -m 'C:\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe' 'C:\Users\rapee\esp\v5.5.1\esp-idf\tools\idf.py'
+or downloadets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x2 (DOWNLOAD_BOOT(UART0/UART1/SDIO_REI_FEO_V2))
+waiting for download
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x12 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6380
+ho 0 tail 12 room 4
+load:0x40078000,len:15916
+load:0x40080400,len:3860
+entry 0x40080638
+[0;32mI (29) boot: ESP-IDF v5.5.1 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Oct 23 2025 03:42:37[0m
+[0;32mI (29) boot: Multicore bootloader[0m
+[0;32mI (31) boot: chip revision: v3.0[0m
+[0;32mI (33) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (37) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (41) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (44) boot: Enabling RNG early entropy source...[0m
+[0;32mI (49) boot: Partition Table:[0m
+[0;32mI (51) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (58) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (64) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (71) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (77) boot: End of partition table[0m
+[0;32mI (81) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0a9d8h ( 43480) map[0m
+[0;32mI (103) esp_image: segment 1: paddr=0001aa00 vaddr=3ffb0000 size=023f8h (  9208) load[0m
+[0;32mI (107) esp_image: segment 2: paddr=0001ce00 vaddr=40080000 size=03218h ( 12824) load[0m
+[0;32mI (112) esp_image: segment 3: paddr=00020020 vaddr=400d0020 size=17ec4h ( 97988) map[0m
+[0;32mI (148) esp_image: segment 4: paddr=00037eec vaddr=40083218 size=09de0h ( 40416) load[0m
+[0;32mI (164) esp_image: segment 5: paddr=00041cd4 vaddr=50000000 size=00020h (    32) load[0m
+[0;32mI (170) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (171) boot: Disabling RNG early entropy source...[0m
+[0;32mI (182) cpu_start: Multicore app[0m
+[0;32mI (190) cpu_start: Pro cpu start user code[0m
+[0;32mI (190) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (190) app_init: Application information:[0m
+[0;32mI (190) app_init: Project name:     heap_management[0m
+[0;32mI (195) app_init: App version:      f7526bb[0m
+[0;32mI (199) app_init: Compile time:     Oct 23 2025 03:41:38[0m
+[0;32mI (204) app_init: ELF file SHA256:  1992a2172...[0m
+[0;32mI (208) app_init: ESP-IDF:          v5.5.1[0m
+[0;32mI (212) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (216) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (220) efuse_init: Chip rev:         v3.0[0m
+[0;32mI (224) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (230) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (235) heap_init: At 3FFB3980 len 0002C680 (177 KiB): DRAM[0m
+[0;32mI (240) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (246) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (251) heap_init: At 4008CFF8 len 00013008 (76 KiB): IRAM[0m
+[0;32mI (258) spi_flash: detected chip: generic[0m
+[0;32mI (260) spi_flash: flash io: dio[0m
+[0;33mW (263) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (276) main_task: Started on CPU0[0m
+[0;32mI (286) main_task: Calling app_main()[0m
+[0;32mI (286) HEAP_MGMT: 🚀 Heap Management Lab Starting...[0m
+[0;32mI (286) HEAP_MGMT: [0m
+📊 MEMORY STATUS
+[0;32mI (286) HEAP_MGMT: Internal Free:   378704[0m
+[0;32mI (286) HEAP_MGMT: Largest Block:   172032[0m
+[0;32mI (296) HEAP_MGMT: SPIRAM Free:     0[0m
+[0;32mI (296) HEAP_MGMT: Total Free:      301768[0m
+[0;32mI (296) HEAP_MGMT: Min Ever Free:   301768[0m
+[0;32mI (306) HEAP_MGMT: Fragmentation:   54.6%[0m
+[0;33mW (306) HEAP_MGMT: ⚠️ High fragmentation[0m
+[0;32mI (316) HEAP_MGMT: [0m
+🏗️ INITIAL HEAP (INTERNAL)
+Heap summary for capabilities 0x00000800:
+  At 0x3ffae6e0 len 6432 free 148 allocated 5764 min_free 148
+    largest_free_block 128 alloc_blocks 35 free_blocks 1 total_blocks 36
+  At 0x3ffe0440 len 15072 free 14656 allocated 0 min_free 14656
+    largest_free_block 14336 alloc_blocks 0 free_blocks 1 total_blocks 1
+  At 0x4008cff8 len 77832 free 76936 allocated 20 min_free 76936
+    largest_free_block 73728 alloc_blocks 1 free_blocks 1 total_blocks 2
+  At 0x3ffe4350 len 113840 free 112968 allocated 0 min_free 112968
+    largest_free_block 110592 alloc_blocks 0 free_blocks 1 total_blocks 1
+  At 0x3ffb3980 len 181888 free 173768 allocated 7168 min_free 173768
+    largest_free_block 172032 alloc_blocks 3 free_blocks 1 total_blocks 4
+  Totals:
+    free 378476 allocated 12952 min_free 378476 largest_free_block 172032
+[0;32mI (386) HEAP_MGMT: 📊 Monitor start[0m
+[0;32mI (396) HEAP_MGMT: 🧪 Stress test start[0m
+[0;32mI (396) HEAP_MGMT: ✅ Alloc 1618B @0x3ffb780c (Stress) slot=0[0m
+[0;32mI (406) HEAP_MGMT: 🔧 alloc 1618B (n=1)[0m
+[0;32mI (406) HEAP_MGMT: 🏊 Pool test start[0m
+[0;32mI (406) HEAP_MGMT: Alloc pools[0m
+[0;32mI (416) HEAP_MGMT: ✅ Alloc 64B @0x4008d37c (Pool0_0) slot=1[0m
+[0;32mI (416) HEAP_MGMT: ✅ Alloc 64B @0x4008d3c0 (Pool0_1) slot=2[0m
+[0;32mI (426) HEAP_MGMT: ✅ Alloc 64B @0x4008d404 (Pool0_2) slot=3[0m
+[0;32mI (426) HEAP_MGMT: ✅ Alloc 64B @0x4008d448 (Pool0_3) slot=4[0m
+[0;32mI (436) HEAP_MGMT: ✅ Alloc 64B @0x4008d48c (Pool0_4) slot=5[0m
+[0;32mI (436) HEAP_MGMT: ✅ Alloc 64B @0x4008d4d0 (Pool0_5) slot=6[0m
+[0;32mI (446) HEAP_MGMT: ✅ Alloc 64B @0x4008d514 (Pool0_6) slot=7[0m
+[0;32mI (446) HEAP_MGMT: ✅ Alloc 64B @0x4008d558 (Pool0_7) slot=8[0m
+[0;32mI (456) HEAP_MGMT: ✅ Alloc 64B @0x4008d59c (Pool0_8) slot=9[0m
+[0;32mI (456) HEAP_MGMT: ✅ Alloc 64B @0x4008d5e0 (Pool0_9) slot=10[0m
+[0;32mI (466) HEAP_MGMT: ✅ Alloc 128B @0x4008d624 (Pool1_0) slot=11[0m
+[0;32mI (476) HEAP_MGMT: ✅ Alloc 128B @0x4008d6a8 (Pool1_1) slot=12[0m
+[0;32mI (476) HEAP_MGMT: ✅ Alloc 128B @0x4008d72c (Pool1_2) slot=13[0m
+[0;32mI (486) HEAP_MGMT: ✅ Alloc 128B @0x4008d7b0 (Pool1_3) slot=14[0m
+[0;32mI (486) HEAP_MGMT: ✅ Alloc 128B @0x4008d834 (Pool1_4) slot=15[0m
+[0;32mI (496) HEAP_MGMT: ✅ Alloc 128B @0x4008d8b8 (Pool1_5) slot=16[0m
+[0;32mI (496) HEAP_MGMT: ✅ Alloc 128B @0x4008d93c (Pool1_6) slot=17[0m
+[0;32mI (506) HEAP_MGMT: ✅ Alloc 128B @0x4008d9c0 (Pool1_7) slot=18[0m
+[0;32mI (516) HEAP_MGMT: ✅ Alloc 128B @0x4008da44 (Pool1_8) slot=19[0m
+[0;32mI (516) HEAP_MGMT: ✅ Alloc 128B @0x4008dac8 (Pool1_9) slot=20[0m
+[0;32mI (526) HEAP_MGMT: ✅ Alloc 256B @0x4008db4c (Pool2_0) slot=21[0m
+[0;32mI (526) HEAP_MGMT: ✅ Alloc 256B @0x4008dc50 (Pool2_1) slot=22[0m
+[0;32mI (536) HEAP_MGMT: ✅ Alloc 256B @0x4008dd54 (Pool2_2) slot=23[0m
+[0;32mI (536) HEAP_MGMT: ✅ Alloc 256B @0x4008de58 (Pool2_3) slot=24[0m
+[0;32mI (546) HEAP_MGMT: ✅ Alloc 256B @0x4008df5c (Pool2_4) slot=25[0m
+[0;32mI (556) HEAP_MGMT: ✅ Alloc 256B @0x4008e060 (Pool2_5) slot=26[0m
+[0;32mI (556) HEAP_MGMT: ✅ Alloc 256B @0x4008e164 (Pool2_6) slot=27[0m
+[0;32mI (566) HEAP_MGMT: ✅ Alloc 256B @0x4008e268 (Pool2_7) slot=28[0m
+[0;32mI (566) HEAP_MGMT: ✅ Alloc 256B @0x4008e36c (Pool2_8) slot=29[0m
+[0;32mI (576) HEAP_MGMT: ✅ Alloc 256B @0x4008e470 (Pool2_9) slot=30[0m
+[0;32mI (576) HEAP_MGMT: ✅ Alloc 512B @0x4008e574 (Pool3_0) slot=31[0m
+[0;32mI (586) HEAP_MGMT: ✅ Alloc 512B @0x4008e778 (Pool3_1) slot=32[0m
+[0;32mI (586) HEAP_MGMT: ✅ Alloc 512B @0x4008e97c (Pool3_2) slot=33[0m
+[0;32mI (596) HEAP_MGMT: ✅ Alloc 512B @0x4008eb80 (Pool3_3) slot=34[0m
+[0;32mI (606) HEAP_MGMT: ✅ Alloc 512B @0x4008ed84 (Pool3_4) slot=35[0m
+[0;32mI (606) HEAP_MGMT: ✅ Alloc 512B @0x4008ef88 (Pool3_5) slot=36[0m
+[0;32mI (616) HEAP_MGMT: ✅ Alloc 512B @0x4008f18c (Pool3_6) slot=37[0m
+[0;32mI (616) HEAP_MGMT: ✅ Alloc 512B @0x4008f390 (Pool3_7) slot=38[0m
+[0;32mI (626) HEAP_MGMT: ✅ Alloc 512B @0x4008f594 (Pool3_8) slot=39[0m
+[0;32mI (626) HEAP_MGMT: ✅ Alloc 512B @0x4008f798 (Pool3_9) slot=40[0m
+[0;32mI (636) HEAP_MGMT: ✅ Alloc 1024B @0x4008f99c (Pool4_0) slot=41[0m
+[0;32mI (646) HEAP_MGMT: ✅ Alloc 1024B @0x4008fda0 (Pool4_1) slot=42[0m
+[0;32mI (646) HEAP_MGMT: ✅ Alloc 1024B @0x400901a4 (Pool4_2) slot=43[0m
+[0;32mI (656) HEAP_MGMT: ✅ Alloc 1024B @0x400905a8 (Pool4_3) slot=44[0m
+[0;32mI (656) HEAP_MGMT: ✅ Alloc 1024B @0x400909ac (Pool4_4) slot=45[0m
+[0;32mI (666) HEAP_MGMT: ✅ Alloc 1024B @0x40090db0 (Pool4_5) slot=46[0m
+[0;32mI (666) HEAP_MGMT: ✅ Alloc 1024B @0x400911b4 (Pool4_6) slot=47[0m
+[0;32mI (676) HEAP_MGMT: ✅ Alloc 1024B @0x400915b8 (Pool4_7) slot=48[0m
+[0;32mI (686) HEAP_MGMT: ✅ Alloc 1024B @0x400919bc (Pool4_8) slot=49[0m
+[0;32mI (686) HEAP_MGMT: ✅ Alloc 1024B @0x40091dc0 (Pool4_9) slot=50[0m
+[0;32mI (696) HEAP_MGMT: 🐘 Large alloc test start[0m
+[0;32mI (696) HEAP_MGMT: Try large 75870B[0m
+[0;32mI (696) HEAP_MGMT: ✅ Alloc 75870B @0x3ffe46bc (LargeInternal) slot=51[0m
+[0;32mI (706) HEAP_MGMT: Write time: 153 us[0m
+[0;32mI (706) HEAP_MGMT: 🔍 Integrity test start[0m
+[0;32mI (716) HEAP_MGMT: [0m
+🎯 LEDs:
+[0;32mI (716) HEAP_MGMT: GPIO2  - Memory OK[0m
+[0;32mI (716) HEAP_MGMT: GPIO4  - Low Memory[0m
+[0;32mI (726) HEAP_MGMT: GPIO5  - Error/Leak[0m
+[0;32mI (726) HEAP_MGMT: GPIO18 - Fragmentation[0m
+[0;32mI (736) HEAP_MGMT: GPIO19 - SPIRAM Active[0m
+[0;32mI (736) HEAP_MGMT: Heap Management System operational![0m
+[0;32mI (736) main_task: Returned from app_main()[0m
+[0;32mI (1906) HEAP_MGMT: ✅ Alloc 466B @0x400921c4 (Stress) slot=52[0m
+Guru Meditation Error: Core  0 panic'ed (LoadStoreError). Exception was unhandled.
+
+Core  0 register dump:
+PC      : 0x4000c48b  PS      : 0x00060b30  A0      : 0x800d6d8e  A1      : 0x3ffb7590  
+A2      : 0x400921c4  A3      : 0xaaaaaaaa  A4      : 0x000001d2  A5      : 0x40092394  
+A6      : 0x3ffb3180  A7      : 0x0000001d  A8      : 0x800d6494  A9      : 0x3ffb7530  
+A10     : 0x00000001  A11     : 0x00000000  A12     : 0x00000000  A13     : 0x00000000  
+A14     : 0x00000000  A15     : 0x3ffafe7c  SAR     : 0x00000004  EXCCAUSE: 0x00000003  
+EXCVADDR: 0x40092394  LBEG    : 0x4000c46c  LEND    : 0x4000c477  LCOUNT  : 0x00000000  
+
+
+Backtrace: 0x4000c488:0x3ffb7590 0x400d6d8b:0x3ffb75a0 0x40085d35:0x3ffb7620
+
+
+
+
+ELF file SHA256: 1992a2172
+
+Rebooting...
+ets Jul 29 2019 12:21:46
+
+rst:0xc (SW_CPU_RESET),boot:0x12 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6380
+ho 0 tail 12 room 4
+load:0x40078000,len:15916
+load:0x40080400,len:3860
+entry 0x40080638
+[0;32mI (29) boot: ESP-IDF v5.5.1 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Oct 23 2025 03:42:37[0m
+[0;32mI (29) boot: Multicore bootloader[0m
+[0;32mI (31) boot: chip revision: v3.0[0m
+[0;32mI (33) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (37) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (41) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (44) boot: Enabling RNG early entropy source...[0m
+[0;32mI (49) boot: Partition Table:[0m
+[0;32mI (51) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (58) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (64) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (71) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (77) boot: End of partition table[0m
+[0;32mI (80) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0a9d8h ( 43480) map[0m
+[0;32mI (103) esp_image: segment 1: paddr=0001aa00 vaddr=3ffb0000 size=023f8h (  9208) load[0m
+[0;32mI (106) esp_image: segment 2: paddr=0001ce00 vaddr=40080000 size=03218h ( 12824) load[0m
+[0;32mI (112) esp_image: segment 3: paddr=00020020 vaddr=400d0020 size=17ec4h ( 97988) map[0m
+[0;32mI (148) esp_image: segment 4: paddr=00037eec vaddr=40083218 size=09de0h ( 40416) load[0m
+[0;32mI (164) esp_image: segment 5: paddr=00041cd4 vaddr=50000000 size=00020h (    32) load[0m
+[0;32mI (170) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (170) boot: Disabling RNG early entropy source...[0m
+[0;32mI (182) cpu_start: Multicore app[0m
+[0;32mI (190) cpu_start: Pro cpu start user code[0m
+[0;32mI (190) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (190) app_init: Application information:[0m
+[0;32mI (190) app_init: Project name:     heap_management[0m
+[0;32mI (195) app_init: App version:      f7526bb[0m
+[0;32mI (199) app_init: Compile time:     Oct 23 2025 03:41:38[0m
+[0;32mI (204) app_init: ELF file SHA256:  1992a2172...[0m
+[0;32mI (208) app_init: ESP-IDF:          v5.5.1[0m
+[0;32mI (212) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (216) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (220) efuse_init: Chip rev:         v3.0[0m
+[0;32mI (224) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (230) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (235) heap_init: At 3FFB3980 len 0002C680 (177 KiB): DRAM[0m
+[0;32mI (240) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (246) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (251) heap_init: At 4008CFF8 len 00013008 (76 KiB): IRAM[0m
+[0;32mI (258) spi_flash: detected chip: generic[0m
+[0;32mI (260) spi_flash: flash io: dio[0m
+[0;33mW (263) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (276) main_task: Started on CPU0[0m
+[0;32mI (286) main_task: Calling app_main()[0m
+[0;32mI (286) HEAP_MGMT: 🚀 Heap Management Lab Starting...[0m
+[0;32mI (286) HEAP_MGMT: [0m
+📊 MEMORY STATUS
+[0;32mI (286) HEAP_MGMT: Internal Free:   378704[0m
+[0;32mI (286) HEAP_MGMT: Largest Block:   172032[0m
+[0;32mI (296) HEAP_MGMT: SPIRAM Free:     0[0m
+[0;32mI (296) HEAP_MGMT: Total Free:      301768[0m
+[0;32mI (296) HEAP_MGMT: Min Ever Free:   301768[0m
+[0;32mI (306) HEAP_MGMT: Fragmentation:   54.6%[0m
+[0;33mW (306) HEAP_MGMT: ⚠️ High fragmentation[0m
+[0;32mI (316) HEAP_MGMT: [0m
+🏗️ INITIAL HEAP (INTERNAL)
+Heap summary for capabilities 0x00000800:
+  At 0x3ffae6e0 len 6432 free 148 allocated 5764 min_free 148
+    largest_free_block 128 alloc_blocks 35 free_blocks 1 total_blocks 36
+  At 0x3ffe0440 len 15072 free 14656 allocated 0 min_free 14656
+    largest_free_block 14336 alloc_blocks 0 free_blocks 1 total_blocks 1
+  At 0x4008cff8 len 77832 free 76936 allocated 20 min_free 76936
+    largest_free_block 73728 alloc_blocks 1 free_blocks 1 total_blocks 2
+  At 0x3ffe4350 len 113840 free 112968 allocated 0 min_free 112968
+    largest_free_block 110592 alloc_blocks 0 free_blocks 1 total_blocks 1
+  At 0x3ffb3980 len 181888 free 173768 allocated 7168 min_free 173768
+    largest_free_block 172032 alloc_blocks 3 free_blocks 1 total_blocks 4
+  Totals:
+    free 378476 allocated 12952 min_free 378476 largest_free_block 172032
+[0;32mI (386) HEAP_MGMT: 📊 Monitor start[0m
+[0;32mI (396) HEAP_MGMT: 🧪 Stress test start[0m
+[0;32mI (396) HEAP_MGMT: ✅ Alloc 1689B @0x3ffb780c (Stress) slot=0[0m
+[0;32mI (406) HEAP_MGMT: 🔧 alloc 1689B (n=1)[0m
+[0;32mI (406) HEAP_MGMT: 🏊 Pool test start[0m
+[0;32mI (406) HEAP_MGMT: Alloc pools[0m
+[0;32mI (416) HEAP_MGMT: ✅ Alloc 64B @0x4008d37c (Pool0_0) slot=1[0m
+[0;32mI (416) HEAP_MGMT: ✅ Alloc 64B @0x4008d3c0 (Pool0_1) slot=2[0m
+[0;32mI (426) HEAP_MGMT: ✅ Alloc 64B @0x4008d404 (Pool0_2) slot=3[0m
+[0;32mI (426) HEAP_MGMT: ✅ Alloc 64B @0x4008d448 (Pool0_3) slot=4[0m
+[0;32mI (436) HEAP_MGMT: ✅ Alloc 64B @0x4008d48c (Pool0_4) slot=5[0m
+[0;32mI (436) HEAP_MGMT: ✅ Alloc 64B @0x4008d4d0 (Pool0_5) slot=6[0m
+[0;32mI (446) HEAP_MGMT: ✅ Alloc 64B @0x4008d514 (Pool0_6) slot=7[0m
+[0;32mI (446) HEAP_MGMT: ✅ Alloc 64B @0x4008d558 (Pool0_7) slot=8[0m
+[0;32mI (456) HEAP_MGMT: ✅ Alloc 64B @0x4008d59c (Pool0_8) slot=9[0m
+[0;32mI (456) HEAP_MGMT: ✅ Alloc 64B @0x4008d5e0 (Pool0_9) slot=10[0m
+[0;32mI (466) HEAP_MGMT: ✅ Alloc 128B @0x4008d624 (Pool1_0) slot=11[0m
+[0;32mI (476) HEAP_MGMT: ✅ Alloc 128B @0x4008d6a8 (Pool1_1) slot=12[0m
+[0;32mI (476) HEAP_MGMT: ✅ Alloc 128B @0x4008d72c (Pool1_2) slot=13[0m
+[0;32mI (486) HEAP_MGMT: ✅ Alloc 128B @0x4008d7b0 (Pool1_3) slot=14[0m
+[0;32mI (486) HEAP_MGMT: ✅ Alloc 128B @0x4008d834 (Pool1_4) slot=15[0m
+[0;32mI (496) HEAP_MGMT: ✅ Alloc 128B @0x4008d8b8 (Pool1_5) slot=16[0m
+[0;32mI (496) HEAP_MGMT: ✅ Alloc 128B @0x4008d93c (Pool1_6) slot=17[0m
+[0;32mI (506) HEAP_MGMT: ✅ Alloc 128B @0x4008d9c0 (Pool1_7) slot=18[0m
+[0;32mI (516) HEAP_MGMT: ✅ Alloc 128B @0x4008da44 (Pool1_8) slot=19[0m
+[0;32mI (516) HEAP_MGMT: ✅ Alloc 128B @0x4008dac8 (Pool1_9) slot=20[0m
+[0;32mI (526) HEAP_MGMT: ✅ Alloc 256B @0x4008db4c (Pool2_0) slot=21[0m
+[0;32mI (526) HEAP_MGMT: ✅ Alloc 256B @0x4008dc50 (Pool2_1) slot=22[0m
+[0;32mI (536) HEAP_MGMT: ✅ Alloc 256B @0x4008dd54 (Pool2_2) slot=23[0m
+[0;32mI (536) HEAP_MGMT: ✅ Alloc 256B @0x4008de58 (Pool2_3) slot=24[0m
+[0;32mI (546) HEAP_MGMT: ✅ Alloc 256B @0x4008df5c (Pool2_4) slot=25[0m
+[0;32mI (556) HEAP_MGMT: ✅ Alloc 256B @0x4008e060 (Pool2_5) slot=26[0m
+[0;32mI (556) HEAP_MGMT: ✅ Alloc 256B @0x4008e164 (Pool2_6) slot=27[0m
+[0;32mI (566) HEAP_MGMT: ✅ Alloc 256B @0x4008e268 (Pool2_7) slot=28[0m
+[0;32mI (566) HEAP_MGMT: ✅ Alloc 256B @0x4008e36c (Pool2_8) slot=29[0m
+[0;32mI (576) HEAP_MGMT: ✅ Alloc 256B @0x4008e470 (Pool2_9) slot=30[0m
+[0;32mI (576) HEAP_MGMT: ✅ Alloc 512B @0x4008e574 (Pool3_0) slot=31[0m
+[0;32mI (586) HEAP_MGMT: ✅ Alloc 512B @0x4008e778 (Pool3_1) slot=32[0m
+[0;32mI (586) HEAP_MGMT: ✅ Alloc 512B @0x4008e97c (Pool3_2) slot=33[0m
+[0;32mI (596) HEAP_MGMT: ✅ Alloc 512B @0x4008eb80 (Pool3_3) slot=34[0m
+[0;32mI (606) HEAP_MGMT: ✅ Alloc 512B @0x4008ed84 (Pool3_4) slot=35[0m
+[0;32mI (606) HEAP_MGMT: ✅ Alloc 512B @0x4008ef88 (Pool3_5) slot=36[0m
+[0;32mI (616) HEAP_MGMT: ✅ Alloc 512B @0x4008f18c (Pool3_6) slot=37[0m
+[0;32mI (616) HEAP_MGMT: ✅ Alloc 512B @0x4008f390 (Pool3_7) slot=38[0m
+[0;32mI (626) HEAP_MGMT: ✅ Alloc 512B @0x4008f594 (Pool3_8) slot=39[0m
+[0;32mI (626) HEAP_MGMT: ✅ Alloc 512B @0x4008f798 (Pool3_9) slot=40[0m
+[0;32mI (636) HEAP_MGMT: ✅ Alloc 1024B @0x4008f99c (Pool4_0) slot=41[0m
+[0;32mI (646) HEAP_MGMT: ✅ Alloc 1024B @0x4008fda0 (Pool4_1) slot=42[0m
+[0;32mI (646) HEAP_MGMT: ✅ Alloc 1024B @0x400901a4 (Pool4_2) slot=43[0m
+[0;32mI (656) HEAP_MGMT: ✅ Alloc 1024B @0x400905a8 (Pool4_3) slot=44[0m
+[0;32mI (656) HEAP_MGMT: ✅ Alloc 1024B @0x400909ac (Pool4_4) slot=45[0m
+[0;32mI (666) HEAP_MGMT: ✅ Alloc 1024B @0x40090db0 (Pool4_5) slot=46[0m
+[0;32mI (666) HEAP_MGMT: ✅ Alloc 1024B @0x400911b4 (Pool4_6) slot=47[0m
+[0;32mI (676) HEAP_MGMT: ✅ Alloc 1024B @0x400915b8 (Pool4_7) slot=48[0m
+[0;32mI (686) HEAP_MGMT: ✅ Alloc 1024B @0x400919bc (Pool4_8) slot=49[0m
+[0;32mI (686) HEAP_MGMT: ✅ Alloc 1024B @0x40091dc0 (Pool4_9) slot=50[0m
+[0;32mI (696) HEAP_MGMT: 🐘 Large alloc test start[0m
+[0;32mI (696) HEAP_MGMT: Try large 80787B[0m
+[0;32mI (696) HEAP_MGMT: ✅ Alloc 80787B @0x3ffe46bc (LargeInternal) slot=51[0m
+[0;32mI (706) HEAP_MGMT: Write time: 163 us[0m
+[0;32mI (706) HEAP_MGMT: 🔍 Integrity test start[0m
+[0;32mI (716) HEAP_MGMT: [0m
+🎯 LEDs:
+[0;32mI (716) HEAP_MGMT: GPIO2  - Memory OK[0m
+[0;32mI (716) HEAP_MGMT: GPIO4  - Low Memory[0m
+[0;32mI (726) HEAP_MGMT: GPIO5  - Error/Leak[0m
+[0;32mI (726) HEAP_MGMT: GPIO18 - Fragmentation[0m
+[0;32mI (736) HEAP_MGMT: GPIO19 - SPIRAM Active[0m
+[0;32mI (736) HEAP_MGMT: Heap Management System operational![0m
+[0;32mI (736) main_task: Returned from app_main()[0m
+[0;32mI (1686) HEAP_MGMT: [0m
+📊 MEMORY STATUS
+[0;32mI (1686) HEAP_MGMT: Internal Free:   262304[0m
+[0;32mI (1686) HEAP_MGMT: Largest Block:   147456[0m
+[0;32mI (1686) HEAP_MGMT: SPIRAM Free:     0[0m
+[0;32mI (1686) HEAP_MGMT: Total Free:      205408[0m
+[0;32mI (1686) HEAP_MGMT: Min Ever Free:   200724[0m
+[0;32mI (1696) HEAP_MGMT: Fragmentation:   43.8%[0m
+[0;33mW (1696) HEAP_MGMT: ⚠️ High fragmentation[0m
+[0;32mI (4236) HEAP_MGMT: 🗑️ Free 1689B @0x3ffb780c (Stress) slot=0[0m
+[0;32mI (4236) HEAP_MGMT: 🗑️ free (n=0)[0m
+[0;32mI (5696) HEAP_MGMT: Free pools (reverse)[0m
+[0;32mI (5696) HEAP_MGMT: 🗑️ Free 1024B @0x40091dc0 (Pool) slot=50[0m
+[0;32mI (5696) HEAP_MGMT: 🗑️ Free 1024B @0x400919bc (Pool) slot=49[0m
+[0;32mI (5696) HEAP_MGMT: 🗑️ Free 1024B @0x400915b8 (Pool) slot=48[0m
+[0;32mI (5706) HEAP_MGMT: 🗑️ Free 1024B @0x400911b4 (Pool) slot=47[0m
+[0;32mI (5706) HEAP_MGMT: 🗑️ Free 1024B @0x40090db0 (Pool) slot=46[0m
+[0;32mI (5716) HEAP_MGMT: 🗑️ Free 1024B @0x400909ac (Pool) slot=45[0m
+[0;32mI (5716) HEAP_MGMT: 🗑️ Free 1024B @0x400905a8 (Pool) slot=44[0m
+[0;32mI (5726) HEAP_MGMT: 🗑️ Free 1024B @0x400901a4 (Pool) slot=43[0m
+[0;32mI (5726) HEAP_MGMT: 🗑️ Free 1024B @0x4008fda0 (Pool) slot=42[0m
+[0;32mI (5736) HEAP_MGMT: 🗑️ Free 1024B @0x4008f99c (Pool) slot=41[0m
+[0;32mI (5746) HEAP_MGMT: 🗑️ Free 512B @0x4008f798 (Pool) slot=40[0m
+[0;32mI (5746) HEAP_MGMT: 🗑️ Free 512B @0x4008f594 (Pool) slot=39[0m
+[0;32mI (5756) HEAP_MGMT: 🗑️ Free 512B @0x4008f390 (Pool) slot=38[0m
+[0;32mI (5756) HEAP_MGMT: 🗑️ Free 512B @0x4008f18c (Pool) slot=37[0m
+[0;32mI (5766) HEAP_MGMT: 🗑️ Free 512B @0x4008ef88 (Pool) slot=36[0m
+[0;32mI (5766) HEAP_MGMT: 🗑️ Free 512B @0x4008ed84 (Pool) slot=35[0m
+[0;32mI (5776) HEAP_MGMT: 🗑️ Free 512B @0x4008eb80 (Pool) slot=34[0m
+[0;32mI (5786) HEAP_MGMT: 🗑️ Free 512B @0x4008e97c (Pool) slot=33[0m
+[0;32mI (5786) HEAP_MGMT: 🗑️ Free 512B @0x4008e778 (Pool) slot=32[0m
+[0;32mI (5796) HEAP_MGMT: 🗑️ Free 512B @0x4008e574 (Pool) slot=31[0m
+[0;32mI (5796) HEAP_MGMT: 🗑️ Free 256B @0x4008e470 (Pool) slot=30[0m
+[0;32mI (5806) HEAP_MGMT: 🗑️ Free 256B @0x4008e36c (Pool) slot=29[0m
+[0;32mI (5806) HEAP_MGMT: 🗑️ Free 256B @0x4008e268 (Pool) slot=28[0m
+[0;32mI (5816) HEAP_MGMT: 🗑️ Free 256B @0x4008e164 (Pool) slot=27[0m
+[0;32mI (5826) HEAP_MGMT: 🗑️ Free 256B @0x4008e060 (Pool) slot=26[0m
+[0;32mI (5826) HEAP_MGMT: 🗑️ Free 256B @0x4008df5c (Pool) slot=25[0m
+[0;32mI (5836) HEAP_MGMT: 🗑️ Free 256B @0x4008de58 (Pool) slot=24[0m
+[0;32mI (5836) HEAP_MGMT: 🗑️ Free 256B @0x4008dd54 (Pool) slot=23[0m
+[0;32mI (5846) HEAP_MGMT: 🗑️ Free 256B @0x4008dc50 (Pool) slot=22[0m
+[0;32mI (5846) HEAP_MGMT: 🗑️ Free 256B @0x4008db4c (Pool) slot=21[0m
+[0;32mI (5856) HEAP_MGMT: 🗑️ Free 128B @0x4008dac8 (Pool) slot=20[0m
+[0;32mI (5866) HEAP_MGMT: 🗑️ Free 128B @0x4008da44 (Pool) slot=19[0m
+[0;32mI (5866) HEAP_MGMT: 🗑️ Free 128B @0x4008d9c0 (Pool) slot=18[0m
+[0;32mI (5876) HEAP_MGMT: 🗑️ Free 128B @0x4008d93c (Pool) slot=17[0m
+[0;32mI (5876) HEAP_MGMT: 🗑️ Free 128B @0x4008d8b8 (Pool) slot=16[0m
+[0;32mI (5886) HEAP_MGMT: 🗑️ Free 128B @0x4008d834 (Pool) slot=15[0m
+[0;32mI (5886) HEAP_MGMT: 🗑️ Free 128B @0x4008d7b0 (Pool) slot=14[0m
+[0;32mI (5896) HEAP_MGMT: 🗑️ Free 128B @0x4008d72c (Pool) slot=13[0m
+[0;32mI (5906) HEAP_MGMT: 🗑️ Free 128B @0x4008d6a8 (Pool) slot=12[0m
+[0;32mI (5906) HEAP_MGMT: 🗑️ Free 128B @0x4008d624 (Pool) slot=11[0m
+[0;32mI (5916) HEAP_MGMT: 🗑️ Free 64B @0x4008d5e0 (Pool) slot=10[0m
+[0;32mI (5916) HEAP_MGMT: 🗑️ Free 64B @0x4008d59c (Pool) slot=9[0m
+[0;32mI (5926) HEAP_MGMT: 🗑️ Free 64B @0x4008d558 (Pool) slot=8[0m
+[0;32mI (5926) HEAP_MGMT: 🗑️ Free 64B @0x4008d514 (Pool) slot=7[0m
+[0;32mI (5936) HEAP_MGMT: 🗑️ Free 64B @0x4008d4d0 (Pool) slot=6[0m
+[0;32mI (5946) HEAP_MGMT: 🗑️ Free 64B @0x4008d48c (Pool) slot=5[0m
+[0;32mI (5946) HEAP_MGMT: 🗑️ Free 64B @0x4008d448 (Pool) slot=4[0m
+[0;32mI (5956) HEAP_MGMT: 🗑️ Free 64B @0x4008d404 (Pool) slot=3[0m
+[0;32mI (5956) HEAP_MGMT: 🗑️ Free 64B @0x4008d3c0 (Pool) slot=2[0m
+[0;32mI (5966) HEAP_MGMT: 🗑️ Free 64B @0x4008d37c (Pool) slot=1[0m
+[0;32mI (5966) HEAP_MGMT: [0m
+📊 MEMORY STATUS
+[0;32mI (5976) HEAP_MGMT: Internal Free:   283492[0m
+[0;32mI (5976) HEAP_MGMT: Largest Block:   147456[0m
+[0;32mI (5976) HEAP_MGMT: SPIRAM Free:     0[0m
+[0;32mI (5986) HEAP_MGMT: Total Free:      206556[0m
+[0;32mI (5986) HEAP_MGMT: Min Ever Free:   200724[0m
+[0;32mI (5996) HEAP_MGMT: Fragmentation:   48.0%[0m
+[0;33mW (5996) HEAP_MGMT: ⚠️ High fragmentation[0m
+[0;32mI (5826) HEAP_MGMT: 🔧 alloc 334B (n=1)[0m
+[0;33mW (8586) HEAP_MGMT: ⚠️ Untracked free @0x3ffafe8c (Stress)[0m
+[0;32mI (8586) HEAP_MGMT: 🗑️ free (n=0)[0m
+[0;32mI (9616) HEAP_MGMT: ✅ Alloc 1286B @0x3ffb7898 (Stress) slot=0[0m
+[0;32mI (9616) HEAP_MGMT: 🔧 alloc 1286B (n=1)[0m
+[0;32mI (10396) HEAP_MGMT: [0m
+📊 MEMORY STATUS
+[0;32mI (10396) HEAP_MGMT: Internal Free:   282280[0m
+[0;32mI (10396) HEAP_MGMT: Largest Block:   147456[0m
+[0;32mI (10396) HEAP_MGMT: SPIRAM Free:     0[0m
+[0;32mI (10396) HEAP_MGMT: Total Free:      205344[0m
+[0;32mI (10396) HEAP_MGMT: Min Ever Free:   200644[0m
+[0;32mI (10406) HEAP_MGMT: Fragmentation:   47.8%[0m
+[0;33mW (10406) HEAP_MGMT: ⚠️ High fragmentation[0m
+[0;32mI (10416) HEAP_MGMT: [0m
+📈 ALLOCATION STATS
+[0;32mI (10416) HEAP_MGMT: Total allocs:     53[0m
+[0;32mI (10416) HEAP_MGMT: Total frees:      51[0m
+[0;32mI (10426) HEAP_MGMT: Current in-use:   2[0m
+[0;32mI (10426) HEAP_MGMT: Bytes alloc:      103602[0m
+[0;32mI (10426) HEAP_MGMT: Bytes freed:      21529[0m
+[0;32mI (10436) HEAP_MGMT: Peak usage:       102316[0m
+[0;32mI (10436) HEAP_MGMT: Alloc failures:   0[0m
+[0;32mI (10446) HEAP_MGMT: Frag events:      4[0m
+[0;32mI (10446) HEAP_MGMT: Low mem events:   0[0m
+[0;32mI (10446) HEAP_MGMT: [0m
+🔍 ACTIVE ALLOCS
+[0;32mI (10456) HEAP_MGMT: slot=0 size=1286 ptr=0x3ffb7898 caps=0x1000 age=842ms desc=Stress[0m
+[0;32mI (10456) HEAP_MGMT: slot=51 size=80787 ptr=0x3ffe46bc caps=0x800 age=9760ms desc=LargeInternal[0m
+[0;32mI (10466) HEAP_MGMT: [0m
+🔍 LEAK SCAN (age>30s)
+[0;32mI (10476) HEAP_MGMT: No potential leaks[0m
+[0;32mI (10476) HEAP_MGMT: Free heap: 205116[0m
+[0;32mI (10476) HEAP_MGMT: Uptime: 10229 ms[0m
+
+[0;32mI (10706) HEAP_MGMT: 🗑️ Free 80787B @0x3ffe46bc (Large) slot=51[0m
+[0;32mI (12056) HEAP_MGMT: [0m
+📊 MEMORY STATUS
+[0;32mI (12056) HEAP_MGMT: Internal Free:   363976[0m
+[0;32mI (12056) HEAP_MGMT: Largest Block:   147456[0m
+[0;32mI (12056) HEAP_MGMT: SPIRAM Free:     0[0m
+[0;32mI (12056) HEAP_MGMT: Total Free:      287040[0m
+[0;32mI (12056) HEAP_MGMT: Min Ever Free:   200644[0m
+[0;32mI (12066) HEAP_MGMT: Fragmentation:   59.5%[0m
+[0;33mW (12066) HEAP_MGMT: ⚠️ High fragmentation[0m
+[0;32mI (13386) HEAP_MGMT: ✅ Alloc 2002B @0x3ffb3d30 (Stress) slot=1[0m
+[0;32mI (13386) HEAP_MGMT: 🔧 alloc 2002B (n=2)[0m
+[0;32mI (13996) HEAP_MGMT: Alloc pools[0m
+[0;32mI (13996) HEAP_MGMT: ✅ Alloc 64B @0x4008d37c (Pool0_0) slot=2[0m
+[0;32mI (13996) HEAP_MGMT: ✅ Alloc 64B @0x4008d3c0 (Pool0_1) slot=3[0m
+[0;32mI (13996) HEAP_MGMT: ✅ Alloc 64B @0x4008d404 (Pool0_2) slot=4[0m
+[0;32mI (13996) HEAP_MGMT: ✅ Alloc 64B @0x4008d448 (Pool0_3) slot=5[0m
+[0;32mI (14006) HEAP_MGMT: ✅ Alloc 64B @0x4008d48c (Pool0_4) slot=6[0m
+[0;32mI (14016) HEAP_MGMT: ✅ Alloc 64B @0x4008d4d0 (Pool0_5) slot=7[0m
+[0;32mI (14016) HEAP_MGMT: ✅ Alloc 64B @0x4008d514 (Pool0_6) slot=8[0m
+[0;32mI (14026) HEAP_MGMT: ✅ Alloc 64B @0x4008d558 (Pool0_7) slot=9[0m
+[0;32mI (14026) HEAP_MGMT: ✅ Alloc 64B @0x4008d59c (Pool0_8) slot=10[0m
+[0;32mI (14036) HEAP_MGMT: ✅ Alloc 64B @0x4008d5e0 (Pool0_9) slot=11[0m
+[0;32mI (14036) HEAP_MGMT: ✅ Alloc 128B @0x4008d624 (Pool1_0) slot=12[0m
+[0;32mI (14046) HEAP_MGMT: ✅ Alloc 128B @0x4008d6a8 (Pool1_1) slot=13[0m
+[0;32mI (14056) HEAP_MGMT: ✅ Alloc 128B @0x4008d72c (Pool1_2) slot=14[0m
+[0;32mI (14056) HEAP_MGMT: ✅ Alloc 128B @0x4008d7b0 (Pool1_3) slot=15[0m
+[0;32mI (14066) HEAP_MGMT: ✅ Alloc 128B @0x4008d834 (Pool1_4) slot=16[0m
+[0;32mI (14066) HEAP_MGMT: ✅ Alloc 128B @0x4008d8b8 (Pool1_5) slot=17[0m
+[0;32mI (14076) HEAP_MGMT: ✅ Alloc 128B @0x4008d93c (Pool1_6) slot=18[0m
+[0;32mI (14076) HEAP_MGMT: ✅ Alloc 128B @0x4008d9c0 (Pool1_7) slot=19[0m
+[0;32mI (14086) HEAP_MGMT: ✅ Alloc 128B @0x4008da44 (Pool1_8) slot=20[0m
+[0;32mI (14096) HEAP_MGMT: ✅ Alloc 128B @0x4008dac8 (Pool1_9) slot=21[0m
+[0;32mI (14096) HEAP_MGMT: ✅ Alloc 256B @0x4008db4c (Pool2_0) slot=22[0m
+[0;32mI (14106) HEAP_MGMT: ✅ Alloc 256B @0x4008dc50 (Pool2_1) slot=23[0m
+[0;32mI (14106) HEAP_MGMT: ✅ Alloc 256B @0x4008dd54 (Pool2_2) slot=24[0m
+[0;32mI (14116) HEAP_MGMT: ✅ Alloc 256B @0x4008de58 (Pool2_3) slot=25[0m
+[0;32mI (14116) HEAP_MGMT: ✅ Alloc 256B @0x4008df5c (Pool2_4) slot=26[0m
+[0;32mI (14126) HEAP_MGMT: ✅ Alloc 256B @0x4008e060 (Pool2_5) slot=27[0m
+[0;32mI (14136) HEAP_MGMT: ✅ Alloc 256B @0x4008e164 (Pool2_6) slot=28[0m
+[0;32mI (14136) HEAP_MGMT: ✅ Alloc 256B @0x4008e268 (Pool2_7) slot=29[0m
+[0;32mI (14146) HEAP_MGMT: ✅ Alloc 256B @0x4008e36c (Pool2_8) slot=30[0m
+[0;32mI (14146) HEAP_MGMT: ✅ Alloc 256B @0x4008e470 (Pool2_9) slot=31[0m
+[0;32mI (14156) HEAP_MGMT: ✅ Alloc 512B @0x4008e574 (Pool3_0) slot=32[0m
+[0;32mI (14166) HEAP_MGMT: ✅ Alloc 512B @0x4008e778 (Pool3_1) slot=33[0m
+[0;32mI (14166) HEAP_MGMT: ✅ Alloc 512B @0x4008e97c (Pool3_2) slot=34[0m
+[0;32mI (14176) HEAP_MGMT: ✅ Alloc 512B @0x4008eb80 (Pool3_3) slot=35[0m
+[0;32mI (14176) HEAP_MGMT: ✅ Alloc 512B @0x4008ed84 (Pool3_4) slot=36[0m
+[0;32mI (14186) HEAP_MGMT: ✅ Alloc 512B @0x4008ef88 (Pool3_5) slot=37[0m
+[0;32mI (14186) HEAP_MGMT: ✅ Alloc 512B @0x4008f18c (Pool3_6) slot=38[0m
+[0;32mI (14196) HEAP_MGMT: ✅ Alloc 512B @0x4008f390 (Pool3_7) slot=39[0m
+[0;32mI (14206) HEAP_MGMT: ✅ Alloc 512B @0x4008f594 (Pool3_8) slot=40[0m
+[0;32mI (14206) HEAP_MGMT: ✅ Alloc 512B @0x4008f798 (Pool3_9) slot=41[0m
+[0;32mI (14216) HEAP_MGMT: ✅ Alloc 1024B @0x4008f99c (Pool4_0) slot=42[0m
+[0;32mI (14216) HEAP_MGMT: ✅ Alloc 1024B @0x4008fda0 (Pool4_1) slot=43[0m
+[0;32mI (14226) HEAP_MGMT: ✅ Alloc 1024B @0x400901a4 (Pool4_2) slot=44[0m
+[0;32mI (14236) HEAP_MGMT: ✅ Alloc 1024B @0x400905a8 (Pool4_3) slot=45[0m
+[0;32mI (14236) HEAP_MGMT: ✅ Alloc 1024B @0x400909ac (Pool4_4) slot=46[0m
+[0;32mI (14246) HEAP_MGMT: ✅ Alloc 1024B @0x40090db0 (Pool4_5) slot=47[0m
+[0;32mI (14246) HEAP_MGMT: ✅ Alloc 1024B @0x400911b4 (Pool4_6) slot=48[0m
+[0;32mI (14256) HEAP_MGMT: ✅ Alloc 1024B @0x400915b8 (Pool4_7) slot=49[0m
+[0;32mI (14266) HEAP_MGMT: ✅ Alloc 1024B @0x400919bc (Pool4_8) slot=50[0m
+[0;32mI (14266) HEAP_MGMT: ✅ Alloc 1024B @0x40091dc0 (Pool4_9) slot=51[0m
+[0;32mI (15046) HEAP_MGMT: 🗑️ Free 2002B @0x3ffb3d30 (Stress) slot=1[0m
+[0;32mI (15046) HEAP_MGMT: 🗑️ free (n=1)[0m
+[0;32mI (16916) HEAP_MGMT: ✅ Alloc 1735B @0x3ffb3d30 (Stress) slot=1[0m
+[0;32mI (16916) HEAP_MGMT: 🔧 alloc 1735B (n=2)[0m
+[0;32mI (19276) HEAP_MGMT: Free pools (reverse)[0m
+[0;32mI (19276) HEAP_MGMT: 🗑️ Free 1024B @0x40091dc0 (Pool) slot=51[0m
+[0;32mI (19276) HEAP_MGMT: 🗑️ Free 1024B @0x400919bc (Pool) slot=50[0m
+[0;32mI (19276) HEAP_MGMT: 🗑️ Free 1024B @0x400915b8 (Pool) slot=49[0m
+[0;32mI (19286) HEAP_MGMT: 🗑️ Free 1024B @0x400911b4 (Pool) slot=48[0m
+[0;32mI (19286) HEAP_MGMT: 🗑️ Free 1024B @0x40090db0 (Pool) slot=47[0m
+[0;32mI (19296) HEAP_MGMT: 🗑️ Free 1024B @0x400909ac (Pool) slot=46[0m
+[0;32mI (19296) HEAP_MGMT: 🗑️ Free 1024B @0x400905a8 (Pool) slot=45[0m
+[0;32mI (19306) HEAP_MGMT: 🗑️ Free 1024B @0x400901a4 (Pool) slot=44[0m
+[0;32mI (19306) HEAP_MGMT: 🗑️ Free 1024B @0x4008fda0 (Pool) slot=43[0m
+[0;32mI (19316) HEAP_MGMT: 🗑️ Free 1024B @0x4008f99c (Pool) slot=42[0m
+[0;32mI (19326) HEAP_MGMT: 🗑️ Free 512B @0x4008f798 (Pool) slot=41[0m
+[0;32mI (19326) HEAP_MGMT: 🗑️ Free 512B @0x4008f594 (Pool) slot=40[0m
+[0;32mI (19336) HEAP_MGMT: 🗑️ Free 512B @0x4008f390 (Pool) slot=39[0m
+[0;32mI (19336) HEAP_MGMT: 🗑️ Free 512B @0x4008f18c (Pool) slot=38[0m
+[0;32mI (19346) HEAP_MGMT: 🗑️ Free 512B @0x4008ef88 (Pool) slot=37[0m
+[0;32mI (19356) HEAP_MGMT: 🗑️ Free 512B @0x4008ed84 (Pool) slot=36[0m
+[0;32mI (19356) HEAP_MGMT: 🗑️ Free 512B @0x4008eb80 (Pool) slot=35[0m
+[0;32mI (19366) HEAP_MGMT: 🗑️ Free 512B @0x4008e97c (Pool) slot=34[0m
+[0;32mI (19366) HEAP_MGMT: 🗑️ Free 512B @0x4008e778 (Pool) slot=33[0m
+[0;32mI (19376) HEAP_MGMT: 🗑️ Free 512B @0x4008e574 (Pool) slot=32[0m
+[0;32mI (19376) HEAP_MGMT: 🗑️ Free 256B @0x4008e470 (Pool) slot=31[0m
+[0;32mI (19386) HEAP_MGMT: 🗑️ Free 256B @0x4008e36c (Pool) slot=30[0m
+[0;32mI (19396) HEAP_MGMT: 🗑️ Free 256B @0x4008e268 (Pool) slot=29[0m
+[0;32mI (19396) HEAP_MGMT: 🗑️ Free 256B @0x4008e164 (Pool) slot=28[0m
+[0;32mI (19406) HEAP_MGMT: 🗑️ Free 256B @0x4008e060 (Pool) slot=27[0m
+[0;32mI (19406) HEAP_MGMT: 🗑️ Free 256B @0x4008df5c (Pool) slot=26[0m
+[0;32mI (19416) HEAP_MGMT: 🗑️ Free 256B @0x4008de58 (Pool) slot=25[0m
+[0;32mI (19426) HEAP_MGMT: 🗑️ Free 256B @0x4008dd54 (Pool) slot=24[0m
+[0;32mI (19426) HEAP_MGMT: 🗑️ Free 256B @0x4008dc50 (Pool) slot=23[0m
+[0;32mI (19436) HEAP_MGMT: 🗑️ Free 256B @0x4008db4c (Pool) slot=22[0m
+[0;32mI (19436) HEAP_MGMT: 🗑️ Free 128B @0x4008dac8 (Pool) slot=21[0m
+[0;32mI (19446) HEAP_MGMT: 🗑️ Free 128B @0x4008da44 (Pool) slot=20[0m
+[0;32mI (19446) HEAP_MGMT: 🗑️ Free 128B @0x4008d9c0 (Pool) slot=19[0m
+[0;32mI (19456) HEAP_MGMT: 🗑️ Free 128B @0x4008d93c (Pool) slot=18[0m
+[0;32mI (19466) HEAP_MGMT: 🗑️ Free 128B @0x4008d8b8 (Pool) slot=17[0m
+[0;32mI (19466) HEAP_MGMT: 🗑️ Free 128B @0x4008d834 (Pool) slot=16[0m
+[0;32mI (19476) HEAP_MGMT: 🗑️ Free 128B @0x4008d7b0 (Pool) slot=15[0m
+[0;32mI (19476) HEAP_MGMT: 🗑️ Free 128B @0x4008d72c (Pool) slot=14[0m
+[0;32mI (19486) HEAP_MGMT: 🗑️ Free 128B @0x4008d6a8 (Pool) slot=13[0m
+[0;32mI (19496) HEAP_MGMT: 🗑️ Free 128B @0x4008d624 (Pool) slot=12[0m
+[0;32mI (19496) HEAP_MGMT: 🗑️ Free 64B @0x4008d5e0 (Pool) slot=11[0m
+[0;32mI (19506) HEAP_MGMT: 🗑️ Free 64B @0x4008d59c (Pool) slot=10[0m
+[0;32mI (19506) HEAP_MGMT: 🗑️ Free 64B @0x4008d558 (Pool) slot=9[0m
+[0;32mI (19516) HEAP_MGMT: 🗑️ Free 64B @0x4008d514 (Pool) slot=8[0m
+[0;32mI (19516) HEAP_MGMT: 🗑️ Free 64B @0x4008d4d0 (Pool) slot=7[0m
+[0;32mI (19526) HEAP_MGMT: 🗑️ Free 64B @0x4008d48c (Pool) slot=6[0m
+[0;32mI (19536) HEAP_MGMT: 🗑️ Free 64B @0x4008d448 (Pool) slot=5[0m
+[0;32mI (19536) HEAP_MGMT: 🗑️ Free 64B @0x4008d404 (Pool) slot=4[0m
+[0;32mI (19546) HEAP_MGMT: 🗑️ Free 64B @0x4008d3c0 (Pool) slot=3[0m
+[0;32mI (19546) HEAP_MGMT: 🗑️ Free 64B @0x4008d37c (Pool) slot=2[0m
+[0;32mI (19556) HEAP_MGMT: [0m
+📊 MEMORY STATUS
+[0;32mI (19556) HEAP_MGMT: Internal Free:   362180[0m
+[0;32mI (19566) HEAP_MGMT: Largest Block:   147456[0m
+[0;32mI (19566) HEAP_MGMT: SPIRAM Free:     0[0m
+[0;32mI (19566) HEAP_MGMT: Total Free:      285244[0m
+[0;32mI (19576) HEAP_MGMT: Min Ever Free:   200644[0m
+[0;32mI (19576) HEAP_MGMT: Fragmentation:   59.3%[0m
+[0;33mW (19576) HEAP_MGMT: ⚠️ High fragmentation[0m
+[0;32mI (19876) HEAP_MGMT: [0m
+📊 MEMORY STATUS
+[0;32mI (19876) HEAP_MGMT: Internal Free:   362180[0m
+[0;32mI (19876) HEAP_MGMT: Largest Block:   147456[0m
+[0;32mI (19876) HEAP_MGMT: SPIRAM Free:     0[0m
+[0;32mI (19876) HEAP_MGMT: Total Free:      285244[0m
+[0;32mI (19876) HEAP_MGMT: Min Ever Free:   200644[0m
+[0;32mI (19886) HEAP_MGMT: Fragmentation:   59.3%[0m
+[0;33mW (19886) HEAP_MGMT: ⚠️ High fragmentation[0m
+[0;32mI (20486) HEAP_MGMT: [0m
+📊 MEMORY STATUS
+[0;32mI (20486) HEAP_MGMT: Internal Free:   362180[0m
+[0;32mI (20486) HEAP_MGMT: Largest Block:   147456[0m
+[0;32mI (20486) HEAP_MGMT: SPIRAM Free:     0[0m
+[0;32mI (20486) HEAP_MGMT: Total Free:      285244[0m
+[0;32mI (20486) HEAP_MGMT: Min Ever Free:   200644[0m
+[0;32mI (20496) HEAP_MGMT: Fragmentation:   59.3%[0m
+[0;33mW (20496) HEAP_MGMT: ⚠️ High fragmentation[0m
+[0;32mI (20506) HEAP_MGMT: [0m
+📈 ALLOCATION STATS
+[0;32mI (20506) HEAP_MGMT: Total allocs:     105[0m
+[0;32mI (20506) HEAP_MGMT: Total frees:      103[0m
+[0;32mI (20516) HEAP_MGMT: Current in-use:   2[0m
+[0;32mI (20516) HEAP_MGMT: Bytes alloc:      127179[0m
+[0;32mI (20516) HEAP_MGMT: Bytes freed:      124158[0m
+[0;32mI (20526) HEAP_MGMT: Peak usage:       102316[0m
+[0;32mI (20526) HEAP_MGMT: Alloc failures:   0[0m
+[0;32mI (20536) HEAP_MGMT: Frag events:      8[0m
+[0;32mI (20536) HEAP_MGMT: Low mem events:   0[0m
+[0;32mI (20536) HEAP_MGMT: [0m
+🔍 ACTIVE ALLOCS
+[0;32mI (20546) HEAP_MGMT: slot=0 size=1286 ptr=0x3ffb7898 caps=0x1000 age=10932ms desc=Stress[0m
+[0;32mI (20556) HEAP_MGMT: slot=1 size=1735 ptr=0x3ffb3d30 caps=0x1000 age=3640ms desc=Stress[0m
+[0;32mI (20556) HEAP_MGMT: [0m
+🔍 LEAK SCAN (age>30s)
+[0;32mI (20566) HEAP_MGMT: No potential leaks[0m
+[0;32mI (20566) HEAP_MGMT: Free heap: 285244[0m
+[0;32mI (20566) HEAP_MGMT: Uptime: 20318 ms[0m
+
+[0;32mI (21076) HEAP_MGMT: [0m
+📊 MEMORY STATUS
+[0;32mI (21076) HEAP_MGMT: Internal Free:   362180[0m
+[0;32mI (21076) HEAP_MGMT: Largest Block:   147456[0m
+[0;32mI (21076) HEAP_MGMT: SPIRAM Free:     0[0m
+[0;32mI (21076) HEAP_MGMT: Total Free:      285244[0m
+[0;32mI (21076) HEAP_MGMT: Min Ever Free:   200644[0m
+[0;32mI (21086) HEAP_MGMT: Fragmentation:   59.3%[0m
+[0;33mW (21086) HEAP_MGMT: ⚠️ High fragmentation[0m
+[0;32mI (22846) HEAP_MGMT: [0m
+📊 MEMORY STATUS
+[0;32mI (22846) HEAP_MGMT: Internal Free:   362180[0m
+[0;32mI (22846) HEAP_MGMT: Largest Block:   147456[0m
+[0;32mI (22846) HEAP_MGMT: SPIRAM Free:     0[0m
+[0;32mI (22846) HEAP_MGMT: Total Free:      285244[0m
+[0;32mI (22846) HEAP_MGMT: Min Ever Free:   200644[0m
+[0;32mI (22856) HEAP_MGMT: Fragmentation:   59.3%[0m
+[0;33mW (22856) HEAP_MGMT: ⚠️ High fragmentation[0m
+[0;32mI (23906) HEAP_MGMT: 🗑️ Free 1735B @0x3ffb3d30 (Stress) slot=1[0m
+[0;32mI (23906) HEAP_MGMT: 🗑️ free (n=1)[0m
+[0;32mI (24936) HEAP_MGMT: ✅ Alloc 1043B @0x4008d37c (Stress) slot=1[0m
+Guru Meditation Error: Core  0 panic'ed (LoadStoreError). Exception was unhandled.
+
+Core  0 register dump:
+PC      : 0x4000c48b  PS      : 0x00060b30  A0      : 0x800d6d8e  A1      : 0x3ffb7590  
+A2      : 0x4008d37c  A3      : 0xaaaaaaaa  A4      : 0x00000413  A5      : 0x4008d78c  
+A6      : 0x3ffb2b20  A7      : 0x00000041  A8      : 0x800d6494  A9      : 0x3ffb7530  
+A10     : 0x00000001  A11     : 0x00000000  A12     : 0x00000000  A13     : 0x00000000  
+A14     : 0x00000000  A15     : 0x3ffafe7c  SAR     : 0x00000004  EXCCAUSE: 0x00000003  
+EXCVADDR: 0x4008d78c  LBEG    : 0x4000c46c  LEND    : 0x4000c477  LCOUNT  : 0x00000000  
+
+
+Backtrace: 0x4000c488:0x3ffb7590 0x400d6d8b:0x3ffb75a0 0x40085d35:0x3ffb7620
+
+
+
+
+ELF file SHA256: 1992a2172
+
+Rebooting...
+ets Jul 29 2019 12:21:46
+
+rst:0xc (SW_CPU_RESET),boot:0x12 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6380
+ho 0 tail 12 room 4
+load:0x40078000,len:15916
+load:0x40080400,len:3860
+entry 0x40080638
+[0;32mI (29) boot: ESP-IDF v5.5.1 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Oct 23 2025 03:42:37[0m
+[0;32mI (29) boot: Multicore bootloader[0m
+[0;32mI (31) boot: chip revision: v3.0[0m
+[0;32mI (33) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (37) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (41) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (44) boot: Enabling RNG early entropy source...[0m
+[0;32mI (49) boot: Partition Table:[0m
+[0;32mI (51) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (58) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (64) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (71) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (77) boot: End of partition table[0m
+[0;32mI (80) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0a9d8h ( 43480) map[0m
+[0;32mI (103) esp_image: segment 1: paddr=0001aa00 vaddr=3ffb0000 size=023f8h (  9208) load[0m
+[0;32mI (106) esp_image: segment 2: paddr=0001ce00 vaddr=40080000 size=03218h ( 12824) load[0m
+[0;32mI (112) esp_image: segment 3: paddr=00020020 vaddr=400d0020 size=17ec4h ( 97988) map[0m
+[0;32mI (148) esp_image: segment 4: paddr=00037eec vaddr=40083218 size=09de0h ( 40416) load[0m
+[0;32mI (164) esp_image: segment 5: paddr=00041cd4 vaddr=50000000 size=00020h (    32) load[0m
+[0;32mI (170) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (170) boot: Disabling RNG early entropy source...[0m
+[0;32mI (182) cpu_start: Multicore app[0m
+[0;32mI (190) cpu_start: Pro cpu start user code[0m
+[0;32mI (190) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (190) app_init: Application information:[0m
+[0;32mI (190) app_init: Project name:     heap_management[0m
+[0;32mI (195) app_init: App version:      f7526bb[0m
+[0;32mI (199) app_init: Compile time:     Oct 23 2025 03:41:38[0m
+[0;32mI (204) app_init: ELF file SHA256:  1992a2172...[0m
+[0;32mI (208) app_init: ESP-IDF:          v5.5.1[0m
+[0;32mI (212) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (216) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (220) efuse_init: Chip rev:         v3.0[0m
+[0;32mI (224) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (230) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (235) heap_init: At 3FFB3980 len 0002C680 (177 KiB): DRAM[0m
+[0;32mI (240) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (246) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (251) heap_init: At 4008CFF8 len 00013008 (76 KiB): IRAM[0m
+[0;32mI (258) spi_flash: detected chip: generic[0m
+[0;32mI (260) spi_flash: flash io: dio[0m
+[0;33mW (263) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (276) main_task: Started on CPU0[0m
+[0;32mI (286) main_task: Calling app_main()[0m
+[0;32mI (286) HEAP_MGMT: 🚀 Heap Management Lab Starting...[0m
+[0;32mI (286) HEAP_MGMT: [0m
+📊 MEMORY STATUS
+[0;32mI (286) HEAP_MGMT: Internal Free:   378704[0m
+[0;32mI (286) HEAP_MGMT: Largest Block:   172032[0m
+[0;32mI (296) HEAP_MGMT: SPIRAM Free:     0[0m
+[0;32mI (296) HEAP_MGMT: Total Free:      301768[0m
+[0;32mI (296) HEAP_MGMT: Min Ever Free:   301768[0m
+[0;32mI (306) HEAP_MGMT: Fragmentation:   54.6%[0m
+[0;33mW (306) HEAP_MGMT: ⚠️ High fragmentation[0m
+[0;32mI (316) HEAP_MGMT: [0m
+🏗️ INITIAL HEAP (INTERNAL)
+Heap summary for capabilities 0x00000800:
+  At 0x3ffae6e0 len 6432 free 148 allocated 5764 min_free 148
+    largest_free_block 128 alloc_blocks 35 free_blocks 1 total_blocks 36
+  At 0x3ffe0440 len 15072 free 14656 allocated 0 min_free 14656
+    largest_free_block 14336 alloc_blocks 0 free_blocks 1 total_blocks 1
+  At 0x4008cff8 len 77832 free 76936 allocated 20 min_free 76936
+    largest_free_block 73728 alloc_blocks 1 free_blocks 1 total_blocks 2
+  At 0x3ffe4350 len 113840 free 112968 allocated 0 min_free 112968
+    largest_free_block 110592 alloc_blocks 0 free_blocks 1 total_blocks 1
+  At 0x3ffb3980 len 181888 free 173768 allocated 7168 min_free 173768
+    largest_free_block 172032 alloc_blocks 3 free_blocks 1 total_blocks 4
+  Totals:
+    free 378476 allocated 12952 min_free 378476 largest_free_block 172032
+[0;32mI (386) HEAP_MGMT: 📊 Monitor start[0m
+[0;32mI (396) HEAP_MGMT: 🧪 Stress test start[0m
+[0;32mI (396) HEAP_MGMT: ✅ Alloc 960B @0x3ffb780c (Stress) slot=0[0m
+[0;32mI (406) HEAP_MGMT: 🔧 alloc 960B (n=1)[0m
+[0;32mI (406) HEAP_MGMT: 🏊 Pool test start[0m
+[0;32mI (406) HEAP_MGMT: Alloc pools[0m
+[0;32mI (416) HEAP_MGMT: ✅ Alloc 64B @0x4008d37c (Pool0_0) slot=1[0m
+[0;32mI (416) HEAP_MGMT: ✅ Alloc 64B @0x4008d3c0 (Pool0_1) slot=2[0m
+[0;32mI (426) HEAP_MGMT: ✅ Alloc 64B @0x4008d404 (Pool0_2) slot=3[0m
+[0;32mI (426) HEAP_MGMT: ✅ Alloc 64B @0x4008d448 (Pool0_3) slot=4[0m
+[0;32mI (436) HEAP_MGMT: ✅ Alloc 64B @0x4008d48c (Pool0_4) slot=5[0m
+[0;32mI (436) HEAP_MGMT: ✅ Alloc 64B @0x4008d4d0 (Pool0_5) slot=6[0m
+[0;32mI (446) HEAP_MGMT: ✅ Alloc 64B @0x4008d514 (Pool0_6) slot=7[0m
+[0;32mI (446) HEAP_MGMT: ✅ Alloc 64B @0x4008d558 (Pool0_7) slot=8[0m
+[0;32mI (456) HEAP_MGMT: ✅ Alloc 64B @0x4008d59c (Pool0_8) slot=9[0m
+[0;32mI (456) HEAP_MGMT: ✅ Alloc 64B @0x4008d5e0 (Pool0_9) slot=10[0m
+[0;32mI (466) HEAP_MGMT: ✅ Alloc 128B @0x4008d624 (Pool1_0) slot=11[0m
+[0;32mI (476) HEAP_MGMT: ✅ Alloc 128B @0x4008d6a8 (Pool1_1) slot=12[0m
+[0;32mI (476) HEAP_MGMT: ✅ Alloc 128B @0x4008d72c (Pool1_2) slot=13[0m
+[0;32mI (486) HEAP_MGMT: ✅ Alloc 128B @0x4008d7b0 (Pool1_3) slot=14[0m
+[0;32mI (486) HEAP_MGMT: ✅ Alloc 128B @0x4008d834 (Pool1_4) slot=15[0m
+[0;32mI (496) HEAP_MGMT: ✅ Alloc 128B @0x4008d8b8 (Pool1_5) slot=16[0m
+[0;32mI (496) HEAP_MGMT: ✅ Alloc 128B @0x4008d93c (Pool1_6) slot=17[0m
+[0;32mI (506) HEAP_MGMT: ✅ Alloc 128B @0x4008d9c0 (Pool1_7) slot=18[0m
+[0;32mI (516) HEAP_MGMT: ✅ Alloc 128B @0x4008da44 (Pool1_8) slot=19[0m
+[0;32mI (516) HEAP_MGMT: ✅ Alloc 128B @0x4008dac8 (Pool1_9) slot=20[0m
+[0;32mI (526) HEAP_MGMT: ✅ Alloc 256B @0x4008db4c (Pool2_0) slot=21[0m
+[0;32mI (526) HEAP_MGMT: ✅ Alloc 256B @0x4008dc50 (Pool2_1) slot=22[0m
+[0;32mI (536) HEAP_MGMT: ✅ Alloc 256B @0x4008dd54 (Pool2_2) slot=23[0m
+[0;32mI (536) HEAP_MGMT: ✅ Alloc 256B @0x4008de58 (Pool2_3) slot=24[0m
+[0;32mI (546) HEAP_MGMT: ✅ Alloc 256B @0x4008df5c (Pool2_4) slot=25[0m
+[0;32mI (546) HEAP_MGMT: ✅ Alloc 256B @0x4008e060 (Pool2_5) slot=26[0m
+[0;32mI (556) HEAP_MGMT: ✅ Alloc 256B @0x4008e164 (Pool2_6) slot=27[0m
+[0;32mI (566) HEAP_MGMT: ✅ Alloc 256B @0x4008e268 (Pool2_7) slot=28[0m
+[0;32mI (566) HEAP_MGMT: ✅ Alloc 256B @0x4008e36c (Pool2_8) slot=29[0m
+[0;32mI (576) HEAP_MGMT: ✅ Alloc 256B @0x4008e470 (Pool2_9) slot=30[0m
+[0;32mI (576) HEAP_MGMT: ✅ Alloc 512B @0x4008e574 (Pool3_0) slot=31[0m
+[0;32mI (586) HEAP_MGMT: ✅ Alloc 512B @0x4008e778 (Pool3_1) slot=32[0m
+[0;32mI (586) HEAP_MGMT: ✅ Alloc 512B @0x4008e97c (Pool3_2) slot=33[0m
+[0;32mI (596) HEAP_MGMT: ✅ Alloc 512B @0x4008eb80 (Pool3_3) slot=34[0m
+[0;32mI (606) HEAP_MGMT: ✅ Alloc 512B @0x4008ed84 (Pool3_4) slot=35[0m
+[0;32mI (606) HEAP_MGMT: ✅ Alloc 512B @0x4008ef88 (Pool3_5) slot=36[0m
+[0;32mI (616) HEAP_MGMT: ✅ Alloc 512B @0x4008f18c (Pool3_6) slot=37[0m
+[0;32mI (616) HEAP_MGMT: ✅ Alloc 512B @0x4008f390 (Pool3_7) slot=38[0m
+[0;32mI (626) HEAP_MGMT: ✅ Alloc 512B @0x4008f594 (Pool3_8) slot=39[0m
+[0;32mI (626) HEAP_MGMT: ✅ Alloc 512B @0x4008f798 (Pool3_9) slot=40[0m
+[0;32mI (636) HEAP_MGMT: ✅ Alloc 1024B @0x4008f99c (Pool4_0) slot=41[0m
+[0;32mI (646) HEAP_MGMT: ✅ Alloc 1024B @0x4008fda0 (Pool4_1) slot=42[0m
+[0;32mI (646) HEAP_MGMT: ✅ Alloc 1024B @0x400901a4 (Pool4_2) slot=43[0m
+[0;32mI (656) HEAP_MGMT: ✅ Alloc 1024B @0x400905a8 (Pool4_3) slot=44[0m
+[0;32mI (656) HEAP_MGMT: ✅ Alloc 1024B @0x400909ac (Pool4_4) slot=45[0m
+[0;32mI (666) HEAP_MGMT: ✅ Alloc 1024B @0x40090db0 (Pool4_5) slot=46[0m
+[0;32mI (666) HEAP_MGMT: ✅ Alloc 1024B @0x400911b4 (Pool4_6) slot=47[0m
+[0;32mI (676) HEAP_MGMT: ✅ Alloc 1024B @0x400915b8 (Pool4_7) slot=48[0m
+[0;32mI (686) HEAP_MGMT: ✅ Alloc 1024B @0x400919bc (Pool4_8) slot=49[0m
+[0;32mI (686) HEAP_MGMT: ✅ Alloc 1024B @0x40091dc0 (Pool4_9) slot=50[0m
+[0;32mI (696) HEAP_MGMT: 🐘 Large alloc test start[0m
+[0;32mI (696) HEAP_MGMT: Try large 69425B[0m
+[0;32mI (696) HEAP_MGMT: ✅ Alloc 69425B @0x3ffe46bc (LargeInternal) slot=51[0m
+[0;32mI (706) HEAP_MGMT: Write time: 140 us[0m
+[0;32mI (706) HEAP_MGMT: 🔍 Integrity test start[0m
+[0;32mI (716) HEAP_MGMT: [0m
+🎯 LEDs:
+[0;32mI (716) HEAP_MGMT: GPIO2  - Memory OK[0m
+[0;32mI (716) HEAP_MGMT: GPIO4  - Low Memory[0m
+[0;32mI (726) HEAP_MGMT: GPIO5  - Error/Leak[0m
+[0;32mI (726) HEAP_MGMT: GPIO18 - Fragmentation[0m
+[0;32mI (726) HEAP_MGMT: GPIO19 - SPIRAM Active[0m
+[0;32mI (736) HEAP_MGMT: Heap Management System operational![0m
+[0;32mI (736) main_task: Returned from app_main()[0m
+[0;32mI (1966) HEAP_MGMT: 🗑️ Free 960B @0x3ffb780c (Stress) slot=0[0m
+[0;32mI (1966) HEAP_MGMT: 🗑️ free (n=0)[0m
+[0;32mI (3216) HEAP_MGMT: [0m
+📊 MEMORY STATUS
+[0;32mI (3216) HEAP_MGMT: Internal Free:   276324[0m
+[0;32mI (3216) HEAP_MGMT: Largest Block:   147456[0m
+[0;32mI (3216) HEAP_MGMT: SPIRAM Free:     0[0m
+[0;32mI (3216) HEAP_MGMT: Total Free:      219428[0m
+[0;32mI (3216) HEAP_MGMT: Min Ever Free:   213780[0m
+[0;32mI (3226) HEAP_MGMT: Fragmentation:   46.6%[0m
+[0;33mW (3226) HEAP_MGMT: ⚠️ High fragmentation[0m
+[0;32mI (5666) HEAP_MGMT: [0m
+📊 MEMORY STATUS
+[0;32mI (5666) HEAP_MGMT: Internal Free:   276096[0m
+[0;32mI (5666) HEAP_MGMT: Largest Block:   147456[0m
+[0;32mI (5666) HEAP_MGMT: SPIRAM Free:     0[0m
+[0;32mI (5666) HEAP_MGMT: Total Free:      219200[0m
+[0;32mI (5666) HEAP_MGMT: Min Ever Free:   213780[0m
+[0;32mI (5676) HEAP_MGMT: Fragmentation:   46.6%[0m
+[0;33mW (5676) HEAP_MGMT: ⚠️ High fragmentation[0m
+[0;32mI (5696) HEAP_MGMT: Free pools (reverse)[0m
+[0;32mI (5696) HEAP_MGMT: 🗑️ Free 1024B @0x40091dc0 (Pool) slot=50[0m
+[0;32mI (5696) HEAP_MGMT: 🗑️ Free 1024B @0x400919bc (Pool) slot=49[0m
+[0;32mI (5696) HEAP_MGMT: 🗑️ Free 1024B @0x400915b8 (Pool) slot=48[0m
+[0;32mI (5706) HEAP_MGMT: 🗑️ Free 1024B @0x400911b4 (Pool) slot=47[0m
+[0;32mI (5706) HEAP_MGMT: 🗑️ Free 1024B @0x40090db0 (Pool) slot=46[0m
+[0;32mI (5716) HEAP_MGMT: 🗑️ Free 1024B @0x400909ac (Pool) slot=45[0m
+[0;32mI (5716) HEAP_MGMT: 🗑️ Free 1024B @0x400905a8 (Pool) slot=44[0m
+[0;32mI (5726) HEAP_MGMT: 🗑️ Free 1024B @0x400901a4 (Pool) slot=43[0m
+[0;32mI (5726) HEAP_MGMT: 🗑️ Free 1024B @0x4008fda0 (Pool) slot=42[0m
+[0;32mI (5736) HEAP_MGMT: 🗑️ Free 1024B @0x4008f99c (Pool) slot=41[0m
+[0;32mI (5746) HEAP_MGMT: 🗑️ Free 512B @0x4008f798 (Pool) slot=40[0m
+[0;32mI (5746) HEAP_MGMT: 🗑️ Free 512B @0x4008f594 (Pool) slot=39[0m
+[0;32mI (5756) HEAP_MGMT: 🗑️ Free 512B @0x4008f390 (Pool) slot=38[0m
+[0;32mI (5756) HEAP_MGMT: 🗑️ Free 512B @0x4008f18c (Pool) slot=37[0m
+[0;32mI (5766) HEAP_MGMT: 🗑️ Free 512B @0x4008ef88 (Pool) slot=36[0m
+[0;32mI (5776) HEAP_MGMT: 🗑️ Free 512B @0x4008ed84 (Pool) slot=35[0m
+[0;32mI (5776) HEAP_MGMT: 🗑️ Free 512B @0x4008eb80 (Pool) slot=34[0m
+[0;32mI (5786) HEAP_MGMT: 🗑️ Free 512B @0x4008e97c (Pool) slot=33[0m
+[0;32mI (5786) HEAP_MGMT: 🗑️ Free 512B @0x4008e778 (Pool) slot=32[0m
+[0;32mI (5796) HEAP_MGMT: 🗑️ Free 512B @0x4008e574 (Pool) slot=31[0m
+[0;32mI (5796) HEAP_MGMT: 🗑️ Free 256B @0x4008e470 (Pool) slot=30[0m
+[0;32mI (5806) HEAP_MGMT: 🗑️ Free 256B @0x4008e36c (Pool) slot=29[0m
+[0;32mI (5816) HEAP_MGMT: 🗑️ Free 256B @0x4008e268 (Pool) slot=28[0m
+[0;32mI (5816) HEAP_MGMT: 🗑️ Free 256B @0x4008e164 (Pool) slot=27[0m
+[0;32mI (5826) HEAP_MGMT: 🗑️ Free 256B @0x4008e060 (Pool) slot=26[0m
+[0;32mI (5826) HEAP_MGMT: 🗑️ Free 256B @0x4008df5c (Pool) slot=25[0m
+[0;32mI (5836) HEAP_MGMT: 🗑️ Free 256B @0x4008de58 (Pool) slot=24[0m
+[0;32mI (5836) HEAP_MGMT: 🗑️ Free 256B @0x4008dd54 (Pool) slot=23[0m
+[0;32mI (5846) HEAP_MGMT: 🗑️ Free 256B @0x4008dc50 (Pool) slot=22[0m
+[0;32mI (5856) HEAP_MGMT: 🗑️ Free 256B @0x4008db4c (Pool) slot=21[0m
+[0;32mI (5856) HEAP_MGMT: 🗑️ Free 128B @0x4008dac8 (Pool) slot=20[0m
+[0;32mI (5866) HEAP_MGMT: 🗑️ Free 128B @0x4008da44 (Pool) slot=19[0m
+[0;32mI (5866) HEAP_MGMT: 🗑️ Free 128B @0x4008d9c0 (Pool) slot=18[0m
+[0;32mI (5876) HEAP_MGMT: 🗑️ Free 128B @0x4008d93c (Pool) slot=17[0m
+[0;32mI (5876) HEAP_MGMT: 🗑️ Free 128B @0x4008d8b8 (Pool) slot=16[0m
+[0;32mI (5886) HEAP_MGMT: 🗑️ Free 128B @0x4008d834 (Pool) slot=15[0m
+[0;32mI (5896) HEAP_MGMT: 🗑️ Free 128B @0x4008d7b0 (Pool) slot=14[0m
+[0;32mI (5896) HEAP_MGMT: 🗑️ Free 128B @0x4008d72c (Pool) slot=13[0m
+[0;32mI (5906) HEAP_MGMT: 🗑️ Free 128B @0x4008d6a8 (Pool) slot=12[0m
+[0;32mI (5906) HEAP_MGMT: 🗑️ Free 128B @0x4008d624 (Pool) slot=11[0m
+[0;32mI (5916) HEAP_MGMT: 🗑️ Free 64B @0x4008d5e0 (Pool) slot=10[0m
+[0;32mI (5916) HEAP_MGMT: 🗑️ Free 64B @0x4008d59c (Pool) slot=9[0m
+[0;32mI (5926) HEAP_MGMT: 🗑️ Free 64B @0x4008d558 (Pool) slot=8[0m
+[0;32mI (5936) HEAP_MGMT: 🗑️ Free 64B @0x4008d514 (Pool) slot=7[0m
+[0;32mI (5936) HEAP_MGMT: 🗑️ Free 64B @0x4008d4d0 (Pool) slot=6[0m
+[0;32mI (5946) HEAP_MGMT: 🗑️ Free 64B @0x4008d48c (Pool) slot=5[0m
+[0;32mI (5946) HEAP_MGMT: 🗑️ Free 64B @0x4008d448 (Pool) slot=4[0m
+[0;32mI (5956) HEAP_MGMT: 🗑️ Free 64B @0x4008d404 (Pool) slot=3[0m
+[0;32mI (5956) HEAP_MGMT: 🗑️ Free 64B @0x4008d3c0 (Pool) slot=2[0m
+[0;32mI (5966) HEAP_MGMT: 🗑️ Free 64B @0x4008d37c (Pool) slot=1[0m
+[0;32mI (5966) HEAP_MGMT: [0m
+📊 MEMORY STATUS
+[0;32mI (5976) HEAP_MGMT: Internal Free:   296136[0m
+[0;32mI (5976) HEAP_MGMT: Largest Block:   147456[0m
+[0;32mI (5986) HEAP_MGMT: SPIRAM Free:     0[0m
+[0;32mI (5986) HEAP_MGMT: Total Free:      219200[0m
+[0;32mI (5986) HEAP_MGMT: Min Ever Free:   213780[0m
+[0;32mI (5996) HEAP_MGMT: Fragmentation:   50.2%[0m
+[0;33mW (5996) HEAP_MGMT: ⚠️ High fragmentation[0m
+[0;32mI (7306) HEAP_MGMT: ✅ Alloc 2021B @0x3ffb3d30 (Stress) slot=0[0m
+[0;32mI (7306) HEAP_MGMT: 🔧 alloc 2021B (n=1)[0m
+[0;32mI (9166) HEAP_MGMT: ✅ Alloc 1895B @0x4008d37c (Stress) slot=1[0m
+Guru Meditation Error: Core  0 panic'ed (LoadStoreError). Exception was unhandled.
+
+Core  0 register dump:
+PC      : 0x4000c48b  PS      : 0x00060b30  A0      : 0x800d6d8e  A1      : 0x3ffb7590  
+A2      : 0x4008d37c  A3      : 0xaaaaaaaa  A4      : 0x00000767  A5      : 0x4008dae0  
+A6      : 0x3ffb2b20  A7      : 0x00000076  A8      : 0x800d6494  A9      : 0x3ffb7530  
+A10     : 0x00000001  A11     : 0x00000000  A12     : 0x00000000  A13     : 0x00000000  
+A14     : 0x00000000  A15     : 0x3ffafe7c  SAR     : 0x00000004  EXCCAUSE: 0x00000003  
+EXCVADDR: 0x4008dae0  LBEG    : 0x4000c46c  LEND    : 0x4000c477  LCOUNT  : 0x00000000  
+
+
+Backtrace: 0x4000c488:0x3ffb7590 0x400d6d8b:0x3ffb75a0 0x40085d35:0x3ffb7620
+
+
+
+
+ELF file SHA256: 1992a2172
+
+Rebooting...
+ets Jul 29 2019 12:21:46
+
+rst:0xc (SW_CPU_RESET),boot:0x12 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6380
+ho 0 tail 12 room 4
+load:0x40078000,len:15916
+load:0x40080400,len:3860
+entry 0x40080638
+[0;32mI (29) boot: ESP-IDF v5.5.1 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Oct 23 2025 03:42:37[0m
+[0;32mI (29) boot: Multicore bootloader[0m
+[0;32mI (31) boot: chip revision: v3.0[0m
+[0;32mI (33) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (37) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (41) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (44) boot: Enabling RNG early entropy source...[0m
+[0;32mI (49) boot: Partition Table:[0m
+[0;32mI (51) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (58) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (64) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (71) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (77) boot: End of partition table[0m
+[0;32mI (80) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0a9d8h ( 43480) map[0m
+[0;32mI (103) esp_image: segment 1: paddr=0001aa00 vaddr=3ffb0000 size=023f8h (  9208) load[0m
+[0;32mI (106) esp_image: segment 2: paddr=0001ce00 vaddr=40080000 size=03218h ( 12824) load[0m
+[0;32mI (112) esp_image: segment 3: paddr=00020020 vaddr=400d0020 size=17ec4h ( 97988) map[0m
+[0;32mI (148) esp_image: segment 4: paddr=00037eec vaddr=40083218 size=09de0h ( 40416) load[0m
+[0;32mI (164) esp_image: segment 5: paddr=00041cd4 vaddr=50000000 size=00020h (    32) load[0m
+[0;32mI (170) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (170) boot: Disabling RNG early entropy source...[0m
+[0;32mI (182) cpu_start: Multicore app[0m
+[0;32mI (190) cpu_start: Pro cpu start user code[0m
+[0;32mI (190) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (190) app_init: Application information:[0m
+[0;32mI (190) app_init: Project name:     heap_management[0m
+[0;32mI (195) app_init: App version:      f7526bb[0m
+[0;32mI (199) app_init: Compile time:     Oct 23 2025 03:41:38[0m
+[0;32mI (204) app_init: ELF file SHA256:  1992a2172...[0m
+[0;32mI (208) app_init: ESP-IDF:          v5.5.1[0m
+[0;32mI (212) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (216) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (220) efuse_init: Chip rev:         v3.0[0m
+[0;32mI (224) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (230) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (235) heap_init: At 3FFB3980 len 0002C680 (177 KiB): DRAM[0m
+[0;32mI (240) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (246) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (251) heap_init: At 4008CFF8 len 00013008 (76 KiB): IRAM[0m
+[0;32mI (258) spi_flash: detected chip: generic[0m
+[0;32mI (260) spi_flash: flash io: dio[0m
+[0;33mW (263) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (276) main_task: Started on CPU0[0m
+[0;32mI (286) main_task: Calling app_main()[0m
+[0;32mI (286) HEAP_MGMT: 🚀 Heap Management Lab Starting...[0m
+[0;32mI (286) HEAP_MGMT: [0m
+📊 MEMORY STATUS
+[0;32mI (286) HEAP_MGMT: Internal Free:   378704[0m
+[0;32mI (286) HEAP_MGMT: Largest Block:   172032[0m
+[0;32mI (296) HEAP_MGMT: SPIRAM Free:     0[0m
+[0;32mI (296) HEAP_MGMT: Total Free:      301768[0m
+[0;32mI (296) HEAP_MGMT: Min Ever Free:   301768[0m
+[0;32mI (306) HEAP_MGMT: Fragmentation:   54.6%[0m
+[0;33mW (306) HEAP_MGMT: ⚠️ High fragmentation[0m
+[0;32mI (316) HEAP_MGMT: [0m
+🏗️ INITIAL HEAP (INTERNAL)
+Heap summary for capabilities 0x00000800:
+  At 0x3ffae6e0 len 6432 free 148 allocated 5764 min_free 148
+    largest_free_block 128 alloc_blocks 35 free_blocks 1 total_blocks 36
+  At 0x3ffe0440 len 15072 free 14656 allocated 0 min_free 14656
+    largest_free_block 14336 alloc_blocks 0 free_blocks 1 total_blocks 1
+  At 0x4008cff8 len 77832 free 76936 allocated 20 min_free 76936
+    largest_free_block 73728 alloc_blocks 1 free_blocks 1 total_blocks 2
+  At 0x3ffe4350 len 113840 free 112968 allocated 0 min_free 112968
+    largest_free_block 110592 alloc_blocks 0 free_blocks 1 total_blocks 1
+  At 0x3ffb3980 len 181888 free 173768 allocated 7168 min_free 173768
+    largest_free_block 172032 alloc_blocks 3 free_blocks 1 total_blocks 4
+  Totals:
+    free 378476 allocated 12952 min_free 378476 largest_free_block 172032
+[0;32mI (386) HEAP_MGMT: 📊 Monitor start[0m
+[0;32mI (396) HEAP_MGMT: 🧪 Stress test start[0m
+[0;32mI (396) HEAP_MGMT: [0m
+📊 MEMORY STATUS
+[0;32mI (396) HEAP_MGMT: Internal Free:   370588[0m
+[0;32mI (406) HEAP_MGMT: Largest Block:   163840[0m
+[0;32mI (406) HEAP_MGMT: SPIRAM Free:     0[0m
+[0;32mI (406) HEAP_MGMT: Total Free:      293652[0m
+[0;32mI (416) HEAP_MGMT: Min Ever Free:   293652[0m
+[0;32mI (416) HEAP_MGMT: Fragmentation:   55.8%[0m
+[0;33mW (426) HEAP_MGMT: ⚠️ High fragmentation[0m
+[0;32mI (426) HEAP_MGMT: 🏊 Pool test start[0m
+[0;32mI (426) HEAP_MGMT: Alloc pools[0m
+[0;32mI (436) HEAP_MGMT: ✅ Alloc 64B @0x4008d37c (Pool0_0) slot=0[0m
+[0;32mI (436) HEAP_MGMT: ✅ Alloc 64B @0x4008d3c0 (Pool0_1) slot=1[0m
+[0;32mI (446) HEAP_MGMT: ✅ Alloc 64B @0x4008d404 (Pool0_2) slot=2[0m
+[0;32mI (446) HEAP_MGMT: ✅ Alloc 64B @0x4008d448 (Pool0_3) slot=3[0m
+[0;32mI (456) HEAP_MGMT: ✅ Alloc 64B @0x4008d48c (Pool0_4) slot=4[0m
+[0;32mI (456) HEAP_MGMT: ✅ Alloc 64B @0x4008d4d0 (Pool0_5) slot=5[0m
+[0;32mI (466) HEAP_MGMT: ✅ Alloc 64B @0x4008d514 (Pool0_6) slot=6[0m
+[0;32mI (466) HEAP_MGMT: ✅ Alloc 64B @0x4008d558 (Pool0_7) slot=7[0m
+[0;32mI (476) HEAP_MGMT: ✅ Alloc 64B @0x4008d59c (Pool0_8) slot=8[0m
+[0;32mI (486) HEAP_MGMT: ✅ Alloc 64B @0x4008d5e0 (Pool0_9) slot=9[0m
+[0;32mI (486) HEAP_MGMT: ✅ Alloc 128B @0x4008d624 (Pool1_0) slot=10[0m
+[0;32mI (496) HEAP_MGMT: ✅ Alloc 128B @0x4008d6a8 (Pool1_1) slot=11[0m
+[0;32mI (496) HEAP_MGMT: ✅ Alloc 128B @0x4008d72c (Pool1_2) slot=12[0m
+[0;32mI (506) HEAP_MGMT: ✅ Alloc 128B @0x4008d7b0 (Pool1_3) slot=13[0m
+[0;32mI (506) HEAP_MGMT: ✅ Alloc 128B @0x4008d834 (Pool1_4) slot=14[0m
+[0;32mI (516) HEAP_MGMT: ✅ Alloc 128B @0x4008d8b8 (Pool1_5) slot=15[0m
+[0;32mI (516) HEAP_MGMT: ✅ Alloc 128B @0x4008d93c (Pool1_6) slot=16[0m
+[0;32mI (526) HEAP_MGMT: ✅ Alloc 128B @0x4008d9c0 (Pool1_7) slot=17[0m
+[0;32mI (536) HEAP_MGMT: ✅ Alloc 128B @0x4008da44 (Pool1_8) slot=18[0m
+[0;32mI (536) HEAP_MGMT: ✅ Alloc 128B @0x4008dac8 (Pool1_9) slot=19[0m
+[0;32mI (546) HEAP_MGMT: ✅ Alloc 256B @0x4008db4c (Pool2_0) slot=20[0m
+[0;32mI (546) HEAP_MGMT: ✅ Alloc 256B @0x4008dc50 (Pool2_1) slot=21[0m
+[0;32mI (556) HEAP_MGMT: ✅ Alloc 256B @0x4008dd54 (Pool2_2) slot=22[0m
+[0;32mI (556) HEAP_MGMT: ✅ Alloc 256B @0x4008de58 (Pool2_3) slot=23[0m
+[0;32mI (566) HEAP_MGMT: ✅ Alloc 256B @0x4008df5c (Pool2_4) slot=24[0m
+[0;32mI (576) HEAP_MGMT: ✅ Alloc 256B @0x4008e060 (Pool2_5) slot=25[0m
+[0;32mI (576) HEAP_MGMT: ✅ Alloc 256B @0x4008e164 (Pool2_6) slot=26[0m
+[0;32mI (586) HEAP_MGMT: ✅ Alloc 256B @0x4008e268 (Pool2_7) slot=27[0m
+[0;32mI (586) HEAP_MGMT: ✅ Alloc 256B @0x4008e36c (Pool2_8) slot=28[0m
+[0;32mI (596) HEAP_MGMT: ✅ Alloc 256B @0x4008e470 (Pool2_9) slot=29[0m
+[0;32mI (596) HEAP_MGMT: ✅ Alloc 512B @0x4008e574 (Pool3_0) slot=30[0m
+[0;32mI (606) HEAP_MGMT: ✅ Alloc 512B @0x4008e778 (Pool3_1) slot=31[0m
+[0;32mI (616) HEAP_MGMT: ✅ Alloc 512B @0x4008e97c (Pool3_2) slot=32[0m
+[0;32mI (616) HEAP_MGMT: ✅ Alloc 512B @0x4008eb80 (Pool3_3) slot=33[0m
+[0;32mI (626) HEAP_MGMT: ✅ Alloc 512B @0x4008ed84 (Pool3_4) slot=34[0m
+[0;32mI (626) HEAP_MGMT: ✅ Alloc 512B @0x4008ef88 (Pool3_5) slot=35[0m
+[0;32mI (636) HEAP_MGMT: ✅ Alloc 512B @0x4008f18c (Pool3_6) slot=36[0m
+[0;32mI (636) HEAP_MGMT: ✅ Alloc 512B @0x4008f390 (Pool3_7) slot=37[0m
+[0;32mI (646) HEAP_MGMT: ✅ Alloc 512B @0x4008f594 (Pool3_8) slot=38[0m
+[0;32mI (646) HEAP_MGMT: ✅ Alloc 512B @0x4008f798 (Pool3_9) slot=39[0m
+[0;32mI (656) HEAP_MGMT: ✅ Alloc 1024B @0x4008f99c (Pool4_0) slot=40[0m
+[0;32mI (666) HEAP_MGMT: ✅ Alloc 1024B @0x4008fda0 (Pool4_1) slot=41[0m
+[0;32mI (666) HEAP_MGMT: ✅ Alloc 1024B @0x400901a4 (Pool4_2) slot=42[0m
+[0;32mI (676) HEAP_MGMT: ✅ Alloc 1024B @0x400905a8 (Pool4_3) slot=43[0m
+[0;32mI (676) HEAP_MGMT: ✅ Alloc 1024B @0x400909ac (Pool4_4) slot=44[0m
+[0;32mI (686) HEAP_MGMT: ✅ Alloc 1024B @0x40090db0 (Pool4_5) slot=45[0m
+[0;32mI (686) HEAP_MGMT: ✅ Alloc 1024B @0x400911b4 (Pool4_6) slot=46[0m
+[0;32mI (696) HEAP_MGMT: ✅ Alloc 1024B @0x400915b8 (Pool4_7) slot=47[0m
+[0;32mI (706) HEAP_MGMT: ✅ Alloc 1024B @0x400919bc (Pool4_8) slot=48[0m
+[0;32mI (706) HEAP_MGMT: ✅ Alloc 1024B @0x40091dc0 (Pool4_9) slot=49[0m
+[0;32mI (716) HEAP_MGMT: 🐘 Large alloc test start[0m
+[0;32mI (716) HEAP_MGMT: Try large 80095B[0m
+[0;32mI (726) HEAP_MGMT: ✅ Alloc 80095B @0x3ffe46bc (LargeInternal) slot=50[0m
+[0;32mI (726) HEAP_MGMT: Write time: 161 us[0m
+[0;32mI (726) HEAP_MGMT: 🔍 Integrity test start[0m
+[0;32mI (736) HEAP_MGMT: [0m
+🎯 LEDs:
+[0;32mI (736) HEAP_MGMT: GPIO2  - Memory OK[0m
+[0;32mI (736) HEAP_MGMT: GPIO4  - Low Memory[0m
+[0;32mI (746) HEAP_MGMT: GPIO5  - Error/Leak[0m
+[0;32mI (746) HEAP_MGMT: GPIO18 - Fragmentation[0m
+[0;32mI (756) HEAP_MGMT: GPIO19 - SPIRAM Active[0m
+[0;32mI (756) HEAP_MGMT: Heap Management System operational![0m
+[0;32mI (756) main_task: Returned from app_main()[0m
+[0;32mI (1666) HEAP_MGMT: [0m
+📊 MEMORY STATUS
+[0;32mI (1666) HEAP_MGMT: Internal Free:   263816[0m
+[0;32mI (1666) HEAP_MGMT: Largest Block:   155648[0m
+[0;32mI (1666) HEAP_MGMT: SPIRAM Free:     0[0m
+[0;32mI (1666) HEAP_MGMT: Total Free:      206920[0m
+[0;32mI (1666) HEAP_MGMT: Min Ever Free:   202236[0m
+[0;32mI (1676) HEAP_MGMT: Fragmentation:   41.0%[0m
+[0;33mW (1676) HEAP_MGMT: ⚠️ High fragmentation[0m
+[0;32mI (3486) HEAP_MGMT: [0m
+📊 MEMORY STATUS
+[0;32mI (3486) HEAP_MGMT: Internal Free:   263816[0m
+[0;32mI (3486) HEAP_MGMT: Largest Block:   155648[0m
+[0;32mI (3486) HEAP_MGMT: SPIRAM Free:     0[0m
+[0;32mI (3486) HEAP_MGMT: Total Free:      206920[0m
+[0;32mI (3486) HEAP_MGMT: Min Ever Free:   202236[0m
+[0;32mI (3496) HEAP_MGMT: Fragmentation:   41.0%[0m
+[0;33mW (3496) HEAP_MGMT: ⚠️ High fragmentation[0m
+[0;32mI (4726) HEAP_MGMT: [0m
+📊 MEMORY STATUS
+[0;32mI (4726) HEAP_MGMT: Internal Free:   263816[0m
+[0;32mI (4726) HEAP_MGMT: Largest Block:   155648[0m
+[0;32mI (4726) HEAP_MGMT: SPIRAM Free:     0[0m
+[0;32mI (4726) HEAP_MGMT: Total Free:      206920[0m
+[0;32mI (4726) HEAP_MGMT: Min Ever Free:   202236[0m
+[0;32mI (4736) HEAP_MGMT: Fragmentation:   41.0%[0m
+[0;33mW (4736) HEAP_MGMT: ⚠️ High fragmentation[0m
+[0;32mI (5716) HEAP_MGMT: Free pools (reverse)[0m
+[0;32mI (5716) HEAP_MGMT: 🗑️ Free 1024B @0x40091dc0 (Pool) slot=49[0m
+[0;32mI (5716) HEAP_MGMT: 🗑️ Free 1024B @0x400919bc (Pool) slot=48[0m
+[0;32mI (5716) HEAP_MGMT: 🗑️ Free 1024B @0x400915b8 (Pool) slot=47[0m
+[0;32mI (5726) HEAP_MGMT: 🗑️ Free 1024B @0x400911b4 (Pool) slot=46[0m
+[0;32mI (5726) HEAP_MGMT: 🗑️ Free 1024B @0x40090db0 (Pool) slot=45[0m
+[0;32mI (5736) HEAP_MGMT: 🗑️ Free 1024B @0x400909ac (Pool) slot=44[0m
+[0;32mI (5736) HEAP_MGMT: 🗑️ Free 1024B @0x400905a8 (Pool) slot=43[0m
+[0;32mI (5746) HEAP_MGMT: 🗑️ Free 1024B @0x400901a4 (Pool) slot=42[0m
+[0;32mI (5746) HEAP_MGMT: 🗑️ Free 1024B @0x4008fda0 (Pool) slot=41[0m
+[0;32mI (5756) HEAP_MGMT: 🗑️ Free 1024B @0x4008f99c (Pool) slot=40[0m
+[0;32mI (5766) HEAP_MGMT: 🗑️ Free 512B @0x4008f798 (Pool) slot=39[0m
+[0;32mI (5766) HEAP_MGMT: 🗑️ Free 512B @0x4008f594 (Pool) slot=38[0m
+[0;32mI (5776) HEAP_MGMT: 🗑️ Free 512B @0x4008f390 (Pool) slot=37[0m
+[0;32mI (5776) HEAP_MGMT: 🗑️ Free 512B @0x4008f18c (Pool) slot=36[0m
+[0;32mI (5786) HEAP_MGMT: 🗑️ Free 512B @0x4008ef88 (Pool) slot=35[0m
+[0;32mI (5786) HEAP_MGMT: 🗑️ Free 512B @0x4008ed84 (Pool) slot=34[0m
+[0;32mI (5796) HEAP_MGMT: 🗑️ Free 512B @0x4008eb80 (Pool) slot=33[0m
+[0;32mI (5806) HEAP_MGMT: 🗑️ Free 512B @0x4008e97c (Pool) slot=32[0m
+[0;32mI (5806) HEAP_MGMT: 🗑️ Free 512B @0x4008e778 (Pool) slot=31[0m
+[0;32mI (5816) HEAP_MGMT: 🗑️ Free 512B @0x4008e574 (Pool) slot=30[0m
+[0;32mI (5816) HEAP_MGMT: 🗑️ Free 256B @0x4008e470 (Pool) slot=29[0m
+[0;32mI (5826) HEAP_MGMT: 🗑️ Free 256B @0x4008e36c (Pool) slot=28[0m
+[0;32mI (5826) HEAP_MGMT: 🗑️ Free 256B @0x4008e268 (Pool) slot=27[0m
+[0;32mI (5836) HEAP_MGMT: 🗑️ Free 256B @0x4008e164 (Pool) slot=26[0m
+[0;32mI (5846) HEAP_MGMT: 🗑️ Free 256B @0x4008e060 (Pool) slot=25[0m
+[0;32mI (5846) HEAP_MGMT: 🗑️ Free 256B @0x4008df5c (Pool) slot=24[0m
+[0;32mI (5856) HEAP_MGMT: 🗑️ Free 256B @0x4008de58 (Pool) slot=23[0m
+[0;32mI (5856) HEAP_MGMT: 🗑️ Free 256B @0x4008dd54 (Pool) slot=22[0m
+[0;32mI (5866) HEAP_MGMT: 🗑️ Free 256B @0x4008dc50 (Pool) slot=21[0m
+[0;32mI (5866) HEAP_MGMT: 🗑️ Free 256B @0x4008db4c (Pool) slot=20[0m
+[0;32mI (5876) HEAP_MGMT: 🗑️ Free 128B @0x4008dac8 (Pool) slot=19[0m
+[0;32mI (5886) HEAP_MGMT: 🗑️ Free 128B @0x4008da44 (Pool) slot=18[0m
+[0;32mI (5886) HEAP_MGMT: 🗑️ Free 128B @0x4008d9c0 (Pool) slot=17[0m
+[0;32mI (5896) HEAP_MGMT: 🗑️ Free 128B @0x4008d93c (Pool) slot=16[0m
+[0;32mI (5896) HEAP_MGMT: 🗑️ Free 128B @0x4008d8b8 (Pool) slot=15[0m
+[0;32mI (5906) HEAP_MGMT: 🗑️ Free 128B @0x4008d834 (Pool) slot=14[0m
+[0;32mI (5906) HEAP_MGMT: 🗑️ Free 128B @0x4008d7b0 (Pool) slot=13[0m
+[0;32mI (5916) HEAP_MGMT: 🗑️ Free 128B @0x4008d72c (Pool) slot=12[0m
+[0;32mI (5926) HEAP_MGMT: 🗑️ Free 128B @0x4008d6a8 (Pool) slot=11[0m
+[0;32mI (5926) HEAP_MGMT: 🗑️ Free 128B @0x4008d624 (Pool) slot=10[0m
+[0;32mI (5936) HEAP_MGMT: 🗑️ Free 64B @0x4008d5e0 (Pool) slot=9[0m
+[0;32mI (5936) HEAP_MGMT: 🗑️ Free 64B @0x4008d59c (Pool) slot=8[0m
+[0;32mI (5946) HEAP_MGMT: 🗑️ Free 64B @0x4008d558 (Pool) slot=7[0m
+[0;32mI (5946) HEAP_MGMT: 🗑️ Free 64B @0x4008d514 (Pool) slot=6[0m
+[0;32mI (5956) HEAP_MGMT: 🗑️ Free 64B @0x4008d4d0 (Pool) slot=5[0m
+[0;32mI (5966) HEAP_MGMT: 🗑️ Free 64B @0x4008d48c (Pool) slot=4[0m
+[0;32mI (5966) HEAP_MGMT: 🗑️ Free 64B @0x4008d448 (Pool) slot=3[0m
+[0;32mI (5976) HEAP_MGMT: 🗑️ Free 64B @0x4008d404 (Pool) slot=2[0m
+[0;32mI (5976) HEAP_MGMT: 🗑️ Free 64B @0x4008d3c0 (Pool) slot=1[0m
+[0;32mI (5986) HEAP_MGMT: 🗑️ Free 64B @0x4008d37c (Pool) slot=0[0m
+[0;32mI (5986) HEAP_MGMT: [0m
+📊 MEMORY STATUS
+[0;32mI (5996) HEAP_MGMT: Internal Free:   283856[0m
+[0;32mI (5996) HEAP_MGMT: Largest Block:   155648[0m
+[0;32mI (5996) HEAP_MGMT: SPIRAM Free:     0[0m
+[0;32mI (6006) HEAP_MGMT: Total Free:      206920[0m
+[0;32mI (6006) HEAP_MGMT: Min Ever Free:   202236[0m
+[0;32mI (6016) HEAP_MGMT: Fragmentation:   45.2%[0m
+[0;33mW (6016) HEAP_MGMT: ⚠️ High fragmentation[0m
+[0;32mI (6776) HEAP_MGMT: [0m
+📊 MEMORY STATUS
+[0;32mI (6776) HEAP_MGMT: Internal Free:   283616[0m
+[0;32mI (6776) HEAP_MGMT: Largest Block:   155648[0m
+[0;32mI (6776) HEAP_MGMT: SPIRAM Free:     0[0m
+[0;32mI (6776) HEAP_MGMT: Total Free:      206680[0m
+[0;32mI (6776) HEAP_MGMT: Min Ever Free:   202236[0m
+[0;32mI (6786) HEAP_MGMT: Fragmentation:   45.1%[0m
+[0;33mW (6786) HEAP_MGMT: ⚠️ High fragmentation[0m
+[0;32mI (9756) HEAP_MGMT: [0m
+📊 MEMORY STATUS
+[0;32mI (9756) HEAP_MGMT: Internal Free:   283616[0m
+[0;32mI (9756) HEAP_MGMT: Largest Block:   155648[0m
+[0;32mI (9756) HEAP_MGMT: SPIRAM Free:     0[0m
+[0;32mI (9756) HEAP_MGMT: Total Free:      206680[0m
+[0;32mI (9756) HEAP_MGMT: Min Ever Free:   202236[0m
+[0;32mI (9766) HEAP_MGMT: Fragmentation:   45.1%[0m
+[0;33mW (9766) HEAP_MGMT: ⚠️ High fragmentation[0m
+[0;32mI (10396) HEAP_MGMT: [0m
+📊 MEMORY STATUS
+[0;32mI (10396) HEAP_MGMT: Internal Free:   283616[0m
+[0;32mI (10396) HEAP_MGMT: Largest Block:   155648[0m
+[0;32mI (10396) HEAP_MGMT: SPIRAM Free:     0[0m
+[0;32mI (10396) HEAP_MGMT: Total Free:      206680[0m
+[0;32mI (10396) HEAP_MGMT: Min Ever Free:   202236[0m
+[0;32mI (10406) HEAP_MGMT: Fragmentation:   45.1%[0m
+[0;33mW (10406) HEAP_MGMT: ⚠️ High fragmentation[0m
+[0;32mI (10416) HEAP_MGMT: [0m
+📈 ALLOCATION STATS
+[0;32mI (10416) HEAP_MGMT: Total allocs:     51[0m
+[0;32mI (10416) HEAP_MGMT: Total frees:      50[0m
+[0;32mI (10426) HEAP_MGMT: Current in-use:   1[0m
+[0;32mI (10426) HEAP_MGMT: Bytes alloc:      99935[0m
+[0;32mI (10426) HEAP_MGMT: Bytes freed:      19840[0m
+[0;32mI (10436) HEAP_MGMT: Peak usage:       99935[0m
+[0;32mI (10436) HEAP_MGMT: Alloc failures:   0[0m
+[0;32mI (10446) HEAP_MGMT: Frag events:      9[0m
+[0;32mI (10446) HEAP_MGMT: Low mem events:   0[0m
+[0;32mI (10446) HEAP_MGMT: [0m
+🔍 ACTIVE ALLOCS
+[0;32mI (10456) HEAP_MGMT: slot=50 size=80095 ptr=0x3ffe46bc caps=0x800 age=9732ms desc=LargeInternal[0m
+[0;32mI (10466) HEAP_MGMT: [0m
+🔍 LEAK SCAN (age>30s)
+[0;32mI (10466) HEAP_MGMT: No potential leaks[0m
+[0;32mI (10466) HEAP_MGMT: Free heap: 206452[0m
+[0;32mI (10476) HEAP_MGMT: Uptime: 10221 ms[0m
+
+[0;32mI (10726) HEAP_MGMT: 🗑️ Free 80095B @0x3ffe46bc (Large) slot=50[0m
+[0;32mI (11306) HEAP_MGMT: [0m
+📊 MEMORY STATUS
+[0;32mI (11306) HEAP_MGMT: Internal Free:   365312[0m
+[0;32mI (11306) HEAP_MGMT: Largest Block:   155648[0m
+[0;32mI (11306) HEAP_MGMT: SPIRAM Free:     0[0m
+[0;32mI (11306) HEAP_MGMT: Total Free:      288376[0m
+[0;32mI (11306) HEAP_MGMT: Min Ever Free:   202236[0m
+[0;32mI (11316) HEAP_MGMT: Fragmentation:   57.4%[0m
+[0;33mW (11316) HEAP_MGMT: ⚠️ High fragmentation[0m

@@ -1,0 +1,664 @@
+Command: C:\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe C:\Users\rapee\esp\v5.5.1\esp-idf\tools/idf_monitor.py -p COM3 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 D:\github\Week-13-FreeRTOS_Worksheets\02-tasks-and-scheduling\practice\lab1-task-priority\task_priority_demo\build\task_priority_demo.elf D:\github\Week-13-FreeRTOS_Worksheets\02-tasks-and-scheduling\practice\lab1-task-priority\task_priority_demo\build\bootloader\bootloader.elf --force-color -m 'C:\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe' 'C:\Users\rapee\esp\v5.5.1\esp-idf\tools\idf.py'
+rv:0x00,hd_d��ͅ���         Type ST Offset   Length
+[0;32mI (58) boot:  0 nvs              WiFi da�ets Jul 29 2019 12:21:46[0m
+
+rst:0x1 (POWERON_RESET),boot:0x12 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6380
+ho 0 tail 12 room 4
+load:0x40078000,len:15916
+load:0x40080400,len:3860
+entry 0x40080638
+[0;32mI (29) boot: ESP-IDF v5.5.1 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Oct 22 2025 23:36:08[0m
+[0;32mI (29) boot: Multicore bootloader[0m
+[0;32mI (31) boot: chip revision: v3.0[0m
+[0;32mI (33) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (37) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (41) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (44) boot: Enabling RNG early entropy source...[0m
+[0;32mI (49) boot: Partition Table:[0m
+[0;32mI (51) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (58) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (64) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (71) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (77) boot: End of partition table[0m
+[0;32mI (81) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0a680h ( 42624) map[0m
+[0;32mI (103) esp_image: segment 1: paddr=0001a6a8 vaddr=3ffb0000 size=023f8h (  9208) load[0m
+[0;32mI (106) esp_image: segment 2: paddr=0001caa8 vaddr=40080000 size=03570h ( 13680) load[0m
+[0;32mI (112) esp_image: segment 3: paddr=00020020 vaddr=400d0020 size=14c6ch ( 85100) map[0m
+[0;32mI (143) esp_image: segment 4: paddr=00034c94 vaddr=40083570 size=09a40h ( 39488) load[0m
+[0;32mI (159) esp_image: segment 5: paddr=0003e6dc vaddr=50000000 size=00020h (    32) load[0m
+[0;32mI (165) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (165) boot: Disabling RNG early entropy source...[0m
+[0;32mI (177) cpu_start: Multicore app[0m
+[0;32mI (185) cpu_start: Pro cpu start user code[0m
+[0;32mI (185) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (185) app_init: Application information:[0m
+[0;32mI (185) app_init: Project name:     task_priority_demo[0m
+[0;32mI (190) app_init: App version:      f7526bb[0m
+[0;32mI (194) app_init: Compile time:     Oct 22 2025 23:34:59[0m
+[0;32mI (199) app_init: ELF file SHA256:  186dbcae9...[0m
+[0;32mI (204) app_init: ESP-IDF:          v5.5.1[0m
+[0;32mI (207) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (211) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (215) efuse_init: Chip rev:         v3.0[0m
+[0;32mI (219) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (225) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (230) heap_init: At 3FFB2CD0 len 0002D330 (180 KiB): DRAM[0m
+[0;32mI (236) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (241) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (247) heap_init: At 4008CFB0 len 00013050 (76 KiB): IRAM[0m
+[0;32mI (253) spi_flash: detected chip: generic[0m
+[0;32mI (255) spi_flash: flash io: dio[0m
+[0;33mW (258) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (271) main_task: Started on CPU0[0m
+[0;32mI (281) main_task: Calling app_main()[0m
+[0;32mI (281) PRIORITY_DEMO: === FreeRTOS Priority Scheduling Demo ===[0m
+[0;32mI (281) PRIORITY_DEMO: Creating tasks...[0m
+[0;32mI (281) PRIORITY_DEMO: High Priority Task started (Priority 5)[0m
+[0;32mI (291) PRIORITY_DEMO: Medium Priority Task started (Priority 3)[0m
+[0;32mI (291) PRIORITY_DEMO: Control Task started[0m
+[0;32mI (301) PRIORITY_DEMO: Low Priority Task started (Priority 1)[0m
+[0;32mI (301) PRIORITY_DEMO: Press button to start test[0m
+[0;32mI (311) PRIORITY_DEMO: LEDs: GPIO2=High, GPIO4=Med, GPIO5=Low[0m
+[0;32mI (311) main_task: Returned from app_main()[0m
+[0;33mW (35301) PRIORITY_DEMO: === STARTING PRIORITY TEST ===[0m
+[0;32mI (35301) PRIORITY_DEMO: Equal Priority Task 1 running[0m
+[0;32mI (35301) PRIORITY_DEMO: Equal Priority Task 2 running[0m
+[0;32mI (35311) PRIORITY_DEMO: Equal Priority Task 3 running[0m
+[0;32mI (35341) PRIORITY_DEMO: Low priority running (1)[0m
+[0;32mI (35391) PRIORITY_DEMO: HIGH PRIORITY RUNNING (1)[0m
+[0;32mI (35391) PRIORITY_DEMO: Medium priority running (1)[0m
+[0;32mI (35401) PRIORITY_DEMO: Equal Priority Task 1 running[0m
+[0;32mI (35411) PRIORITY_DEMO: Equal Priority Task 2 running[0m
+[0;32mI (35411) PRIORITY_DEMO: Equal Priority Task 3 running[0m
+[0;32mI (35501) PRIORITY_DEMO: Equal Priority Task 2 running[0m
+[0;32mI (35501) PRIORITY_DEMO: Equal Priority Task 1 running[0m
+[0;32mI (35511) PRIORITY_DEMO: Equal Priority Task 3 running[0m
+[0;32mI (35591) PRIORITY_DEMO: Equal Priority Task 2 running[0m
+[0;32mI (35591) PRIORITY_DEMO: Equal Priority Task 1 running[0m
+[0;32mI (35601) PRIORITY_DEMO: HIGH PRIORITY RUNNING (2)[0m
+[0;32mI (35611) PRIORITY_DEMO: Equal Priority Task 3 running[0m
+[0;32mI (35681) PRIORITY_DEMO: Equal Priority Task 2 running[0m
+[0;32mI (35681) PRIORITY_DEMO: Equal Priority Task 1 running[0m
+[0;32mI (35711) PRIORITY_DEMO: Medium priority running (2)[0m
+[0;32mI (35711) PRIORITY_DEMO: Equal Priority Task 3 running[0m
+[0;32mI (35771) PRIORITY_DEMO: Equal Priority Task 2 running[0m
+[0;32mI (35771) PRIORITY_DEMO: Equal Priority Task 1 running[0m
+[0;32mI (35801) PRIORITY_DEMO: Equal Priority Task 3 running[0m
+[0;32mI (35811) PRIORITY_DEMO: HIGH PRIORITY RUNNING (3)[0m
+[0;32mI (35851) PRIORITY_DEMO: Equal Priority Task 2 running[0m
+[0;32mI (35851) PRIORITY_DEMO: Equal Priority Task 1 running[0m
+[0;32mI (35881) PRIORITY_DEMO: Equal Priority Task 3 running[0m
+[0;32mI (35931) PRIORITY_DEMO: Equal Priority Task 2 running[0m
+[0;32mI (35931) PRIORITY_DEMO: Equal Priority Task 1 running[0m
+[0;32mI (35961) PRIORITY_DEMO: Equal Priority Task 3 running[0m
+[0;32mI (36011) PRIORITY_DEMO: Equal Priority Task 2 running[0m
+[0;32mI (36011) PRIORITY_DEMO: Equal Priority Task 1 running[0m
+[0;32mI (36021) PRIORITY_DEMO: HIGH PRIORITY RUNNING (4)[0m
+[0;32mI (36031) PRIORITY_DEMO: Medium priority running (3)[0m
+[0;32mI (36051) PRIORITY_DEMO: Equal Priority Task 3 running[0m
+[0;32mI (36111) PRIORITY_DEMO: Equal Priority Task 2 running[0m
+[0;32mI (36111) PRIORITY_DEMO: Equal Priority Task 1 running[0m
+[0;32mI (36141) PRIORITY_DEMO: Equal Priority Task 3 running[0m
+[0;32mI (36141) PRIORITY_DEMO: Low priority running (2)[0m
+[0;32mI (36191) PRIORITY_DEMO: Equal Priority Task 2 running[0m
+[0;32mI (36191) PRIORITY_DEMO: Equal Priority Task 1 running[0m
+[0;32mI (36221) PRIORITY_DEMO: Equal Priority Task 3 running[0m
+[0;32mI (36231) PRIORITY_DEMO: HIGH PRIORITY RUNNING (5)[0m
+[0;32mI (36271) PRIORITY_DEMO: Equal Priority Task 2 running[0m
+[0;32mI (36271) PRIORITY_DEMO: Equal Priority Task 1 running[0m
+[0;33mW (36301) PRIORITY_DEMO: High priority task needs shared resource[0m
+[0;32mI (36301) PRIORITY_DEMO: High priority got resource[0m
+[0;32mI (36301) PRIORITY_DEMO: Equal Priority Task 3 running[0m
+[0;32mI (36321) PRIORITY_DEMO: Low priority using shared resource[0m
+[0;32mI (36351) PRIORITY_DEMO: Medium priority running (4)[0m
+[0;32mI (36351) PRIORITY_DEMO: Equal Priority Task 2 running[0m
+[0;32mI (36361) PRIORITY_DEMO: Equal Priority Task 1 running[0m
+[0;32mI (36391) PRIORITY_DEMO: Equal Priority Task 3 running[0m
+[0;32mI (36441) PRIORITY_DEMO: HIGH PRIORITY RUNNING (6)[0m
+[0;32mI (36441) PRIORITY_DEMO: Equal Priority Task 1 running[0m
+[0;32mI (36451) PRIORITY_DEMO: Equal Priority Task 2 running[0m
+[0;32mI (36471) PRIORITY_DEMO: Equal Priority Task 3 running[0m
+[0;32mI (36501) PRIORITY_DEMO: High priority released resource[0m
+[0;32mI (36521) PRIORITY_DEMO: Equal Priority Task 1 running[0m
+[0;32mI (36531) PRIORITY_DEMO: Equal Priority Task 2 running[0m
+[0;32mI (36551) PRIORITY_DEMO: Equal Priority Task 3 running[0m
+[0;32mI (36601) PRIORITY_DEMO: Equal Priority Task 1 running[0m
+[0;32mI (36611) PRIORITY_DEMO: Equal Priority Task 2 running[0m
+[0;32mI (36631) PRIORITY_DEMO: Equal Priority Task 3 running[0m
+[0;32mI (36651) PRIORITY_DEMO: HIGH PRIORITY RUNNING (7)[0m
+[0;32mI (36671) PRIORITY_DEMO: Medium priority running (5)[0m
+[0;32mI (36681) PRIORITY_DEMO: Equal Priority Task 1 running[0m
+[0;32mI (36691) PRIORITY_DEMO: Equal Priority Task 2 running[0m
+[0;32mI (36711) PRIORITY_DEMO: Equal Priority Task 3 running[0m
+[0;32mI (36761) PRIORITY_DEMO: Equal Priority Task 1 running[0m
+[0;32mI (36771) PRIORITY_DEMO: Equal Priority Task 2 running[0m
+[0;32mI (36791) PRIORITY_DEMO: Equal Priority Task 3 running[0m
+[0;32mI (36841) PRIORITY_DEMO: Equal Priority Task 1 running[0m
+[0;32mI (36851) PRIORITY_DEMO: Equal Priority Task 2 running[0m
+[0;32mI (36861) PRIORITY_DEMO: HIGH PRIORITY RUNNING (8)[0m
+[0;32mI (36881) PRIORITY_DEMO: Equal Priority Task 3 running[0m
+[0;32mI (36881) PRIORITY_DEMO: Low priority running (3)[0m
+[0;32mI (36931) PRIORITY_DEMO: Equal Priority Task 1 running[0m
+[0;32mI (36931) PRIORITY_DEMO: Equal Priority Task 2 running[0m
+[0;32mI (36961) PRIORITY_DEMO: Equal Priority Task 3 running[0m
+[0;32mI (36991) PRIORITY_DEMO: Medium priority running (6)[0m
+[0;32mI (37011) PRIORITY_DEMO: Equal Priority Task 1 running[0m
+[0;32mI (37011) PRIORITY_DEMO: Equal Priority Task 2 running[0m
+[0;32mI (37051) PRIORITY_DEMO: Equal Priority Task 3 running[0m
+[0;32mI (37071) PRIORITY_DEMO: HIGH PRIORITY RUNNING (9)[0m
+[0;32mI (37091) PRIORITY_DEMO: Equal Priority Task 1 running[0m
+[0;32mI (37101) PRIORITY_DEMO: Equal Priority Task 2 running[0m
+[0;32mI (37131) PRIORITY_DEMO: Equal Priority Task 3 running[0m
+[0;32mI (37171) PRIORITY_DEMO: Equal Priority Task 1 running[0m
+[0;32mI (37181) PRIORITY_DEMO: Equal Priority Task 2 running[0m
+[0;32mI (37211) PRIORITY_DEMO: Equal Priority Task 3 running[0m
+[0;32mI (37251) PRIORITY_DEMO: Equal Priority Task 1 running[0m
+[0;32mI (37261) PRIORITY_DEMO: Equal Priority Task 2 running[0m
+[0;32mI (37281) PRIORITY_DEMO: HIGH PRIORITY RUNNING (10)[0m
+[0;32mI (37291) PRIORITY_DEMO: Equal Priority Task 3 running[0m
+[0;32mI (37311) PRIORITY_DEMO: Medium priority running (7)[0m
+[0;32mI (37341) PRIORITY_DEMO: Equal Priority Task 1 running[0m
+[0;32mI (37341) PRIORITY_DEMO: Equal Priority Task 2 running[0m
+[0;32mI (37371) PRIORITY_DEMO: Equal Priority Task 3 running[0m
+[0;32mI (37421) PRIORITY_DEMO: Equal Priority Task 1 running[0m
+[0;32mI (37421) PRIORITY_DEMO: Equal Priority Task 2 running[0m
+[0;32mI (37451) PRIORITY_DEMO: Equal Priority Task 3 running[0m
+[0;32mI (37491) PRIORITY_DEMO: HIGH PRIORITY RUNNING (11)[0m
+[0;33mW (37501) PRIORITY_DEMO: High priority task needs shared resource[0m
+[0;32mI (37501) PRIORITY_DEMO: High priority got resource[0m
+[0;32mI (37501) PRIORITY_DEMO: Equal Priority Task 1 running[0m
+[0;32mI (37501) PRIORITY_DEMO: Equal Priority Task 2 running[0m
+[0;32mI (37531) PRIORITY_DEMO: Equal Priority Task 3 running[0m
+[0;32mI (37581) PRIORITY_DEMO: Equal Priority Task 1 running[0m
+[0;32mI (37581) PRIORITY_DEMO: Equal Priority Task 2 running[0m
+[0;32mI (37611) PRIORITY_DEMO: Equal Priority Task 3 running[0m
+[0;32mI (37611) PRIORITY_DEMO: Low priority running (4)[0m
+[0;32mI (37631) PRIORITY_DEMO: Medium priority running (8)[0m
+[0;32mI (37661) PRIORITY_DEMO: Equal Priority Task 1 running[0m
+[0;32mI (37661) PRIORITY_DEMO: Equal Priority Task 2 running[0m
+[0;32mI (37701) PRIORITY_DEMO: High priority released resource[0m
+[0;32mI (37701) PRIORITY_DEMO: HIGH PRIORITY RUNNING (12)[0m
+[0;32mI (37701) PRIORITY_DEMO: Equal Priority Task 3 running[0m
+[0;32mI (37741) PRIORITY_DEMO: Equal Priority Task 1 running[0m
+[0;32mI (37741) PRIORITY_DEMO: Equal Priority Task 2 running[0m
+[0;32mI (37781) PRIORITY_DEMO: Equal Priority Task 3 running[0m
+[0;32mI (37821) PRIORITY_DEMO: Equal Priority Task 1 running[0m
+[0;32mI (37821) PRIORITY_DEMO: Equal Priority Task 2 running[0m
+[0;32mI (37861) PRIORITY_DEMO: Equal Priority Task 3 running[0m
+[0;32mI (37901) PRIORITY_DEMO: Equal Priority Task 1 running[0m
+[0;32mI (37901) PRIORITY_DEMO: Equal Priority Task 2 running[0m
+[0;32mI (37911) PRIORITY_DEMO: HIGH PRIORITY RUNNING (13)[0m
+[0;32mI (37941) PRIORITY_DEMO: Equal Priority Task 3 running[0m
+[0;32mI (37951) PRIORITY_DEMO: Medium priority running (9)[0m
+[0;32mI (37981) PRIORITY_DEMO: Equal Priority Task 1 running[0m
+[0;32mI (37991) PRIORITY_DEMO: Equal Priority Task 2 running[0m
+[0;32mI (38021) PRIORITY_DEMO: Equal Priority Task 3 running[0m
+[0;32mI (38061) PRIORITY_DEMO: Equal Priority Task 1 running[0m
+[0;32mI (38071) PRIORITY_DEMO: Equal Priority Task 2 running[0m
+[0;32mI (38101) PRIORITY_DEMO: Equal Priority Task 3 running[0m
+[0;32mI (38121) PRIORITY_DEMO: HIGH PRIORITY RUNNING (14)[0m
+[0;32mI (38141) PRIORITY_DEMO: Equal Priority Task 1 running[0m
+[0;32mI (38151) PRIORITY_DEMO: Equal Priority Task 2 running[0m
+[0;32mI (38181) PRIORITY_DEMO: Equal Priority Task 3 running[0m
+[0;32mI (38221) PRIORITY_DEMO: Equal Priority Task 1 running[0m
+[0;32mI (38231) PRIORITY_DEMO: Equal Priority Task 2 running[0m
+[0;32mI (38261) PRIORITY_DEMO: Equal Priority Task 3 running[0m
+[0;32mI (38271) PRIORITY_DEMO: Medium priority running (10)[0m
+[0;32mI (38301) PRIORITY_DEMO: Equal Priority Task 1 running[0m
+[0;32mI (38311) PRIORITY_DEMO: Equal Priority Task 2 running[0m
+[0;32mI (38331) PRIORITY_DEMO: HIGH PRIORITY RUNNING (15)[0m
+[0;32mI (38341) PRIORITY_DEMO: Equal Priority Task 3 running[0m
+[0;32mI (38341) PRIORITY_DEMO: Low priority released resource[0m
+[0;32mI (38361) PRIORITY_DEMO: Low priority running (5)[0m
+[0;32mI (38391) PRIORITY_DEMO: Equal Priority Task 1 running[0m
+[0;32mI (38391) PRIORITY_DEMO: Equal Priority Task 2 running[0m
+[0;32mI (38421) PRIORITY_DEMO: Equal Priority Task 3 running[0m
+[0;32mI (38471) PRIORITY_DEMO: Equal Priority Task 1 running[0m
+[0;32mI (38471) PRIORITY_DEMO: Equal Priority Task 2 running[0m
+[0;32mI (38501) PRIORITY_DEMO: Equal Priority Task 3 running[0m
+[0;32mI (38541) PRIORITY_DEMO: HIGH PRIORITY RUNNING (16)[0m
+[0;32mI (38551) PRIORITY_DEMO: Equal Priority Task 1 running[0m
+[0;32mI (38551) PRIORITY_DEMO: Equal Priority Task 2 running[0m
+[0;32mI (38581) PRIORITY_DEMO: Equal Priority Task 3 running[0m
+[0;32mI (38591) PRIORITY_DEMO: Medium priority running (11)[0m
+[0;32mI (38631) PRIORITY_DEMO: Equal Priority Task 1 running[0m
+[0;32mI (38631) PRIORITY_DEMO: Equal Priority Task 2 running[0m
+[0;32mI (38661) PRIORITY_DEMO: Equal Priority Task 3 running[0m
+[0;33mW (38701) PRIORITY_DEMO: High priority task needs shared resource[0m
+[0;32mI (38701) PRIORITY_DEMO: High priority got resource[0m
+[0;32mI (38711) PRIORITY_DEMO: Equal Priority Task 1 running[0m
+[0;32mI (38711) PRIORITY_DEMO: Equal Priority Task 2 running[0m
+[0;32mI (38741) PRIORITY_DEMO: Equal Priority Task 3 running[0m
+[0;32mI (38751) PRIORITY_DEMO: HIGH PRIORITY RUNNING (17)[0m
+[0;32mI (38791) PRIORITY_DEMO: Equal Priority Task 1 running[0m
+[0;32mI (38791) PRIORITY_DEMO: Equal Priority Task 2 running[0m
+[0;32mI (38821) PRIORITY_DEMO: Equal Priority Task 3 running[0m
+[0;32mI (38871) PRIORITY_DEMO: Equal Priority Task 1 running[0m
+[0;32mI (38871) PRIORITY_DEMO: Equal Priority Task 2 running[0m
+[0;32mI (38901) PRIORITY_DEMO: High priority released resource[0m
+[0;32mI (38901) PRIORITY_DEMO: Equal Priority Task 3 running[0m
+[0;32mI (38911) PRIORITY_DEMO: Medium priority running (12)[0m
+[0;32mI (38951) PRIORITY_DEMO: Equal Priority Task 1 running[0m
+[0;32mI (38951) PRIORITY_DEMO: Equal Priority Task 2 running[0m
+[0;32mI (38961) PRIORITY_DEMO: HIGH PRIORITY RUNNING (18)[0m
+[0;32mI (38981) PRIORITY_DEMO: Equal Priority Task 3 running[0m
+[0;32mI (39031) PRIORITY_DEMO: Equal Priority Task 1 running[0m
+[0;32mI (39041) PRIORITY_DEMO: Equal Priority Task 2 running[0m
+[0;32mI (39061) PRIORITY_DEMO: Equal Priority Task 3 running[0m
+[0;32mI (39111) PRIORITY_DEMO: Equal Priority Task 1 running[0m
+[0;32mI (39121) PRIORITY_DEMO: Equal Priority Task 2 running[0m
+[0;32mI (39141) PRIORITY_DEMO: Equal Priority Task 3 running[0m
+[0;32mI (39151) PRIORITY_DEMO: Low priority running (6)[0m
+[0;32mI (39171) PRIORITY_DEMO: HIGH PRIORITY RUNNING (19)[0m
+[0;32mI (39191) PRIORITY_DEMO: Equal Priority Task 1 running[0m
+[0;32mI (39201) PRIORITY_DEMO: Equal Priority Task 2 running[0m
+[0;32mI (39221) PRIORITY_DEMO: Equal Priority Task 3 running[0m
+[0;32mI (39231) PRIORITY_DEMO: Medium priority running (13)[0m
+[0;32mI (39271) PRIORITY_DEMO: Equal Priority Task 1 running[0m
+[0;32mI (39281) PRIORITY_DEMO: Equal Priority Task 2 running[0m
+[0;32mI (39301) PRIORITY_DEMO: Equal Priority Task 3 running[0m
+[0;32mI (39351) PRIORITY_DEMO: Equal Priority Task 1 running[0m
+[0;32mI (39361) PRIORITY_DEMO: Equal Priority Task 2 running[0m
+[0;32mI (39381) PRIORITY_DEMO: HIGH PRIORITY RUNNING (20)[0m
+[0;32mI (39391) PRIORITY_DEMO: Equal Priority Task 3 running[0m
+[0;32mI (39441) PRIORITY_DEMO: Equal Priority Task 1 running[0m
+[0;32mI (39441) PRIORITY_DEMO: Equal Priority Task 2 running[0m
+[0;32mI (39471) PRIORITY_DEMO: Equal Priority Task 3 running[0m
+[0;32mI (39521) PRIORITY_DEMO: Equal Priority Task 1 running[0m
+[0;32mI (39521) PRIORITY_DEMO: Equal Priority Task 2 running[0m
+[0;32mI (39551) PRIORITY_DEMO: Medium priority running (14)[0m
+[0;32mI (39551) PRIORITY_DEMO: Equal Priority Task 3 running[0m
+[0;32mI (39591) PRIORITY_DEMO: HIGH PRIORITY RUNNING (21)[0m
+[0;32mI (39601) PRIORITY_DEMO: Equal Priority Task 1 running[0m
+[0;32mI (39601) PRIORITY_DEMO: Equal Priority Task 2 running[0m
+[0;32mI (39631) PRIORITY_DEMO: Equal Priority Task 3 running[0m
+[0;32mI (39681) PRIORITY_DEMO: Equal Priority Task 1 running[0m
+[0;32mI (39681) PRIORITY_DEMO: Equal Priority Task 2 running[0m
+[0;32mI (39711) PRIORITY_DEMO: Equal Priority Task 3 running[0m
+[0;32mI (39761) PRIORITY_DEMO: Equal Priority Task 1 running[0m
+[0;32mI (39761) PRIORITY_DEMO: Equal Priority Task 2 running[0m
+[0;32mI (39791) PRIORITY_DEMO: Equal Priority Task 3 running[0m
+[0;32mI (39801) PRIORITY_DEMO: HIGH PRIORITY RUNNING (22)[0m
+[0;32mI (39841) PRIORITY_DEMO: Equal Priority Task 1 running[0m
+[0;32mI (39841) PRIORITY_DEMO: Equal Priority Task 2 running[0m
+[0;32mI (39871) PRIORITY_DEMO: Medium priority running (15)[0m
+[0;32mI (39871) PRIORITY_DEMO: Equal Priority Task 3 running[0m
+[0;33mW (39901) PRIORITY_DEMO: High priority task needs shared resource[0m
+[0;32mI (39901) PRIORITY_DEMO: High priority got resource[0m
+[0;32mI (39911) PRIORITY_DEMO: Low priority running (7)[0m
+[0;32mI (39921) PRIORITY_DEMO: Equal Priority Task 1 running[0m
+[0;32mI (39921) PRIORITY_DEMO: Equal Priority Task 2 running[0m
+[0;32mI (39951) PRIORITY_DEMO: Equal Priority Task 3 running[0m
+[0;32mI (40001) PRIORITY_DEMO: Equal Priority Task 1 running[0m
+[0;32mI (40001) PRIORITY_DEMO: Equal Priority Task 2 running[0m
+[0;32mI (40011) PRIORITY_DEMO: HIGH PRIORITY RUNNING (23)[0m
+[0;32mI (40031) PRIORITY_DEMO: Equal Priority Task 3 running[0m
+[0;32mI (40081) PRIORITY_DEMO: Equal Priority Task 1 running[0m
+[0;32mI (40091) PRIORITY_DEMO: Equal Priority Task 2 running[0m
+[0;32mI (40101) PRIORITY_DEMO: High priority released resource[0m
+[0;32mI (40111) PRIORITY_DEMO: Equal Priority Task 3 running[0m
+[0;32mI (40161) PRIORITY_DEMO: Equal Priority Task 1 running[0m
+[0;32mI (40171) PRIORITY_DEMO: Equal Priority Task 2 running[0m
+[0;32mI (40191) PRIORITY_DEMO: Medium priority running (16)[0m
+[0;32mI (40201) PRIORITY_DEMO: Equal Priority Task 3 running[0m
+[0;32mI (40221) PRIORITY_DEMO: HIGH PRIORITY RUNNING (24)[0m
+[0;32mI (40251) PRIORITY_DEMO: Equal Priority Task 1 running[0m
+[0;32mI (40261) PRIORITY_DEMO: Equal Priority Task 2 running[0m
+[0;32mI (40281) PRIORITY_DEMO: Equal Priority Task 3 running[0m
+[0;32mI (40331) PRIORITY_DEMO: Equal Priority Task 1 running[0m
+[0;32mI (40341) PRIORITY_DEMO: Equal Priority Task 2 running[0m
+[0;32mI (40361) PRIORITY_DEMO: Equal Priority Task 3 running[0m
+[0;32mI (40411) PRIORITY_DEMO: Equal Priority Task 1 running[0m
+[0;32mI (40421) PRIORITY_DEMO: Equal Priority Task 2 running[0m
+[0;32mI (40431) PRIORITY_DEMO: HIGH PRIORITY RUNNING (25)[0m
+[0;32mI (40451) PRIORITY_DEMO: Equal Priority Task 3 running[0m
+[0;32mI (40501) PRIORITY_DEMO: Equal Priority Task 1 running[0m
+[0;32mI (40501) PRIORITY_DEMO: Equal Priority Task 2 running[0m
+[0;32mI (40511) PRIORITY_DEMO: Medium priority running (17)[0m
+[0;32mI (40541) PRIORITY_DEMO: Equal Priority Task 3 running[0m
+[0;32mI (40591) PRIORITY_DEMO: Equal Priority Task 1 running[0m
+[0;32mI (40591) PRIORITY_DEMO: Equal Priority Task 2 running[0m
+[0;32mI (40621) PRIORITY_DEMO: Equal Priority Task 3 running[0m
+[0;32mI (40641) PRIORITY_DEMO: HIGH PRIORITY RUNNING (26)[0m
+[0;32mI (40661) PRIORITY_DEMO: Low priority running (8)[0m
+[0;32mI (40671) PRIORITY_DEMO: Equal Priority Task 1 running[0m
+[0;32mI (40671) PRIORITY_DEMO: Equal Priority Task 2 running[0m
+[0;32mI (40701) PRIORITY_DEMO: Equal Priority Task 3 running[0m
+[0;32mI (40751) PRIORITY_DEMO: Equal Priority Task 1 running[0m
+[0;32mI (40751) PRIORITY_DEMO: Equal Priority Task 2 running[0m
+[0;32mI (40781) PRIORITY_DEMO: Equal Priority Task 3 running[0m
+[0;32mI (40831) PRIORITY_DEMO: Medium priority running (18)[0m
+[0;32mI (40831) PRIORITY_DEMO: Equal Priority Task 1 running[0m
+[0;32mI (40841) PRIORITY_DEMO: Equal Priority Task 2 running[0m
+[0;32mI (40851) PRIORITY_DEMO: HIGH PRIORITY RUNNING (27)[0m
+[0;32mI (40871) PRIORITY_DEMO: Equal Priority Task 3 running[0m
+[0;32mI (40931) PRIORITY_DEMO: Equal Priority Task 1 running[0m
+[0;32mI (40931) PRIORITY_DEMO: Equal Priority Task 2 running[0m
+[0;32mI (40961) PRIORITY_DEMO: Equal Priority Task 3 running[0m
+[0;32mI (41011) PRIORITY_DEMO: Equal Priority Task 1 running[0m
+[0;32mI (41011) PRIORITY_DEMO: Equal Priority Task 2 running[0m
+[0;32mI (41041) PRIORITY_DEMO: Equal Priority Task 3 running[0m
+[0;32mI (41061) PRIORITY_DEMO: HIGH PRIORITY RUNNING (28)[0m
+[0;32mI (41091) PRIORITY_DEMO: Equal Priority Task 1 running[0m
+[0;32mI (41091) PRIORITY_DEMO: Equal Priority Task 2 running[0m
+[0;33mW (41101) PRIORITY_DEMO: High priority task needs shared resource[0m
+[0;32mI (41101) PRIORITY_DEMO: High priority got resource[0m
+[0;32mI (41121) PRIORITY_DEMO: Equal Priority Task 3 running[0m
+[0;32mI (41151) PRIORITY_DEMO: Medium priority running (19)[0m
+[0;32mI (41171) PRIORITY_DEMO: Equal Priority Task 1 running[0m
+[0;32mI (41171) PRIORITY_DEMO: Equal Priority Task 2 running[0m
+[0;32mI (41201) PRIORITY_DEMO: Equal Priority Task 3 running[0m
+[0;32mI (41251) PRIORITY_DEMO: Equal Priority Task 1 running[0m
+[0;32mI (41251) PRIORITY_DEMO: Equal Priority Task 2 running[0m
+[0;32mI (41271) PRIORITY_DEMO: HIGH PRIORITY RUNNING (29)[0m
+[0;32mI (41281) PRIORITY_DEMO: Equal Priority Task 3 running[0m
+[0;32mI (41301) PRIORITY_DEMO: High priority released resource[0m
+[0;32mI (41331) PRIORITY_DEMO: Equal Priority Task 1 running[0m
+[0;32mI (41341) PRIORITY_DEMO: Equal Priority Task 2 running[0m
+[0;32mI (41361) PRIORITY_DEMO: Equal Priority Task 3 running[0m
+[0;32mI (41371) PRIORITY_DEMO: Low priority using shared resource[0m
+[0;32mI (41411) PRIORITY_DEMO: Equal Priority Task 1 running[0m
+[0;32mI (41421) PRIORITY_DEMO: Equal Priority Task 2 running[0m
+[0;32mI (41441) PRIORITY_DEMO: Equal Priority Task 3 running[0m
+[0;32mI (41451) PRIORITY_DEMO: Low priority running (9)[0m
+[0;32mI (41471) PRIORITY_DEMO: Medium priority running (20)[0m
+[0;32mI (41481) PRIORITY_DEMO: HIGH PRIORITY RUNNING (30)[0m
+[0;32mI (41491) PRIORITY_DEMO: Equal Priority Task 1 running[0m
+[0;32mI (41501) PRIORITY_DEMO: Equal Priority Task 2 running[0m
+[0;32mI (41521) PRIORITY_DEMO: Equal Priority Task 3 running[0m
+[0;32mI (41571) PRIORITY_DEMO: Equal Priority Task 1 running[0m
+[0;32mI (41581) PRIORITY_DEMO: Equal Priority Task 2 running[0m
+[0;32mI (41601) PRIORITY_DEMO: Equal Priority Task 3 running[0m
+[0;32mI (41651) PRIORITY_DEMO: Equal Priority Task 1 running[0m
+[0;32mI (41661) PRIORITY_DEMO: Equal Priority Task 2 running[0m
+[0;32mI (41681) PRIORITY_DEMO: Equal Priority Task 3 running[0m
+[0;32mI (41691) PRIORITY_DEMO: HIGH PRIORITY RUNNING (31)[0m
+[0;32mI (41731) PRIORITY_DEMO: Equal Priority Task 1 running[0m
+[0;32mI (41741) PRIORITY_DEMO: Equal Priority Task 2 running[0m
+[0;32mI (41761) PRIORITY_DEMO: Equal Priority Task 3 running[0m
+[0;32mI (41791) PRIORITY_DEMO: Medium priority running (21)[0m
+[0;32mI (41811) PRIORITY_DEMO: Equal Priority Task 1 running[0m
+[0;32mI (41821) PRIORITY_DEMO: Equal Priority Task 2 running[0m
+[0;32mI (41841) PRIORITY_DEMO: Equal Priority Task 3 running[0m
+[0;32mI (41891) PRIORITY_DEMO: Equal Priority Task 1 running[0m
+[0;32mI (41901) PRIORITY_DEMO: HIGH PRIORITY RUNNING (32)[0m
+[0;32mI (41901) PRIORITY_DEMO: Equal Priority Task 2 running[0m
+[0;32mI (41931) PRIORITY_DEMO: Equal Priority Task 3 running[0m
+[0;32mI (41981) PRIORITY_DEMO: Equal Priority Task 2 running[0m
+[0;32mI (41981) PRIORITY_DEMO: Equal Priority Task 1 running[0m
+[0;32mI (42011) PRIORITY_DEMO: Equal Priority Task 3 running[0m
+[0;32mI (42061) PRIORITY_DEMO: Equal Priority Task 2 running[0m
+[0;32mI (42061) PRIORITY_DEMO: Equal Priority Task 1 running[0m
+[0;32mI (42091) PRIORITY_DEMO: Equal Priority Task 3 running[0m
+[0;32mI (42111) PRIORITY_DEMO: HIGH PRIORITY RUNNING (33)[0m
+[0;32mI (42111) PRIORITY_DEMO: Medium priority running (22)[0m
+[0;32mI (42141) PRIORITY_DEMO: Equal Priority Task 2 running[0m
+[0;32mI (42141) PRIORITY_DEMO: Equal Priority Task 1 running[0m
+[0;32mI (42181) PRIORITY_DEMO: Equal Priority Task 3 running[0m
+[0;32mI (42201) PRIORITY_DEMO: Low priority running (10)[0m
+[0;32mI (42221) PRIORITY_DEMO: Equal Priority Task 2 running[0m
+[0;32mI (42221) PRIORITY_DEMO: Equal Priority Task 1 running[0m
+[0;32mI (42261) PRIORITY_DEMO: Equal Priority Task 3 running[0m
+[0;33mW (42301) PRIORITY_DEMO: High priority task needs shared resource[0m
+[0;33mW (42301) PRIORITY_DEMO: High priority BLOCKED by low priority![0m
+[0;32mI (42301) PRIORITY_DEMO: Equal Priority Task 2 running[0m
+[0;32mI (42301) PRIORITY_DEMO: Equal Priority Task 1 running[0m
+[0;33mW (42311) PRIORITY_DEMO: High priority BLOCKED by low priority![0m
+[0;32mI (42321) PRIORITY_DEMO: HIGH PRIORITY RUNNING (34)[0m
+[0;33mW (42321) PRIORITY_DEMO: High priority BLOCKED by low priority![0m
+[0;33mW (42331) PRIORITY_DEMO: High priority BLOCKED by low priority![0m
+[0;33mW (42341) PRIORITY_DEMO: High priority BLOCKED by low priority![0m
+[0;32mI (42341) PRIORITY_DEMO: Equal Priority Task 3 running[0m
+[0;33mW (42351) PRIORITY_DEMO: High priority BLOCKED by low priority![0m
+[0;33mW (42361) PRIORITY_DEMO: High priority BLOCKED by low priority![0m
+[0;33mW (42371) PRIORITY_DEMO: High priority BLOCKED by low priority![0m
+[0;33mW (42381) PRIORITY_DEMO: High priority BLOCKED by low priority![0m
+[0;33mW (42391) PRIORITY_DEMO: High priority BLOCKED by low priority![0m
+[0;32mI (42391) PRIORITY_DEMO: Equal Priority Task 2 running[0m
+[0;33mW (42401) PRIORITY_DEMO: High priority BLOCKED by low priority![0m
+[0;32mI (42401) PRIORITY_DEMO: Equal Priority Task 1 running[0m
+[0;33mW (42411) PRIORITY_DEMO: High priority BLOCKED by low priority![0m
+[0;33mW (42421) PRIORITY_DEMO: High priority BLOCKED by low priority![0m
+[0;32mI (42421) PRIORITY_DEMO: Equal Priority Task 3 running[0m
+[0;33mW (42431) PRIORITY_DEMO: High priority BLOCKED by low priority![0m
+[0;32mI (42431) PRIORITY_DEMO: Medium priority running (23)[0m
+[0;33mW (42441) PRIORITY_DEMO: High priority BLOCKED by low priority![0m
+[0;33mW (42451) PRIORITY_DEMO: High priority BLOCKED by low priority![0m
+[0;33mW (42461) PRIORITY_DEMO: High priority BLOCKED by low priority![0m
+[0;33mW (42471) PRIORITY_DEMO: High priority BLOCKED by low priority![0m
+[0;32mI (42471) PRIORITY_DEMO: Equal Priority Task 2 running[0m
+[0;33mW (42481) PRIORITY_DEMO: High priority BLOCKED by low priority![0m
+[0;32mI (42481) PRIORITY_DEMO: Equal Priority Task 1 running[0m
+[0;33mW (42491) PRIORITY_DEMO: High priority BLOCKED by low priority![0m
+[0;33mW (42501) PRIORITY_DEMO: High priority BLOCKED by low priority![0m
+[0;32mI (42501) PRIORITY_DEMO: Equal Priority Task 3 running[0m
+[0;33mW (42511) PRIORITY_DEMO: High priority BLOCKED by low priority![0m
+[0;33mW (42521) PRIORITY_DEMO: High priority BLOCKED by low priority![0m
+[0;32mI (42531) PRIORITY_DEMO: HIGH PRIORITY RUNNING (35)[0m
+[0;33mW (42531) PRIORITY_DEMO: High priority BLOCKED by low priority![0m
+[0;33mW (42541) PRIORITY_DEMO: High priority BLOCKED by low priority![0m
+[0;33mW (42551) PRIORITY_DEMO: High priority BLOCKED by low priority![0m
+[0;32mI (42551) PRIORITY_DEMO: Equal Priority Task 2 running[0m
+[0;33mW (42561) PRIORITY_DEMO: High priority BLOCKED by low priority![0m
+[0;32mI (42561) PRIORITY_DEMO: Equal Priority Task 1 running[0m
+[0;33mW (42571) PRIORITY_DEMO: High priority BLOCKED by low priority![0m
+[0;33mW (42581) PRIORITY_DEMO: High priority BLOCKED by low priority![0m
+[0;32mI (42581) PRIORITY_DEMO: Equal Priority Task 3 running[0m
+[0;33mW (42591) PRIORITY_DEMO: High priority BLOCKED by low priority![0m
+[0;33mW (42601) PRIORITY_DEMO: High priority BLOCKED by low priority![0m
+[0;33mW (42611) PRIORITY_DEMO: High priority BLOCKED by low priority![0m
+[0;33mW (42621) PRIORITY_DEMO: High priority BLOCKED by low priority![0m
+[0;33mW (42631) PRIORITY_DEMO: High priority BLOCKED by low priority![0m
+[0;32mI (42631) PRIORITY_DEMO: Equal Priority Task 2 running[0m
+[0;33mW (42641) PRIORITY_DEMO: High priority BLOCKED by low priority![0m
+[0;32mI (42641) PRIORITY_DEMO: Equal Priority Task 1 running[0m
+[0;33mW (42651) PRIORITY_DEMO: High priority BLOCKED by low priority![0m
+[0;33mW (42661) PRIORITY_DEMO: High priority BLOCKED by low priority![0m
+[0;32mI (42661) PRIORITY_DEMO: Equal Priority Task 3 running[0m
+[0;33mW (42671) PRIORITY_DEMO: High priority BLOCKED by low priority![0m
+[0;33mW (42681) PRIORITY_DEMO: High priority BLOCKED by low priority![0m
+[0;33mW (42691) PRIORITY_DEMO: High priority BLOCKED by low priority![0m
+[0;33mW (42701) PRIORITY_DEMO: High priority BLOCKED by low priority![0m
+[0;33mW (42711) PRIORITY_DEMO: High priority BLOCKED by low priority![0m
+[0;32mI (42711) PRIORITY_DEMO: Equal Priority Task 2 running[0m
+[0;33mW (42721) PRIORITY_DEMO: High priority BLOCKED by low priority![0m
+[0;32mI (42721) PRIORITY_DEMO: Equal Priority Task 1 running[0m
+[0;33mW (42731) PRIORITY_DEMO: High priority BLOCKED by low priority![0m
+[0;32mI (42741) PRIORITY_DEMO: HIGH PRIORITY RUNNING (36)[0m
+[0;33mW (42741) PRIORITY_DEMO: High priority BLOCKED by low priority![0m
+[0;33mW (42751) PRIORITY_DEMO: High priority BLOCKED by low priority![0m
+[0;32mI (42751) PRIORITY_DEMO: Medium priority running (24)[0m
+[0;32mI (42751) PRIORITY_DEMO: Equal Priority Task 3 running[0m
+[0;33mW (42761) PRIORITY_DEMO: High priority BLOCKED by low priority![0m
+[0;33mW (42771) PRIORITY_DEMO: High priority BLOCKED by low priority![0m
+[0;33mW (42781) PRIORITY_DEMO: High priority BLOCKED by low priority![0m
+[0;33mW (42791) PRIORITY_DEMO: High priority BLOCKED by low priority![0m
+[0;33mW (42801) PRIORITY_DEMO: High priority BLOCKED by low priority![0m
+[0;32mI (42801) PRIORITY_DEMO: Equal Priority Task 2 running[0m
+[0;33mW (42811) PRIORITY_DEMO: High priority BLOCKED by low priority![0m
+[0;32mI (42811) PRIORITY_DEMO: Equal Priority Task 1 running[0m
+[0;33mW (42821) PRIORITY_DEMO: High priority BLOCKED by low priority![0m
+[0;33mW (42831) PRIORITY_DEMO: High priority BLOCKED by low priority![0m
+[0;32mI (42831) PRIORITY_DEMO: Equal Priority Task 3 running[0m
+[0;33mW (42841) PRIORITY_DEMO: High priority BLOCKED by low priority![0m
+[0;33mW (42851) PRIORITY_DEMO: High priority BLOCKED by low priority![0m
+[0;33mW (42861) PRIORITY_DEMO: High priority BLOCKED by low priority![0m
+[0;33mW (42871) PRIORITY_DEMO: High priority BLOCKED by low priority![0m
+[0;33mW (42881) PRIORITY_DEMO: High priority BLOCKED by low priority![0m
+[0;32mI (42881) PRIORITY_DEMO: Equal Priority Task 2 running[0m
+[0;33mW (42891) PRIORITY_DEMO: High priority BLOCKED by low priority![0m
+[0;32mI (42891) PRIORITY_DEMO: Equal Priority Task 1 running[0m
+[0;33mW (42901) PRIORITY_DEMO: High priority BLOCKED by low priority![0m
+[0;33mW (42911) PRIORITY_DEMO: High priority BLOCKED by low priority![0m
+[0;32mI (42911) PRIORITY_DEMO: Equal Priority Task 3 running[0m
+[0;33mW (42921) PRIORITY_DEMO: High priority BLOCKED by low priority![0m
+[0;33mW (42931) PRIORITY_DEMO: High priority BLOCKED by low priority![0m
+[0;33mW (42941) PRIORITY_DEMO: High priority BLOCKED by low priority![0m
+[0;32mI (42951) PRIORITY_DEMO: HIGH PRIORITY RUNNING (37)[0m
+[0;33mW (42951) PRIORITY_DEMO: High priority BLOCKED by low priority![0m
+[0;33mW (42961) PRIORITY_DEMO: High priority BLOCKED by low priority![0m
+[0;32mI (42961) PRIORITY_DEMO: Equal Priority Task 2 running[0m
+[0;33mW (42971) PRIORITY_DEMO: High priority BLOCKED by low priority![0m
+[0;32mI (42971) PRIORITY_DEMO: Equal Priority Task 1 running[0m
+[0;33mW (42981) PRIORITY_DEMO: High priority BLOCKED by low priority![0m
+[0;33mW (42991) PRIORITY_DEMO: High priority BLOCKED by low priority![0m
+[0;32mI (42991) PRIORITY_DEMO: Equal Priority Task 3 running[0m
+[0;33mW (43001) PRIORITY_DEMO: High priority BLOCKED by low priority![0m
+[0;33mW (43011) PRIORITY_DEMO: High priority BLOCKED by low priority![0m
+[0;32mI (43011) PRIORITY_DEMO: Low priority running (11)[0m
+[0;33mW (43021) PRIORITY_DEMO: High priority BLOCKED by low priority![0m
+[0;33mW (43031) PRIORITY_DEMO: High priority BLOCKED by low priority![0m
+[0;33mW (43041) PRIORITY_DEMO: High priority BLOCKED by low priority![0m
+[0;32mI (43041) PRIORITY_DEMO: Equal Priority Task 2 running[0m
+[0;33mW (43051) PRIORITY_DEMO: High priority BLOCKED by low priority![0m
+[0;32mI (43051) PRIORITY_DEMO: Equal Priority Task 1 running[0m
+[0;33mW (43061) PRIORITY_DEMO: High priority BLOCKED by low priority![0m
+[0;33mW (43071) PRIORITY_DEMO: High priority BLOCKED by low priority![0m
+[0;32mI (43071) PRIORITY_DEMO: Medium priority running (25)[0m
+[0;33mW (43081) PRIORITY_DEMO: High priority BLOCKED by low priority![0m
+[0;32mI (43081) PRIORITY_DEMO: Equal Priority Task 3 running[0m
+[0;33mW (43091) PRIORITY_DEMO: High priority BLOCKED by low priority![0m
+[0;33mW (43101) PRIORITY_DEMO: High priority BLOCKED by low priority![0m
+[0;33mW (43111) PRIORITY_DEMO: High priority BLOCKED by low priority![0m
+[0;33mW (43121) PRIORITY_DEMO: High priority BLOCKED by low priority![0m
+[0;33mW (43131) PRIORITY_DEMO: High priority BLOCKED by low priority![0m
+[0;32mI (43131) PRIORITY_DEMO: Equal Priority Task 2 running[0m
+[0;33mW (43141) PRIORITY_DEMO: High priority BLOCKED by low priority![0m
+[0;32mI (43141) PRIORITY_DEMO: Equal Priority Task 1 running[0m
+[0;33mW (43151) PRIORITY_DEMO: High priority BLOCKED by low priority![0m
+[0;32mI (43161) PRIORITY_DEMO: HIGH PRIORITY RUNNING (38)[0m
+[0;33mW (43161) PRIORITY_DEMO: High priority BLOCKED by low priority![0m
+[0;33mW (43171) PRIORITY_DEMO: High priority BLOCKED by low priority![0m
+[0;32mI (43171) PRIORITY_DEMO: Equal Priority Task 3 running[0m
+[0;33mW (43181) PRIORITY_DEMO: High priority BLOCKED by low priority![0m
+[0;33mW (43191) PRIORITY_DEMO: High priority BLOCKED by low priority![0m
+[0;33mW (43201) PRIORITY_DEMO: High priority BLOCKED by low priority![0m
+[0;33mW (43211) PRIORITY_DEMO: High priority BLOCKED by low priority![0m
+[0;33mW (43221) PRIORITY_DEMO: High priority BLOCKED by low priority![0m
+[0;32mI (43221) PRIORITY_DEMO: Equal Priority Task 2 running[0m
+[0;32mI (43221) PRIORITY_DEMO: Equal Priority Task 1 running[0m
+[0;33mW (43231) PRIORITY_DEMO: High priority BLOCKED by low priority![0m
+[0;33mW (43241) PRIORITY_DEMO: High priority BLOCKED by low priority![0m
+[0;33mW (43251) PRIORITY_DEMO: High priority BLOCKED by low priority![0m
+[0;32mI (43251) PRIORITY_DEMO: Equal Priority Task 3 running[0m
+[0;33mW (43261) PRIORITY_DEMO: High priority BLOCKED by low priority![0m
+[0;33mW (43271) PRIORITY_DEMO: High priority BLOCKED by low priority![0m
+[0;33mW (43281) PRIORITY_DEMO: High priority BLOCKED by low priority![0m
+[0;33mW (43291) PRIORITY_DEMO: High priority BLOCKED by low priority![0m
+[0;33mW (43301) PRIORITY_DEMO: High priority BLOCKED by low priority![0m
+[0;32mI (43301) PRIORITY_DEMO: Equal Priority Task 2 running[0m
+[0;32mI (43301) PRIORITY_DEMO: Equal Priority Task 1 running[0m
+[0;33mW (43311) PRIORITY_DEMO: High priority BLOCKED by low priority![0m
+[0;33mW (43321) PRIORITY_DEMO: High priority BLOCKED by low priority![0m
+[0;33mW (43331) PRIORITY_DEMO: High priority BLOCKED by low priority![0m
+[0;32mI (43331) PRIORITY_DEMO: Equal Priority Task 3 running[0m
+[0;33mW (43341) PRIORITY_DEMO: High priority BLOCKED by low priority![0m
+[0;33mW (43351) PRIORITY_DEMO: High priority BLOCKED by low priority![0m
+[0;33mW (43361) PRIORITY_DEMO: High priority BLOCKED by low priority![0m
+[0;32mI (43371) PRIORITY_DEMO: HIGH PRIORITY RUNNING (39)[0m
+[0;33mW (43371) PRIORITY_DEMO: High priority BLOCKED by low priority![0m
+[0;32mI (43371) PRIORITY_DEMO: Low priority released resource[0m
+[0;32mI (43381) PRIORITY_DEMO: High priority got resource[0m
+[0;32mI (43381) PRIORITY_DEMO: Equal Priority Task 2 running[0m
+[0;32mI (43381) PRIORITY_DEMO: Equal Priority Task 1 running[0m
+[0;32mI (43391) PRIORITY_DEMO: Medium priority running (26)[0m
+[0;32mI (43421) PRIORITY_DEMO: Equal Priority Task 3 running[0m
+[0;32mI (43471) PRIORITY_DEMO: Equal Priority Task 2 running[0m
+[0;32mI (43481) PRIORITY_DEMO: Equal Priority Task 1 running[0m
+[0;32mI (43501) PRIORITY_DEMO: Equal Priority Task 3 running[0m
+[0;32mI (43551) PRIORITY_DEMO: Equal Priority Task 2 running[0m
+[0;32mI (43561) PRIORITY_DEMO: Equal Priority Task 1 running[0m
+[0;32mI (43581) PRIORITY_DEMO: High priority released resource[0m
+[0;32mI (43581) PRIORITY_DEMO: HIGH PRIORITY RUNNING (40)[0m
+[0;32mI (43591) PRIORITY_DEMO: Equal Priority Task 3 running[0m
+[0;32mI (43641) PRIORITY_DEMO: Equal Priority Task 2 running[0m
+[0;32mI (43641) PRIORITY_DEMO: Equal Priority Task 1 running[0m
+[0;32mI (43671) PRIORITY_DEMO: Equal Priority Task 3 running[0m
+[0;32mI (43711) PRIORITY_DEMO: Medium priority running (27)[0m
+[0;32mI (43721) PRIORITY_DEMO: Equal Priority Task 2 running[0m
+[0;32mI (43731) PRIORITY_DEMO: Equal Priority Task 1 running[0m
+[0;32mI (43751) PRIORITY_DEMO: Equal Priority Task 3 running[0m
+[0;32mI (43761) PRIORITY_DEMO: Low priority running (12)[0m
+[0;32mI (43791) PRIORITY_DEMO: HIGH PRIORITY RUNNING (41)[0m
+[0;32mI (43801) PRIORITY_DEMO: Equal Priority Task 2 running[0m
+[0;32mI (43811) PRIORITY_DEMO: Equal Priority Task 1 running[0m
+[0;32mI (43831) PRIORITY_DEMO: Equal Priority Task 3 running[0m
+[0;32mI (43881) PRIORITY_DEMO: Equal Priority Task 2 running[0m
+[0;32mI (43891) PRIORITY_DEMO: Equal Priority Task 1 running[0m
+[0;32mI (43911) PRIORITY_DEMO: Equal Priority Task 3 running[0m
+[0;32mI (43961) PRIORITY_DEMO: Equal Priority Task 2 running[0m
+[0;32mI (43971) PRIORITY_DEMO: Equal Priority Task 1 running[0m
+[0;32mI (43991) PRIORITY_DEMO: Equal Priority Task 3 running[0m
+[0;32mI (44001) PRIORITY_DEMO: HIGH PRIORITY RUNNING (42)[0m
+[0;32mI (44031) PRIORITY_DEMO: Medium priority running (28)[0m
+[0;32mI (44041) PRIORITY_DEMO: Equal Priority Task 2 running[0m
+[0;32mI (44051) PRIORITY_DEMO: Equal Priority Task 1 running[0m
+[0;32mI (44071) PRIORITY_DEMO: Equal Priority Task 3 running[0m
+[0;32mI (44121) PRIORITY_DEMO: Equal Priority Task 2 running[0m
+[0;32mI (44131) PRIORITY_DEMO: Equal Priority Task 1 running[0m
+[0;32mI (44151) PRIORITY_DEMO: Equal Priority Task 3 running[0m
+[0;32mI (44201) PRIORITY_DEMO: Equal Priority Task 2 running[0m
+[0;32mI (44211) PRIORITY_DEMO: HIGH PRIORITY RUNNING (43)[0m
+[0;32mI (44211) PRIORITY_DEMO: Equal Priority Task 1 running[0m
+[0;32mI (44241) PRIORITY_DEMO: Equal Priority Task 3 running[0m
+[0;32mI (44291) PRIORITY_DEMO: Equal Priority Task 1 running[0m
+[0;32mI (44291) PRIORITY_DEMO: Equal Priority Task 2 running[0m
+[0;32mI (44321) PRIORITY_DEMO: Equal Priority Task 3 running[0m
+[0;32mI (44351) PRIORITY_DEMO: Medium priority running (29)[0m
+[0;32mI (44371) PRIORITY_DEMO: Equal Priority Task 1 running[0m
+[0;32mI (44371) PRIORITY_DEMO: Equal Priority Task 2 running[0m
+[0;32mI (44401) PRIORITY_DEMO: Equal Priority Task 3 running[0m
+[0;32mI (44421) PRIORITY_DEMO: HIGH PRIORITY RUNNING (44)[0m
+[0;32mI (44451) PRIORITY_DEMO: Equal Priority Task 1 running[0m
+[0;32mI (44451) PRIORITY_DEMO: Equal Priority Task 2 running[0m
+[0;32mI (44481) PRIORITY_DEMO: Equal Priority Task 3 running[0m
+[0;32mI (44511) PRIORITY_DEMO: Low priority running (13)[0m
+[0;32mI (44531) PRIORITY_DEMO: Equal Priority Task 1 running[0m
+[0;32mI (44531) PRIORITY_DEMO: Equal Priority Task 2 running[0m
+[0;32mI (44561) PRIORITY_DEMO: Equal Priority Task 3 running[0m
+[0;33mW (44581) PRIORITY_DEMO: High priority task needs shared resource[0m
+[0;32mI (44581) PRIORITY_DEMO: High priority got resource[0m
+[0;32mI (44611) PRIORITY_DEMO: Equal Priority Task 1 running[0m
+[0;32mI (44611) PRIORITY_DEMO: Equal Priority Task 2 running[0m
+[0;32mI (44631) PRIORITY_DEMO: HIGH PRIORITY RUNNING (45)[0m
+[0;32mI (44641) PRIORITY_DEMO: Equal Priority Task 3 running[0m
+[0;32mI (44671) PRIORITY_DEMO: Medium priority running (30)[0m
+[0;32mI (44691) PRIORITY_DEMO: Equal Priority Task 1 running[0m
+[0;32mI (44701) PRIORITY_DEMO: Equal Priority Task 2 running[0m
+[0;32mI (44721) PRIORITY_DEMO: Equal Priority Task 3 running[0m
+[0;32mI (44771) PRIORITY_DEMO: Equal Priority Task 1 running[0m
+[0;32mI (44781) PRIORITY_DEMO: High priority released resource[0m
+[0;32mI (44781) PRIORITY_DEMO: Equal Priority Task 2 running[0m
+[0;32mI (44801) PRIORITY_DEMO: Equal Priority Task 3 running[0m
+[0;32mI (44841) PRIORITY_DEMO: HIGH PRIORITY RUNNING (46)[0m
+[0;32mI (44851) PRIORITY_DEMO: Equal Priority Task 1 running[0m
+[0;32mI (44861) PRIORITY_DEMO: Equal Priority Task 2 running[0m
+[0;32mI (44881) PRIORITY_DEMO: Equal Priority Task 3 running[0m
+[0;32mI (44931) PRIORITY_DEMO: Equal Priority Task 1 running[0m
+[0;32mI (44941) PRIORITY_DEMO: Equal Priority Task 2 running[0m
+[0;32mI (44961) PRIORITY_DEMO: Equal Priority Task 3 running[0m
+[0;32mI (44991) PRIORITY_DEMO: Medium priority running (31)[0m
+[0;32mI (45011) PRIORITY_DEMO: Equal Priority Task 1 running[0m
+[0;32mI (45021) PRIORITY_DEMO: Equal Priority Task 2 running[0m
+[0;32mI (45041) PRIORITY_DEMO: Equal Priority Task 3 running[0m
+[0;32mI (45051) PRIORITY_DEMO: HIGH PRIORITY RUNNING (47)[0m
+[0;32mI (45091) PRIORITY_DEMO: Equal Priority Task 1 running[0m
+[0;32mI (45101) PRIORITY_DEMO: Equal Priority Task 2 running[0m
+[0;32mI (45121) PRIORITY_DEMO: Equal Priority Task 3 running[0m
+[0;32mI (45171) PRIORITY_DEMO: Equal Priority Task 1 running[0m
+[0;32mI (45181) PRIORITY_DEMO: Equal Priority Task 2 running[0m
+[0;32mI (45201) PRIORITY_DEMO: Equal Priority Task 3 running[0m
+[0;32mI (45251) PRIORITY_DEMO: Equal Priority Task 1 running[0m
+[0;32mI (45261) PRIORITY_DEMO: HIGH PRIORITY RUNNING (48)[0m
+[0;32mI (45261) PRIORITY_DEMO: Equal Priority Task 2 running[0m
+[0;32mI (45291) PRIORITY_DEMO: Equal Priority Task 3 running[0m
+[0;32mI (45291) PRIORITY_DEMO: Low priority running (14)[0m
+[0;33mW (45301) PRIORITY_DEMO: === PRIORITY TEST RESULTS ===[0m
+[0;32mI (45301) PRIORITY_DEMO: High: 51.6%[0m
+[0;32mI (45301) PRIORITY_DEMO: Medium: 33.3%[0m
+[0;32mI (45301) PRIORITY_DEMO: Low: 15.1%[0m

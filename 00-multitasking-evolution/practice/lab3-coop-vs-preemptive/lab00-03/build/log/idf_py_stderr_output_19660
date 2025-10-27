@@ -1,0 +1,28 @@
+Command: C:\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe C:\Users\rapee\esp\v5.5.1\esp-idf\tools/idf_monitor.py -p COM3 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 D:\github\Week-13-FreeRTOS_Worksheets\00-multitasking-evolution\practice\lab3-coop-vs-preemptive\lab00-03\build\lab00-03.elf D:\github\Week-13-FreeRTOS_Worksheets\00-multitasking-evolution\practice\lab3-coop-vs-preemptive\lab00-03\build\bootloader\bootloader.elf --force-color -m 'C:\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe' 'C:\Users\rapee\esp\v5.5.1\esp-idf\tools\idf.py'
+[0;33m--- Warning: GDB cannot open serial ports accessed as COMx[0m
+[0;33m--- Using \\.\COM3 instead...[0m
+[0;33m--- esp-idf-monitor 1.7.0 on \\.\COM3 115200[0m
+[0;33m--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H[0m
+[0m--- 0x40080400: [0;33m_invalid_pc_placeholder[0m[0m at [0;32mC:/Users/rapee/esp/v5.5.1/esp-idf/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m2235[0m
+[0m--- 0x40080638: [0;33mcall_start_cpu0[0m[0m at [0;32mC:/Users/rapee/esp/v5.5.1/esp-idf/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m25[0m
+[0m--- 0x400d8442: [0;33mtask_wdt_timeout_handling[0m[0m at [0;32mC:/Users/rapee/esp/v5.5.1/esp-idf/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m436[0m
+[0m--- 0x400d8804: [0;33mtask_wdt_isr[0m[0m at [0;32mC:/Users/rapee/esp/v5.5.1/esp-idf/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m509[0m
+[0m--- 0x40082925: [0;33m_xt_lowint1[0m[0m at [0;32mC:/Users/rapee/esp/v5.5.1/esp-idf/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x40083a7d: [0;33mesp_crosscore_int_send_yield[0m[0m at [0;32mC:/Users/rapee/esp/v5.5.1/esp-idf/components/esp_system/crosscore_int.c[0m[0m:[1;31m125[0m
+[0m--- 0x40087746: [0;33mvTaskDelay[0m[0m at [0;32mC:/Users/rapee/esp/v5.5.1/esp-idf/components/freertos/FreeRTOS-Kernel/tasks.c[0m[0m:[1;31m1611[0m
+[0m--- 0x400d6421: [0;33mpreemptive_emergency_task[0m[0m at [0;32mD:/github/Week-13-FreeRTOS_Worksheets/00-multitasking-evolution/practice/lab3-coop-vs-preemptive/lab00-03/main/lab00-03.c[0m[0m:[1;31m179[0m
+[0m--- 0x40085ced: [0;33mvPortTaskWrapper[0m[0m at [0;32mC:/Users/rapee/esp/v5.5.1/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x400d8442: [0;33mtask_wdt_timeout_handling[0m[0m at [0;32mC:/Users/rapee/esp/v5.5.1/esp-idf/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m436[0m
+[0m--- 0x400d8804: [0;33mtask_wdt_isr[0m[0m at [0;32mC:/Users/rapee/esp/v5.5.1/esp-idf/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m509[0m
+[0m--- 0x40082925: [0;33m_xt_lowint1[0m[0m at [0;32mC:/Users/rapee/esp/v5.5.1/esp-idf/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x40087746: [0;33mvTaskDelay[0m[0m at [0;32mC:/Users/rapee/esp/v5.5.1/esp-idf/components/freertos/FreeRTOS-Kernel/tasks.c[0m[0m:[1;31m1611[0m
+[0m--- 0x400d6421: [0;33mpreemptive_emergency_task[0m[0m at [0;32mD:/github/Week-13-FreeRTOS_Worksheets/00-multitasking-evolution/practice/lab3-coop-vs-preemptive/lab00-03/main/lab00-03.c[0m[0m:[1;31m179[0m
+[0m--- 0x40085ced: [0;33mvPortTaskWrapper[0m[0m at [0;32mC:/Users/rapee/esp/v5.5.1/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x400d8442: [0;33mtask_wdt_timeout_handling[0m[0m at [0;32mC:/Users/rapee/esp/v5.5.1/esp-idf/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m436[0m
+[0m--- 0x400d8804: [0;33mtask_wdt_isr[0m[0m at [0;32mC:/Users/rapee/esp/v5.5.1/esp-idf/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m509[0m
+[0m--- 0x40082925: [0;33m_xt_lowint1[0m[0m at [0;32mC:/Users/rapee/esp/v5.5.1/esp-idf/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x40083a7d: [0;33mesp_crosscore_int_send_yield[0m[0m at [0;32mC:/Users/rapee/esp/v5.5.1/esp-idf/components/esp_system/crosscore_int.c[0m[0m:[1;31m125[0m
+[0m--- 0x40087746: [0;33mvTaskDelay[0m[0m at [0;32mC:/Users/rapee/esp/v5.5.1/esp-idf/components/freertos/FreeRTOS-Kernel/tasks.c[0m[0m:[1;31m1611[0m
+[0m--- 0x400d6421: [0;33mpreemptive_emergency_task[0m[0m at [0;32mD:/github/Week-13-FreeRTOS_Worksheets/00-multitasking-evolution/practice/lab3-coop-vs-preemptive/lab00-03/main/lab00-03.c[0m[0m:[1;31m179[0m
+[0m--- 0x40085ced: [0;33mvPortTaskWrapper[0m[0m at [0;32mC:/Users/rapee/esp/v5.5.1/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m

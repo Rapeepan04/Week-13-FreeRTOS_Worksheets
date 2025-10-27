@@ -1,0 +1,99 @@
+Command: C:\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe C:\Users\rapee\esp\v5.5.1\esp-idf\tools/idf_monitor.py -p COM3 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 D:\github\Week-13-FreeRTOS_Worksheets\05-timers\practice\lab2-timer-applications\timer_applications\build\timer_applications.elf D:\github\Week-13-FreeRTOS_Worksheets\05-timers\practice\lab2-timer-applications\timer_applications\build\bootloader\bootloader.elf --force-color -m 'C:\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe' 'C:\Users\rapee\esp\v5.5.1\esp-idf\tools\idf.py'
+)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_d�  Usage          Type ST Offset   Length
+[0;32mI (58) boot:  0 nvs              WiFi da�ets Jul 29 2019 12:21:46[0m
+
+rst:0x1 (POWERON_RESET),boot:0x12 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6380
+ho 0 tail 12 room 4
+load:0x40078000,len:15916
+load:0x40080400,len:3860
+entry 0x40080638
+[0;32mI (29) boot: ESP-IDF v5.5.1 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Oct 23 2025 02:14:28[0m
+[0;32mI (29) boot: Multicore bootloader[0m
+[0;32mI (31) boot: chip revision: v3.0[0m
+[0;32mI (33) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (37) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (41) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (44) boot: Enabling RNG early entropy source...[0m
+[0;32mI (49) boot: Partition Table:[0m
+[0;32mI (51) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (58) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (64) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (71) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (77) boot: End of partition table[0m
+[0;32mI (81) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0aaf4h ( 43764) map[0m
+[0;32mI (103) esp_image: segment 1: paddr=0001ab1c vaddr=3ffb0000 size=02438h (  9272) load[0m
+[0;32mI (107) esp_image: segment 2: paddr=0001cf5c vaddr=40080000 size=030bch ( 12476) load[0m
+[0;32mI (112) esp_image: segment 3: paddr=00020020 vaddr=400d0020 size=158c8h ( 88264) map[0m
+[0;32mI (145) esp_image: segment 4: paddr=000358f0 vaddr=400830bc size=0a6fch ( 42748) load[0m
+[0;32mI (161) esp_image: segment 5: paddr=0003fff4 vaddr=50000000 size=00020h (    32) load[0m
+[0;32mI (168) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (168) boot: Disabling RNG early entropy source...[0m
+[0;32mI (180) cpu_start: Multicore app[0m
+[0;32mI (188) cpu_start: Pro cpu start user code[0m
+[0;32mI (188) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (188) app_init: Application information:[0m
+[0;32mI (188) app_init: Project name:     timer_applications[0m
+[0;32mI (193) app_init: App version:      f7526bb[0m
+[0;32mI (197) app_init: Compile time:     Oct 23 2025 02:13:14[0m
+[0;32mI (202) app_init: ELF file SHA256:  11bd240ea...[0m
+[0;32mI (206) app_init: ESP-IDF:          v5.5.1[0m
+[0;32mI (210) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (214) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (218) efuse_init: Chip rev:         v3.0[0m
+[0;32mI (222) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (228) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (233) heap_init: At 3FFB2E70 len 0002D190 (180 KiB): DRAM[0m
+[0;32mI (238) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (244) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (249) heap_init: At 4008D7B8 len 00012848 (74 KiB): IRAM[0m
+[0;32mI (256) spi_flash: detected chip: generic[0m
+[0;32mI (258) spi_flash: flash io: dio[0m
+[0;33mW (261) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (273) ADC: legacy driver is deprecated, please migrate to `esp_adc/adc_oneshot.h`[0m
+[0;32mI (281) main_task: Started on CPU0[0m
+[0;32mI (291) main_task: Calling app_main()[0m
+[0;32mI (291) TIMER_APPS: Timer Applications Lab Starting...[0m
+[0;32mI (291) TIMER_APPS: 🎨 Pattern: OFF -> SLOW_BLINK[0m
+[0;32mI (291) TIMER_APPS: 🚀 System operational![0m
+[0;32mI (291) main_task: Returned from app_main()[0m
+[0;32mI (2291) TIMER_APPS: 🍖 Feeding watchdog #1[0m
+[0;32mI (3291) TIMER_APPS: [0m
+═══════ SYSTEM STATUS ═══════
+[0;32mI (3291) TIMER_APPS: Uptime: 3s[0m
+[0;32mI (3291) TIMER_APPS: Health: ✅[0m
+[0;32mI (3291) TIMER_APPS: Feeds: 1 | Timeouts: 0[0m
+[0;32mI (3291) TIMER_APPS: Patterns: 1 | Sensors: 3[0m
+[0;32mI (3291) TIMER_APPS: ═════════════════════════════[0m
+[0;32mI (4291) TIMER_APPS: 🍖 Feeding watchdog #2[0m
+[0;32mI (6291) TIMER_APPS: [0m
+═══════ SYSTEM STATUS ═══════
+[0;32mI (6291) TIMER_APPS: Uptime: 6s[0m
+[0;32mI (6291) TIMER_APPS: Health: ✅[0m
+[0;32mI (6291) TIMER_APPS: Feeds: 2 | Timeouts: 0[0m
+[0;32mI (6291) TIMER_APPS: Patterns: 1 | Sensors: 7[0m
+[0;32mI (6291) TIMER_APPS: ═════════════════════════════[0m
+[0;32mI (6501) TIMER_APPS: 🍖 Feeding watchdog #3[0m
+[0;32mI (8291) TIMER_APPS: 🍖 Feeding watchdog #4[0m
+[0;32mI (9291) TIMER_APPS: [0m
+═══════ SYSTEM STATUS ═══════
+[0;32mI (9291) TIMER_APPS: Uptime: 9s[0m
+[0;32mI (9291) TIMER_APPS: Health: ✅[0m
+[0;32mI (9291) TIMER_APPS: Feeds: 4 | Timeouts: 0[0m
+[0;32mI (9291) TIMER_APPS: Patterns: 1 | Sensors: 8[0m
+[0;32mI (9291) TIMER_APPS: ═════════════════════════════[0m
+[0;32mI (10291) TIMER_APPS: 🍖 Feeding watchdog #5[0m
+[0;32mI (12291) TIMER_APPS: [0m
+═══════ SYSTEM STATUS ═══════
+[0;32mI (12291) TIMER_APPS: Uptime: 12s[0m
+[0;32mI (12291) TIMER_APPS: Health: ✅[0m
+[0;32mI (12291) TIMER_APPS: Feeds: 5 | Timeouts: 0[0m
+[0;32mI (12291) TIMER_APPS: Patterns: 1 | Sensors: 10[0m
+[0;32mI (12301) TIMER_APPS: ═════════════════════════════[0m
+[0;32mI (12511) TIMER_APPS: 🍖 Feeding watchdog #6[0m

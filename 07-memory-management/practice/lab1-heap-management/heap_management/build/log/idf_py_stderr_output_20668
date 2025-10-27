@@ -1,0 +1,32 @@
+Command: C:\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe C:\Users\rapee\esp\v5.5.1\esp-idf\tools/idf_monitor.py -p COM3 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 D:\github\Week-13-FreeRTOS_Worksheets\07-memory-management\practice\lab1-heap-management\heap_management\build\heap_management.elf D:\github\Week-13-FreeRTOS_Worksheets\07-memory-management\practice\lab1-heap-management\heap_management\build\bootloader\bootloader.elf --force-color -m 'C:\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe' 'C:\Users\rapee\esp\v5.5.1\esp-idf\tools\idf.py'
+[0;33m--- Warning: GDB cannot open serial ports accessed as COMx[0m
+[0;33m--- Using \\.\COM3 instead...[0m
+[0;33m--- esp-idf-monitor 1.7.0 on \\.\COM3 115200[0m
+[0;33m--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H[0m
+[0m--- 0x40080400: [0;33m_invalid_pc_placeholder[0m[0m at [0;32mC:/Users/rapee/esp/v5.5.1/esp-idf/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m2235[0m
+[0m--- 0x40080638: [0;33mcall_start_cpu0[0m[0m at [0;32mC:/Users/rapee/esp/v5.5.1/esp-idf/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m25[0m
+[0m--- 0x4000c48b: [0;33mmemset[0m[0m in [0;32mROM[0m
+[0m--- 0x4000c46c: [0;33mmemset[0m[0m in [0;32mROM[0m
+[0m--- 0x4000c477: [0;33mmemset[0m[0m in [0;32mROM[0m
+[0m--- 0x4000c488: [0;33mmemset[0m[0m in [0;32mROM[0m
+[0m--- 0x400d6d8b: [0;33mmemory_stress_test_task[0m[0m at [0;32mD:/github/Week-13-FreeRTOS_Worksheets/07-memory-management/practice/lab1-heap-management/heap_management/main/heap_management.c[0m[0m:[1;31m257[0m
+[0m--- 0x40085d35: [0;33mvPortTaskWrapper[0m[0m at [0;32mC:/Users/rapee/esp/v5.5.1/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x40080400: [0;33m_invalid_pc_placeholder[0m[0m at [0;32mC:/Users/rapee/esp/v5.5.1/esp-idf/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m2235[0m
+[0m--- 0x40080638: [0;33mcall_start_cpu0[0m[0m at [0;32mC:/Users/rapee/esp/v5.5.1/esp-idf/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m25[0m
+[0m--- 0x4000c48b: [0;33mmemset[0m[0m in [0;32mROM[0m
+[0m--- 0x4000c46c: [0;33mmemset[0m[0m in [0;32mROM[0m
+[0m--- 0x4000c477: [0;33mmemset[0m[0m in [0;32mROM[0m
+[0m--- 0x4000c488: [0;33mmemset[0m[0m in [0;32mROM[0m
+[0m--- 0x400d6d8b: [0;33mmemory_stress_test_task[0m[0m at [0;32mD:/github/Week-13-FreeRTOS_Worksheets/07-memory-management/practice/lab1-heap-management/heap_management/main/heap_management.c[0m[0m:[1;31m257[0m
+[0m--- 0x40085d35: [0;33mvPortTaskWrapper[0m[0m at [0;32mC:/Users/rapee/esp/v5.5.1/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x40080400: [0;33m_invalid_pc_placeholder[0m[0m at [0;32mC:/Users/rapee/esp/v5.5.1/esp-idf/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m2235[0m
+[0m--- 0x40080638: [0;33mcall_start_cpu0[0m[0m at [0;32mC:/Users/rapee/esp/v5.5.1/esp-idf/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m25[0m
+[0m--- 0x4000c48b: [0;33mmemset[0m[0m in [0;32mROM[0m
+[0m--- 0x4000c46c: [0;33mmemset[0m[0m in [0;32mROM[0m
+[0m--- 0x4000c477: [0;33mmemset[0m[0m in [0;32mROM[0m
+[0m--- 0x4000c488: [0;33mmemset[0m[0m in [0;32mROM[0m
+[0m--- 0x400d6d8b: [0;33mmemory_stress_test_task[0m[0m at [0;32mD:/github/Week-13-FreeRTOS_Worksheets/07-memory-management/practice/lab1-heap-management/heap_management/main/heap_management.c[0m[0m:[1;31m257[0m
+[0m--- 0x40085d35: [0;33mvPortTaskWrapper[0m[0m at [0;32mC:/Users/rapee/esp/v5.5.1/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x40080400: [0;33m_invalid_pc_placeholder[0m[0m at [0;32mC:/Users/rapee/esp/v5.5.1/esp-idf/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m2235[0m
+[0m--- 0x40080638: [0;33mcall_start_cpu0[0m[0m at [0;32mC:/Users/rapee/esp/v5.5.1/esp-idf/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m25[0m
+[0m

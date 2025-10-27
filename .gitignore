@@ -1,0 +1,61 @@
+# ======================
+# ESP-IDF Project Ignore
+# ======================
+
+# Build output
+/build/
+/sdkconfig.old
+/sdkconfig
+
+# IDE and editor settings
+.vscode/
+.idea/
+*.code-workspace
+
+# Compiled object files
+*.o
+*.obj
+*.elf
+*.bin
+*.map
+*.a
+
+# CMake and Ninja build files
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+*.cmake
+*.ninja
+.ninja_deps
+.ninja_log
+Makefile
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.swp
+*.bak
+*~
+.DS_Store
+Thumbs.db
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# ESP-IDF specific
+/.espressif/
+dependencies.lock
+/idf_env.json
+/idf.py
+/export.bat
+/export.sh
+
+# Custom user files (optional)
+# Uncomment if you use these locally only
+# /tools/
+# /notes/
+# /tests/

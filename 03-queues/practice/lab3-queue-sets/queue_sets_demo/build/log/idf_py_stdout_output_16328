@@ -1,0 +1,116 @@
+Command: C:\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe C:\Users\rapee\esp\v5.5.1\esp-idf\tools/idf_monitor.py -p COM3 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 D:\github\Week-13-FreeRTOS_Worksheets\03-queues\practice\lab3-queue-sets\queue_sets_demo\build\queue_sets_demo.elf D:\github\Week-13-FreeRTOS_Worksheets\03-queues\practice\lab3-queue-sets\queue_sets_demo\build\bootloader\bootloader.elf --force-color -m 'C:\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe' 'C:\Users\rapee\esp\v5.5.1\esp-idf\tools\idf.py'
+v:0x00,hd_d�ͅ���         Type ST Offset   Length
+[0;32mI (58) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (64) boot:  1 phy_init         R�ets Jul 29 2019 12:21:46[0m
+
+rst:0x1 (POWERON_RESET),boot:0x12 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6380
+ho 0 tail 12 room 4
+load:0x40078000,len:15916
+load:0x40080400,len:3860
+entry 0x40080638
+[0;32mI (29) boot: ESP-IDF v5.5.1 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Oct 23 2025 00:52:51[0m
+[0;32mI (29) boot: Multicore bootloader[0m
+[0;32mI (31) boot: chip revision: v3.0[0m
+[0;32mI (33) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (37) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (41) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (44) boot: Enabling RNG early entropy source...[0m
+[0;32mI (49) boot: Partition Table:[0m
+[0;32mI (51) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (58) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (64) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (71) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (77) boot: End of partition table[0m
+[0;32mI (81) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0a028h ( 41000) map[0m
+[0;32mI (102) esp_image: segment 1: paddr=0001a050 vaddr=3ffb0000 size=023f8h (  9208) load[0m
+[0;32mI (106) esp_image: segment 2: paddr=0001c450 vaddr=40080000 size=03bc8h ( 15304) load[0m
+[0;32mI (112) esp_image: segment 3: paddr=00020020 vaddr=400d0020 size=140e8h ( 82152) map[0m
+[0;32mI (142) esp_image: segment 4: paddr=00034110 vaddr=40083bc8 size=09580h ( 38272) load[0m
+[0;32mI (157) esp_image: segment 5: paddr=0003d698 vaddr=50000000 size=00020h (    32) load[0m
+[0;32mI (163) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (164) boot: Disabling RNG early entropy source...[0m
+[0;32mI (175) cpu_start: Multicore app[0m
+[0;32mI (183) cpu_start: Pro cpu start user code[0m
+[0;32mI (183) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (183) app_init: Application information:[0m
+[0;32mI (183) app_init: Project name:     queue_sets_demo[0m
+[0;32mI (188) app_init: App version:      f7526bb[0m
+[0;32mI (192) app_init: Compile time:     Oct 23 2025 00:51:37[0m
+[0;32mI (197) app_init: ELF file SHA256:  6816d85dd...[0m
+[0;32mI (201) app_init: ESP-IDF:          v5.5.1[0m
+[0;32mI (205) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (209) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (213) efuse_init: Chip rev:         v3.0[0m
+[0;32mI (217) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (223) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (228) heap_init: At 3FFB2CE8 len 0002D318 (180 KiB): DRAM[0m
+[0;32mI (233) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (239) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (244) heap_init: At 4008D148 len 00012EB8 (75 KiB): IRAM[0m
+[0;32mI (251) spi_flash: detected chip: generic[0m
+[0;32mI (253) spi_flash: flash io: dio[0m
+[0;33mW (256) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (269) main_task: Started on CPU0[0m
+[0;32mI (279) main_task: Calling app_main()[0m
+[0;32mI (279) QUEUE_SETS: === Queue Sets Demo Starting ===[0m
+[0;32mI (279) QUEUE_SETS: Sensor task started[0m
+[0;32mI (279) QUEUE_SETS: 📊 Sensor: T=21.0°C, H=30.6%[0m
+[0;32mI (279) QUEUE_SETS: User input task started[0m
+[0;32mI (289) QUEUE_SETS: 🔘 User: Button 1 pressed for 795ms[0m
+[0;32mI (289) QUEUE_SETS: Network task started[0m
+[0;32mI (299) QUEUE_SETS: 🌐 Network [Bluetooth]: Config changed (P:5)[0m
+[0;32mI (299) QUEUE_SETS: Timer task started[0m
+[0;32mI (309) QUEUE_SETS: Processor task waiting for events...[0m
+[0;32mI (309) QUEUE_SETS: → SENSOR: 21.0°C 30.6%[0m
+[0;32mI (309) main_task: Returned from app_main()[0m
+[0;32mI (509) QUEUE_SETS: → USER: Button 1 (795ms)[0m
+[0;32mI (709) QUEUE_SETS: → NETWORK: [Bluetooth] Config changed[0m
+[0;32mI (1749) QUEUE_SETS: → NETWORK: [Ethernet] Alert![0m
+[0;32mI (1749) QUEUE_SETS: 🌐 Network [Ethernet]: Alert! (P:3)[0m
+[0;32mI (2409) QUEUE_SETS: → SENSOR: 38.6°C 68.6%[0m
+[0;32mI (2409) QUEUE_SETS: 📊 Sensor: T=38.6°C, H=68.6%[0m
+[0;32mI (4299) QUEUE_SETS: → NETWORK: [Bluetooth] Sync data[0m
+[0;32mI (4299) QUEUE_SETS: 🌐 Network [Bluetooth]: Sync data (P:2)[0m
+[0;32mI (4499) QUEUE_SETS: → USER: Button 1 (1076ms)[0m
+[0;32mI (4499) QUEUE_SETS: 🔘 User: Button 1 pressed for 1076ms[0m
+[0;32mI (6319) QUEUE_SETS: → SENSOR: 34.6°C 52.2%[0m
+[0;32mI (6319) QUEUE_SETS: 📊 Sensor: T=34.6°C, H=52.2%[0m
+[0;32mI (7229) QUEUE_SETS: → NETWORK: [LoRa] Heartbeat[0m
+[0;32mI (7229) QUEUE_SETS: 🌐 Network [LoRa]: Heartbeat (P:2)[0m
+[0;32mI (8399) QUEUE_SETS: → NETWORK: [Bluetooth] Status update[0m
+[0;32mI (8399) QUEUE_SETS: 🌐 Network [Bluetooth]: Status update (P:1)[0m
+[0;32mI (9159) QUEUE_SETS: → SENSOR: 31.6°C 61.2%[0m
+[0;32mI (9159) QUEUE_SETS: 📊 Sensor: T=31.6°C, H=61.2%[0m
+[0;32mI (10099) QUEUE_SETS: → USER: Button 2 (768ms)[0m
+[0;32mI (10099) QUEUE_SETS: 🔘 User: Button 2 pressed for 768ms[0m
+[0;32mI (10309) QUEUE_SETS: → TIMER: Maintenance event[0m
+[0;32mI (10309) QUEUE_SETS: 📈 Counts → Sensor:4 | User:3 | Net:5 | Timer:1[0m
+[0;32mI (10309) QUEUE_SETS: ⏰ Timer event fired[0m
+[0;32mI (10579) QUEUE_SETS: → NETWORK: [WiFi] Alert![0m
+[0;32mI (10579) QUEUE_SETS: 🌐 Network [WiFi]: Alert! (P:1)[0m
+[0;32mI (12829) QUEUE_SETS: → SENSOR: 29.0°C 47.7%[0m
+[0;32mI (12829) QUEUE_SETS: 📊 Sensor: T=29.0°C, H=47.7%[0m
+[0;32mI (13799) QUEUE_SETS: → NETWORK: [Bluetooth] Alert![0m
+[0;32mI (13799) QUEUE_SETS: 🌐 Network [Bluetooth]: Alert! (P:2)[0m
+[0;32mI (15679) QUEUE_SETS: → NETWORK: [Ethernet] Alert![0m
+[0;32mI (15679) QUEUE_SETS: 🌐 Network [Ethernet]: Alert! (P:5)[0m
+[0;32mI (16399) QUEUE_SETS: → SENSOR: 38.9°C 53.7%[0m
+[0;32mI (16399) QUEUE_SETS: 📊 Sensor: T=38.9°C, H=53.7%[0m
+[0;32mI (16899) QUEUE_SETS: → USER: Button 2 (1021ms)[0m
+[0;32mI (16899) QUEUE_SETS: 🔘 User: Button 2 pressed for 1021ms[0m
+[0;32mI (17299) QUEUE_SETS: → NETWORK: [Ethernet] Alert![0m
+[0;32mI (17299) QUEUE_SETS: 🌐 Network [Ethernet]: Alert! (P:3)[0m
+[0;32mI (20179) QUEUE_SETS: → NETWORK: [LoRa] Status update[0m
+[0;32mI (20179) QUEUE_SETS: 🌐 Network [LoRa]: Status update (P:2)[0m
+[0;32mI (20249) QUEUE_SETS: 📊 Sensor: T=23.6°C, H=59.1%[0m
+[0;32mI (20379) QUEUE_SETS: → SENSOR: 23.6°C 59.1%[0m
+[0;32mI (20409) QUEUE_SETS: ⏰ Timer event fired[0m
+[0;32mI (20579) QUEUE_SETS: → TIMER: Maintenance event[0m
+[0;32mI (20579) QUEUE_SETS: 📈 Counts → Sensor:7 | User:4 | Net:10 | Timer:2[0m
+[0;32mI (21709) QUEUE_SETS: → NETWORK: [Bluetooth] Heartbeat[0m
+[0;32mI (21709) QUEUE_SETS: 🌐 Network [Bluetooth]: Heartbeat (P:1)[0m

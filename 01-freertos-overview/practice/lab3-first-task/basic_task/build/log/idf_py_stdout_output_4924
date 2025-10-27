@@ -1,0 +1,270 @@
+Command: C:\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe C:\Users\rapee\esp\v5.5.1\esp-idf\tools/idf_monitor.py -p COM3 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 D:\github\Week-13-FreeRTOS_Worksheets\01-freertos-overview\practice\lab3-first-task\basic_task\build\basic_task.elf D:\github\Week-13-FreeRTOS_Worksheets\01-freertos-overview\practice\lab3-first-task\basic_task\build\bootloader\bootloader.elf --force-color -m 'C:\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe' 'C:\Users\rapee\esp\v5.5.1\esp-idf\tools\idf.py'
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x3 (DOWNLOAD_BOOT(UART0/UART1/SDIO_REI_REO_V2))
+waiting for download
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6380
+ho 0 tail 12 room 4
+load:0x40078000,len:15916
+load:0x40080400,len:3860
+entry 0x40080638
+[0;32mI (29) boot: ESP-IDF v5.5.1 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Oct 22 2025 23:14:56[0m
+[0;32mI (29) boot: Multicore bootloader[0m
+[0;32mI (31) boot: chip revision: v3.0[0m
+[0;32mI (33) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (37) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (41) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (44) boot: Enabling RNG early entropy source...[0m
+[0;32mI (49) boot: Partition Table:[0m
+[0;32mI (51) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (58) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (64) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (71) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (77) boot: End of partition table[0m
+[0;32mI (81) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0a690h ( 42640) map[0m
+[0;32mI (103) esp_image: segment 1: paddr=0001a6b8 vaddr=3ffb0000 size=02408h (  9224) load[0m
+[0;32mI (106) esp_image: segment 2: paddr=0001cac8 vaddr=40080000 size=03550h ( 13648) load[0m
+[0;32mI (112) esp_image: segment 3: paddr=00020020 vaddr=400d0020 size=14a18h ( 84504) map[0m
+[0;32mI (143) esp_image: segment 4: paddr=00034a40 vaddr=40083550 size=09dach ( 40364) load[0m
+[0;32mI (159) esp_image: segment 5: paddr=0003e7f4 vaddr=50000000 size=00020h (    32) load[0m
+[0;32mI (166) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (166) boot: Disabling RNG early entropy source...[0m
+[0;32mI (177) cpu_start: Multicore app[0m
+[0;32mI (185) cpu_start: Pro cpu start user code[0m
+[0;32mI (185) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (185) app_init: Application information:[0m
+[0;32mI (185) app_init: Project name:     basic_task[0m
+[0;32mI (190) app_init: App version:      f7526bb[0m
+[0;32mI (193) app_init: Compile time:     Oct 22 2025 23:14:03[0m
+[0;32mI (198) app_init: ELF file SHA256:  01d31f64d...[0m
+[0;32mI (203) app_init: ESP-IDF:          v5.5.1[0m
+[0;32mI (207) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (210) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (214) efuse_init: Chip rev:         v3.0[0m
+[0;32mI (219) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (225) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (230) heap_init: At 3FFB2CD0 len 0002D330 (180 KiB): DRAM[0m
+[0;32mI (235) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (240) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (246) heap_init: At 4008D2FC len 00012D04 (75 KiB): IRAM[0m
+[0;32mI (253) spi_flash: detected chip: generic[0m
+[0;32mI (255) spi_flash: flash io: dio[0m
+[0;33mW (258) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (271) main_task: Started on CPU0[0m
+[0;32mI (281) main_task: Calling app_main()[0m
+[0;32mI (281) BASIC_TASKS: === FreeRTOS Basic Tasks Demo ===[0m
+[0;32mI (281) BASIC_TASKS: LED1 Task started with ID: 1[0m
+[0;32mI (281) BASIC_TASKS: LED1 ON[0m
+[0;32mI (281) BASIC_TASKS: LED2 Task started: FastBlinker[0m
+[0;32mI (291) BASIC_TASKS: LED2 Blink Fast[0m
+[0;32mI (291) BASIC_TASKS: LED1 Task created[0m
+[0;32mI (291) BASIC_TASKS: LED2 Task created[0m
+[0;32mI (301) BASIC_TASKS: System Info Task started[0m
+[0;32mI (301) BASIC_TASKS: System Info Task created[0m
+[0;32mI (301) BASIC_TASKS: === System Information ===[0m
+[0;32mI (311) BASIC_TASKS: Task Manager started[0m
+[0;33mW (311) BASIC_TASKS: Manager: Suspending LED1[0m
+[0;32mI (311) BASIC_TASKS: Free heap: 294452 bytes[0m
+[0;32mI (321) BASIC_TASKS: Min free heap: 294452 bytes[0m
+[0;32mI (331) BASIC_TASKS: Number of tasks: 9[0m
+[0;32mI (331) BASIC_TASKS: Uptime: 0 seconds[0m
+[0;32mI (311) BASIC_TASKS: All tasks created. Main task idling...[0m
+[0;32mI (341) BASIC_TASKS: Main task heartbeat[0m
+[0;32mI (2291) BASIC_TASKS: LED2 Blink Fast[0m
+[0;33mW (2321) BASIC_TASKS: Manager: Resuming LED1[0m
+[0;32mI (2321) BASIC_TASKS: LED1 OFF[0m
+[0;32mI (2821) BASIC_TASKS: LED1 ON[0m
+[0;32mI (3321) BASIC_TASKS: LED1 OFF[0m
+[0;32mI (3331) BASIC_TASKS: === System Information ===[0m
+[0;32mI (3331) BASIC_TASKS: Free heap: 294452 bytes[0m
+[0;32mI (3331) BASIC_TASKS: Min free heap: 294452 bytes[0m
+[0;32mI (3331) BASIC_TASKS: Number of tasks: 9[0m
+[0;32mI (3331) BASIC_TASKS: Uptime: 3 seconds[0m
+[0;32mI (3821) BASIC_TASKS: LED1 ON[0m
+[0;32mI (4291) BASIC_TASKS: LED2 Blink Fast[0m
+[0;33mW (4321) BASIC_TASKS: Manager: Suspending LED2[0m
+[0;32mI (4321) BASIC_TASKS: LED1 OFF[0m
+[0;32mI (4821) BASIC_TASKS: LED1 ON[0m
+[0;32mI (5321) BASIC_TASKS: LED1 OFF[0m
+[0;32mI (5341) BASIC_TASKS: Main task heartbeat[0m
+[0;32mI (5821) BASIC_TASKS: LED1 ON[0m
+[0;33mW (6321) BASIC_TASKS: Manager: Resuming LED2[0m
+[0;32mI (6321) BASIC_TASKS: LED1 OFF[0m
+[0;32mI (6331) BASIC_TASKS: === System Information ===[0m
+[0;32mI (6331) BASIC_TASKS: Free heap: 294452 bytes[0m
+[0;32mI (6331) BASIC_TASKS: Min free heap: 294452 bytes[0m
+[0;32mI (6331) BASIC_TASKS: Number of tasks: 9[0m
+[0;32mI (6331) BASIC_TASKS: Uptime: 6 seconds[0m
+[0;32mI (6821) BASIC_TASKS: LED1 ON[0m
+[0;32mI (7321) BASIC_TASKS: LED1 OFF[0m
+[0;32mI (7821) BASIC_TASKS: LED1 ON[0m
+[0;32mI (8221) BASIC_TASKS: LED2 Blink Fast[0m
+[0;32mI (8321) BASIC_TASKS: Manager: Checking Task States[0m
+[0;32mI (8321) BASIC_TASKS: LED1 State: 1[0m
+[0;32mI (8321) BASIC_TASKS: LED2 State: 1[0m
+[0;32mI (8321) BASIC_TASKS: LED1 OFF[0m
+[0;32mI (8821) BASIC_TASKS: LED1 ON[0m
+[0;32mI (9321) BASIC_TASKS: LED1 OFF[0m
+[0;32mI (9331) BASIC_TASKS: === System Information ===[0m
+[0;32mI (9331) BASIC_TASKS: Free heap: 294452 bytes[0m
+[0;32mI (9331) BASIC_TASKS: Min free heap: 294452 bytes[0m
+[0;32mI (9331) BASIC_TASKS: Number of tasks: 9[0m
+[0;32mI (9331) BASIC_TASKS: Uptime: 9 seconds[0m
+[0;32mI (9821) BASIC_TASKS: LED1 ON[0m
+[0;32mI (10221) BASIC_TASKS: LED2 Blink Fast[0m
+[0;32mI (10321) BASIC_TASKS: Manager: Reset cycle[0m
+[0;32mI (10321) BASIC_TASKS: LED1 OFF[0m
+[0;32mI (10341) BASIC_TASKS: Main task heartbeat[0m
+[0;32mI (10821) BASIC_TASKS: LED1 ON[0m
+[0;32mI (11321) BASIC_TASKS: LED1 OFF[0m
+[0;32mI (11821) BASIC_TASKS: LED1 ON[0m
+[0;32mI (12221) BASIC_TASKS: LED2 Blink Fast[0m
+[0;33mW (12321) BASIC_TASKS: Manager: Suspending LED1[0m
+[0;32mI (12331) BASIC_TASKS: === System Information ===[0m
+[0;32mI (12331) BASIC_TASKS: Free heap: 294452 bytes[0m
+[0;32mI (12331) BASIC_TASKS: Min free heap: 294452 bytes[0m
+[0;32mI (12331) BASIC_TASKS: Number of tasks: 9[0m
+[0;32mI (12331) BASIC_TASKS: Uptime: 12 seconds[0m
+[0;32mI (14221) BASIC_TASKS: LED2 Blink Fast[0m
+[0;33mW (14321) BASIC_TASKS: Manager: Resuming LED1[0m
+[0;32mI (14321) BASIC_TASKS: LED1 OFF[0m
+[0;32mI (14821) BASIC_TASKS: LED1 ON[0m
+[0;32mI (15321) BASIC_TASKS: LED1 OFF[0m
+[0;32mI (15331) BASIC_TASKS: === System Information ===[0m
+[0;32mI (15331) BASIC_TASKS: Free heap: 294452 bytes[0m
+[0;32mI (15331) BASIC_TASKS: Min free heap: 294452 bytes[0m
+[0;32mI (15331) BASIC_TASKS: Number of tasks: 9[0m
+[0;32mI (15331) BASIC_TASKS: Uptime: 15 seconds[0m
+[0;32mI (15341) BASIC_TASKS: Main task heartbeat[0m
+[0;32mI (15821) BASIC_TASKS: LED1 ON[0m
+[0;32mI (16221) BASIC_TASKS: LED2 Blink Fast[0m
+[0;33mW (16321) BASIC_TASKS: Manager: Suspending LED2[0m
+[0;32mI (16321) BASIC_TASKS: LED1 OFF[0m
+[0;32mI (16821) BASIC_TASKS: LED1 ON[0m
+[0;32mI (17321) BASIC_TASKS: LED1 OFF[0m
+[0;32mI (17821) BASIC_TASKS: LED1 ON[0m
+[0;33mW (18321) BASIC_TASKS: Manager: Resuming LED2[0m
+[0;32mI (18321) BASIC_TASKS: LED1 OFF[0m
+[0;32mI (18331) BASIC_TASKS: === System Information ===[0m
+[0;32mI (18331) BASIC_TASKS: Free heap: 294452 bytes[0m
+[0;32mI (18331) BASIC_TASKS: Min free heap: 294452 bytes[0m
+[0;32mI (18331) BASIC_TASKS: Number of tasks: 9[0m
+[0;32mI (18331) BASIC_TASKS: Uptime: 18 seconds[0m
+[0;32mI (18821) BASIC_TASKS: LED1 ON[0m
+[0;32mI (19321) BASIC_TASKS: LED1 OFF[0m
+[0;32mI (19821) BASIC_TASKS: LED1 ON[0m
+[0;32mI (20221) BASIC_TASKS: LED2 Blink Fast[0m
+[0;32mI (20321) BASIC_TASKS: Manager: Checking Task States[0m
+[0;32mI (20321) BASIC_TASKS: LED1 State: 1[0m
+[0;32mI (20321) BASIC_TASKS: LED2 State: 1[0m
+[0;32mI (20321) BASIC_TASKS: LED1 OFF[0m
+[0;32mI (20341) BASIC_TASKS: Main task heartbeat[0m
+[0;32mI (20821) BASIC_TASKS: LED1 ON[0m
+[0;32mI (21321) BASIC_TASKS: LED1 OFF[0m
+[0;32mI (21331) BASIC_TASKS: === System Information ===[0m
+[0;32mI (21331) BASIC_TASKS: Free heap: 294452 bytes[0m
+[0;32mI (21331) BASIC_TASKS: Min free heap: 294452 bytes[0m
+[0;32mI (21331) BASIC_TASKS: Number of tasks: 9[0m
+[0;32mI (21331) BASIC_TASKS: Uptime: 21 seconds[0m
+[0;32mI (21821) BASIC_TASKS: LED1 ON[0m
+[0;32mI (22221) BASIC_TASKS: LED2 Blink Fast[0m
+[0;32mI (22321) BASIC_TASKS: Manager: Reset cycle[0m
+[0;32mI (22321) BASIC_TASKS: LED1 OFF[0m
+[0;32mI (22821) BASIC_TASKS: LED1 ON[0m
+[0;32mI (23321) BASIC_TASKS: LED1 OFF[0m
+[0;32mI (23821) BASIC_TASKS: LED1 ON[0m
+[0;32mI (24221) BASIC_TASKS: LED2 Blink Fast[0m
+[0;33mW (24321) BASIC_TASKS: Manager: Suspending LED1[0m
+[0;32mI (24331) BASIC_TASKS: === System Information ===[0m
+[0;32mI (24331) BASIC_TASKS: Free heap: 294452 bytes[0m
+[0;32mI (24331) BASIC_TASKS: Min free heap: 294452 bytes[0m
+[0;32mI (24331) BASIC_TASKS: Number of tasks: 9[0m
+[0;32mI (24331) BASIC_TASKS: Uptime: 24 seconds[0m
+[0;32mI (25341) BASIC_TASKS: Main task heartbeat[0m
+[0;32mI (26221) BASIC_TASKS: LED2 Blink Fast[0m
+[0;33mW (26321) BASIC_TASKS: Manager: Resuming LED1[0m
+[0;32mI (26321) BASIC_TASKS: LED1 OFF[0m
+[0;32mI (26821) BASIC_TASKS: LED1 ON[0m
+[0;32mI (27321) BASIC_TASKS: LED1 OFF[0m
+[0;32mI (27331) BASIC_TASKS: === System Information ===[0m
+[0;32mI (27331) BASIC_TASKS: Free heap: 294452 bytes[0m
+[0;32mI (27331) BASIC_TASKS: Min free heap: 294452 bytes[0m
+[0;32mI (27331) BASIC_TASKS: Number of tasks: 9[0m
+[0;32mI (27331) BASIC_TASKS: Uptime: 27 seconds[0m
+[0;32mI (27821) BASIC_TASKS: LED1 ON[0m
+[0;32mI (28221) BASIC_TASKS: LED2 Blink Fast[0m
+[0;33mW (28321) BASIC_TASKS: Manager: Suspending LED2[0m
+[0;32mI (28321) BASIC_TASKS: LED1 OFF[0m
+[0;32mI (28821) BASIC_TASKS: LED1 ON[0m
+[0;32mI (29321) BASIC_TASKS: LED1 OFF[0m
+[0;32mI (29821) BASIC_TASKS: LED1 ON[0m
+[0;33mW (30321) BASIC_TASKS: Manager: Resuming LED2[0m
+[0;32mI (30321) BASIC_TASKS: LED1 OFF[0m
+[0;32mI (30331) BASIC_TASKS: === System Information ===[0m
+[0;32mI (30331) BASIC_TASKS: Free heap: 294452 bytes[0m
+[0;32mI (30331) BASIC_TASKS: Min free heap: 294452 bytes[0m
+[0;32mI (30331) BASIC_TASKS: Number of tasks: 9[0m
+[0;32mI (30331) BASIC_TASKS: Uptime: 30 seconds[0m
+[0;32mI (30341) BASIC_TASKS: Main task heartbeat[0m
+[0;32mI (30821) BASIC_TASKS: LED1 ON[0m
+[0;32mI (31321) BASIC_TASKS: LED1 OFF[0m
+[0;32mI (31821) BASIC_TASKS: LED1 ON[0m
+[0;32mI (32221) BASIC_TASKS: LED2 Blink Fast[0m
+[0;32mI (32321) BASIC_TASKS: Manager: Checking Task States[0m
+[0;32mI (32321) BASIC_TASKS: LED1 State: 1[0m
+[0;32mI (32321) BASIC_TASKS: LED2 State: 1[0m
+[0;32mI (32321) BASIC_TASKS: LED1 OFF[0m
+[0;32mI (32821) BASIC_TASKS: LED1 ON[0m
+[0;32mI (33321) BASIC_TASKS: LED1 OFF[0m
+[0;32mI (33331) BASIC_TASKS: === System Information ===[0m
+[0;32mI (33331) BASIC_TASKS: Free heap: 294452 bytes[0m
+[0;32mI (33331) BASIC_TASKS: Min free heap: 294452 bytes[0m
+[0;32mI (33331) BASIC_TASKS: Number of tasks: 9[0m
+[0;32mI (33331) BASIC_TASKS: Uptime: 33 seconds[0m
+[0;32mI (33821) BASIC_TASKS: LED1 ON[0m
+[0;32mI (34221) BASIC_TASKS: LED2 Blink Fast[0m
+[0;32mI (34321) BASIC_TASKS: Manager: Reset cycle[0m
+[0;32mI (34321) BASIC_TASKS: LED1 OFF[0m
+[0;32mI (34821) BASIC_TASKS: LED1 ON[0m
+[0;32mI (35321) BASIC_TASKS: LED1 OFF[0m
+[0;32mI (35341) BASIC_TASKS: Main task heartbeat[0m
+[0;32mI (35821) BASIC_TASKS: LED1 ON[0m
+[0;32mI (36221) BASIC_TASKS: LED2 Blink Fast[0m
+[0;33mW (36321) BASIC_TASKS: Manager: Suspending LED1[0m
+[0;32mI (36331) BASIC_TASKS: === System Information ===[0m
+[0;32mI (36331) BASIC_TASKS: Free heap: 294452 bytes[0m
+[0;32mI (36331) BASIC_TASKS: Min free heap: 294452 bytes[0m
+[0;32mI (36331) BASIC_TASKS: Number of tasks: 9[0m
+[0;32mI (36331) BASIC_TASKS: Uptime: 36 seconds[0m
+[0;32mI (38221) BASIC_TASKS: LED2 Blink Fast[0m
+[0;33mW (38321) BASIC_TASKS: Manager: Resuming LED1[0m
+[0;32mI (38321) BASIC_TASKS: LED1 OFF[0m
+[0;32mI (38821) BASIC_TASKS: LED1 ON[0m
+[0;32mI (39321) BASIC_TASKS: LED1 OFF[0m
+[0;32mI (39331) BASIC_TASKS: === System Information ===[0m
+[0;32mI (39331) BASIC_TASKS: Free heap: 294452 bytes[0m
+[0;32mI (39331) BASIC_TASKS: Min free heap: 294452 bytes[0m
+[0;32mI (39331) BASIC_TASKS: Number of tasks: 9[0m
+[0;32mI (39331) BASIC_TASKS: Uptime: 39 seconds[0m
+[0;32mI (39821) BASIC_TASKS: LED1 ON[0m
+[0;32mI (40221) BASIC_TASKS: LED2 Blink Fast[0m
+[0;33mW (40321) BASIC_TASKS: Manager: Suspending LED2[0m
+[0;32mI (40321) BASIC_TASKS: LED1 OFF[0m
+[0;32mI (40341) BASIC_TASKS: Main task heartbeat[0m
+[0;32mI (40821) BASIC_TASKS: LED1 ON[0m
+[0;32mI (41321) BASIC_TASKS: LED1 OFF[0m
+[0;32mI (41821) BASIC_TASKS: LED1 ON[0m
+[0;33mW (42321) BASIC_TASKS: Manager: Resuming LED2[0m
+[0;32mI (42321) BASIC_TASKS: LED1 OFF[0m
+[0;32mI (42331) BASIC_TASKS: === System Information ===[0m
+[0;32mI (42331) BASIC_TASKS: Free heap: 294452 bytes[0m
+[0;32mI (42331) BASIC_TASKS: Min free heap: 294452 bytes[0m
+[0;32mI (42331) BASIC_TASKS: Number of tasks: 9[0m
+[0;32mI (42331) BASIC_TASKS: Uptime: 42 seconds[0m
