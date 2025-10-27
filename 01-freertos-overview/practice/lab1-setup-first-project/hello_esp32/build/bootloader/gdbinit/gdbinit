@@ -1,0 +1,2 @@
+source D:/github/Week-13-FreeRTOS_Worksheets/01-freertos-overview/practice/lab1-setup-first-project/hello_esp32/build/bootloader/gdbinit/symbols
+source D:/github/Week-13-FreeRTOS_Worksheets/01-freertos-overview/practice/lab1-setup-first-project/hello_esp32/build/bootloader/gdbinit/connect
